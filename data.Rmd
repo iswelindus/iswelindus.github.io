@@ -146,14 +146,14 @@ Processed data is available in the ISWEL project folder [pdrive\\is-wel\\indus\\
 The following table gives a summary of the data sets that have been processed.
 
 <p id="tabcap"> Processed Data </p> 									
-|	Sector	|	Data	|	IIASA Folder name	|	Sources	|
-|	:---------:	|	:---------:	|	:---------:	|	:---------:	|
-|	Admin	|	Admin boundaries	|	processed_admin_boundaries	|	@lehner2013_HYDROBASINS	|
-|	Admin	|	Population	|	processed_admin_population	|	@IIASA SSP2 RCP4 gridded projections	|
-|	Admin	|	Road network	|	processed_admin_roads	|	@OSM2017	|
-|	Water	|	Water temperature	|	processed_water_temp	|	@IIASA Water	|
-|	Energy	|	Transmission lines	|	processed_energy_transmission	|	@WorldBank2017_PakTransmissionMap	|
-|	Energy	|	Powerplants	|	processed_energy_powerplants	|	@raptis2016_globalpp,@CARMA2009_Energydata	|
+|	Sector	|	Data	            |	IIASA Folder name	            |	Sources	                                    |
+|---------|-------------------|-------------------------------|---------------------------------------------|
+|	Admin	  |	Admin boundaries	|	processed_admin_boundaries	  |	@lehner2013_HYDROBASINS	                    |
+|	Admin	  |	Population	      |	processed_admin_population	  |	IIASA SSP2 RCP4 gridded projections	        |
+|	Admin	  |	Road network	    |	processed_admin_roads	        |	@OSM2017	                                  |
+|	Water	  |	Water temperature	|	processed_water_temp	        |	IIASA Water	                                |
+|	Energy	|	Transmission lines|	processed_energy_transmission	|	@WorldBank2017_PakTransmissionMap	          |
+|	Energy	|	Powerplants	      |	processed_energy_powerplants	|	@raptis2016_globalpp,@CARMA2009_Energydata	|
 
 
 # Processed Data Details
