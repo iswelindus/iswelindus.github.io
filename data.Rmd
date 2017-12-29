@@ -141,22 +141,29 @@ Data from the different disciplines involved in the ISWEL project are broadly ca
 
 # Processed Data Summary
 
+Processed data is available in the ISWEL project folder [pdrive\\is-wel\\indus\\datagis](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).
+
 The following table gives a summary of the data sets that have been processed.
 
-<p id="tabcap"> Table 6: Processed Data Summary </p> 																
-|	Sector	|	Data	|	Map, Chart, Table, gif	|	Spatial Type	|	Spatial Scale	|	Temporal Scale	|	IIASA Folder name	|	Sources	|
-|	:---------:	|	:---------:	|	:---------:	|	:---------:	|	:---------:	|	:---------:	|	:---------:	|	:---------:	|
-|	Admin	|	Admin boundaries	|	Maps	|	Polygons	|	Country, Basin, Sub-basin	|	-	|	processed_admin_boundaries	|	~\cite{lehner2013_HYDROBASINS}	|
-|	Admin	|	Population	|	Map, Chart, Table, Gif	|	Polygons, Raster	|	Country, Basin, Sub-basin	|	Annual	|	processed_admin_population	|	IIASA SSP2 RCP4 gridded projections	|
-|	Admin	|	Road network	|	Map, Chart, Table, Gif	|	Polygons	|	Country, Basin, Sub-basin	|	-	|	processed_admin_roads	|	~\cite{OSM2017}	|
-|	Water	|	Water temperature	|	Map, Chart, Table, Gif	|	Polygons, Raster	|	Country, Basin, Sub-basin	|	Daily	|	processed_water_temp	|	IIASA Water	|
-|	Energy	|	Transmission lines	|	Maps, Table	|	Polygons	|	Country, Basin, Sub-basin	|	-	|	processed_energy_transmission	|	~\cite{WorldBank2017_PakTransmissionMap}	|
+<p id="tabcap"> Processed Data </p> 									
+|	Sector	|	Data	|	IIASA Folder name	|	Sources	|
+|	:---------:	|	:---------:	|	:---------:	|	:---------:	|
+|	Admin	|	Admin boundaries	|	processed_admin_boundaries	|	@lehner2013_HYDROBASINS	|
+|	Admin	|	Population	|	processed_admin_population	|	@IIASA SSP2 RCP4 gridded projections	|
+|	Admin	|	Road network	|	processed_admin_roads	|	@OSM2017	|
+|	Water	|	Water temperature	|	processed_water_temp	|	@IIASA Water	|
+|	Energy	|	Transmission lines	|	processed_energy_transmission	|	@WorldBank2017_PakTransmissionMap	|
+|	Energy	|	Powerplants	|	processed_energy_powerplants	|	@raptis2016_globalpp,@CARMA2009_Energydata	|
+
 
 # Processed Data Details
 
 Processed data is available in the ISWEL project folder [pdrive\\is-wel\\indus\\datagis](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).
 
 ## Admin_boundaries
+
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_admin_boundaries](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+Sources: @lehner2013_HYDROBASINS
 
 | Admin boundary data files                      |
 |------------------------------------------------|

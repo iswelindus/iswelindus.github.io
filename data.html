@@ -23,8 +23,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -34,10 +34,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -628,29 +630,22 @@ Table 5: Expected administration data examples
 </div>
 <div id="processed-data-summary" class="section level1">
 <h1>Processed Data Summary</h1>
+<p>Processed data is available in the ISWEL project folder <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis</a>.</p>
 <p>The following table gives a summary of the data sets that have been processed.</p>
 <p id="tabcap">
-Table 6: Processed Data Summary
+Processed Data
 </p>
-<table>
+<table style="width:67%;">
 <colgroup>
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="center">Sector</th>
 <th align="center">Data</th>
-<th align="center">Map, Chart, Table, gif</th>
-<th align="center">Spatial Type</th>
-<th align="center">Spatial Scale</th>
-<th align="center">Temporal Scale</th>
 <th align="center">IIASA Folder name</th>
 <th align="center">Sources</th>
 </tr>
@@ -659,52 +654,38 @@ Table 6: Processed Data Summary
 <tr class="odd">
 <td align="center">Admin</td>
 <td align="center">Admin boundaries</td>
-<td align="center">Maps</td>
-<td align="center">Polygons</td>
-<td align="center">Country, Basin, Sub-basin</td>
-<td align="center">-</td>
 <td align="center">processed_admin_boundaries</td>
-<td align="center">~</td>
+<td align="center"><span class="citation">Lehner and Grill (<a href="#ref-lehner2013_HYDROBASINS">2013</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="center">Admin</td>
 <td align="center">Population</td>
-<td align="center">Map, Chart, Table, Gif</td>
-<td align="center">Polygons, Raster</td>
-<td align="center">Country, Basin, Sub-basin</td>
-<td align="center">Annual</td>
 <td align="center">processed_admin_population</td>
-<td align="center">IIASA SSP2 RCP4 gridded projections</td>
+<td align="center"><span class="citation">(<span class="citeproc-not-found" data-reference-id="IIASA"><strong>???</strong></span>)</span> SSP2 RCP4 gridded projections</td>
 </tr>
 <tr class="odd">
 <td align="center">Admin</td>
 <td align="center">Road network</td>
-<td align="center">Map, Chart, Table, Gif</td>
-<td align="center">Polygons</td>
-<td align="center">Country, Basin, Sub-basin</td>
-<td align="center">-</td>
 <td align="center">processed_admin_roads</td>
-<td align="center">~</td>
+<td align="center"><span class="citation">OSM (<a href="#ref-OSM2017">2017</a>)</span></td>
 </tr>
 <tr class="even">
 <td align="center">Water</td>
 <td align="center">Water temperature</td>
-<td align="center">Map, Chart, Table, Gif</td>
-<td align="center">Polygons, Raster</td>
-<td align="center">Country, Basin, Sub-basin</td>
-<td align="center">Daily</td>
 <td align="center">processed_water_temp</td>
-<td align="center">IIASA Water</td>
+<td align="center">@IIASA Water</td>
 </tr>
 <tr class="odd">
 <td align="center">Energy</td>
 <td align="center">Transmission lines</td>
-<td align="center">Maps, Table</td>
-<td align="center">Polygons</td>
-<td align="center">Country, Basin, Sub-basin</td>
-<td align="center">-</td>
 <td align="center">processed_energy_transmission</td>
-<td align="center">~</td>
+<td align="center"><span class="citation">World Bank (<a href="#ref-WorldBank2017_PakTransmissionMap">2017</a>)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Energy</td>
+<td align="center">Powerplants</td>
+<td align="center">processed_energy_powerplants</td>
+<td align="center"><span class="citation">Raptis and Pfister (<a href="#ref-raptis2016_globalpp">2016</a>)</span>,<span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span></td>
 </tr>
 </tbody>
 </table>
@@ -714,6 +695,7 @@ Table 6: Processed Data Summary
 <p>Processed data is available in the ISWEL project folder <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis</a>.</p>
 <div id="admin_boundaries" class="section level2">
 <h2>Admin_boundaries</h2>
+<p>IIASA folder: <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\processed_admin_boundaries</a>.<br> Sources: <span class="citation">Lehner and Grill (<a href="#ref-lehner2013_HYDROBASINS">2013</a>)</span></p>
 <table>
 <thead>
 <tr class="header">
@@ -1587,8 +1569,20 @@ Road network OSM (<span class="citation">OSM (<a href="#ref-OSM2017">2017</a>)</
 </tbody>
 </table>
 <div id="refs" class="references">
+<div id="ref-CARMA2009_Energydata">
+<p>CARMA. 2009. <em>CARMA Api V1.1 Documentation</em>. Carbon Monitoring for Action (CARMA), The Center For Global Development. <a href="http://www.carma.org/api/" class="uri">http://www.carma.org/api/</a>.</p>
+</div>
+<div id="ref-lehner2013_HYDROBASINS">
+<p>Lehner, Bernhard, and Günther Grill. 2013. “Global River Hydrography and Network Routing: Baseline Data and New Approaches to Study the World’s Large River Systems.” <em>Hydrological Processes</em> 27 (15). Wiley Online Library: 2171–86. <a href="http://www.hydrosheds.org" class="uri">http://www.hydrosheds.org</a>.</p>
+</div>
 <div id="ref-OSM2017">
 <p>OSM. 2017. <em>OpenStreetMap(OSM) Data</em>. <a href="https://www.openstreetmap.org" class="uri">https://www.openstreetmap.org</a>.</p>
+</div>
+<div id="ref-raptis2016_globalpp">
+<p>Raptis, Catherine E, and Stephan Pfister. 2016. “Global Freshwater Thermal Emissions from Steam-Electric Power Plants with Once-Through Cooling Systems.” <em>Energy</em> 97. Elsevier: 46–57.</p>
+</div>
+<div id="ref-WorldBank2017_PakTransmissionMap">
+<p>World Bank. 2017. <em>Pakistan Transmission Network (GeoJSON File)</em>. World Bank Group. <a href="https://energydata.info/dataset/pakistan-transmission-network/resource/c3e700d6-e082-40d5-af34-fa745273926a?inner_span=True" class="uri">https://energydata.info/dataset/pakistan-transmission-network/resource/c3e700d6-e082-40d5-af34-fa745273926a?inner_span=True</a>.</p>
 </div>
 </div>
 </div>

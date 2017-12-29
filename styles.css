@@ -2,6 +2,22 @@ blockquote {
   font-style: italic
 }
 
+/* Headers */
+h1{
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+h2{
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+h3,h4,h5,h6{
+  font-size: 14pt;
+  font-weight: bold;
+}
+
 #figcap{
     font-size:150%;
     color:#717D7E;
