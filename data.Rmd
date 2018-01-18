@@ -24,120 +24,13 @@ Project data is categorized and kept in three folders in the shared ISWEL projec
 Data used in this project is available in several different formats. Some of these are:
 
 <ul>
-<li> Spatial polygons – By boundaries </li> 
-<li> Spatial grid cells – By X,Y coordinates and cell size </li> 
+<li> Spatial polygons – By regional boundaries </li> 
+<li> Spatial grid cells or rasters – By X,Y coordinates and cell size </li> 
 <li> Flow/directional data – For flow or connecting lines </li> 
 <li> Parameters for processes – Individual processes </li> 
 <li> Temporal ranges – Annual, monthly, daily etc.</li> 
 </ul>
 
-## Spatial data
-
-Spatial data can be either polygon data or gridded data as shown in Figure 1 below.
-
-<p id="figcap"> Figure 1: Polygon and gridded spatial data examples</p>
-<center>
-<div id="fig">
-![](figures\f_data_formatsSpatial.PNG)
-</div>
-</center>
-
-<br><br>
-
-## Flow or directional data
-
-Data can also indicate infrastructure or flow paths from one spatial to another as shown in Figure 2 below.
-
-<p id="figcap"> Figure 2: Directional data examples</p>
-<center>
-<div id="fig">
-![](figures\f_data_formatsFlow.PNG)
-</div>
-</center>
-
-<br><br>
-
-
-## Temporal data ranges
-
-Data can also vary by temporal scales as shown in Figure 3 below.
-
-<p id="figcap"> Figure 3: Temporal data range examples</p>
-<center>
-<div id="fig">
-![](figures\f_data_formatsTemporal.PNG)
-</div>
-</center>
-
-<br><br>
-
-
-# Expected Data
-
-Data from the different disciplines involved in the ISWEL project are broadly categorized as shown below. As the particular data is gathered and processed it will be further classified.
-
-<p id="tabcap">Table 1: Expected energy data examples</p> 
-
-| Energy                     | Data examples                                    |
-|----------------------------|--------------------------------------------------|
-| Energy - Quality           | Grades                                           |
-| Energy - Primary           | Coal, Oil, Gas, Nuclear                          |
-| Energy - Extraction        | Mining                                           |
-| Energy - Conversion        | Powerplants                                      |
-| Energy - Storage           | Hydropower                                       |
-| Energy - Imports           | Coal, Oil, Gas, Nuclear, Electricity             |
-| Energy - Exports           | Coal, Oil, Gas, Nuclear, Electricity             |
-| Energy - Transmission      | Voltage                                          |
-| Energy - Distribution      | Voltage                                          |
-| Energy - Demands           | Industry, Services, Agriculture, Residential     |
-
-<p id="tabcap">Table 2: Expected water data examples</p> 
-
-| Water                      | Data examples                                    |
-|----------------------------|--------------------------------------------------|
-| Water - Quality            | Grades                                           |
-| Water - Primary            | Rain, Snow/Ice, Aquifers, Soil                   |
-| Water - Extraction         | Pumping                                          |
-| Water - Conversion         | Desalination, Purification, Wastewater Treatment |
-| Water - Storage            | Reservoirs, Rainwater Harvesting                 |
-| Water - Imports            | Water                                            |
-| Water - Exports            | Water                                            |
-| Water - Transmission       | Canals, Pipes                                    |
-| Water - Distribution       | Pipes                                            |
-| Water - Demands            | Industry, Services, Agriculture, Residential     |
-
-<p id="tabcap">Table 3: Expected agricultural data examples</p> 
-
-| Agriculture                | Data examples                                    |
-|----------------------------|--------------------------------------------------|
-| Agriculture - Quality      | Grades                                           |
-| Agriculture - Primary      | Wheat, Rice, Cotton                              |
-| Agriculture - Extraction   | Harvesting                                       |
-| Agriculture - Conversion   | Tillage, Irrigation, Fertilizers                 |
-| Agriculture - Storage      | Silos, graineries                                |
-| Agriculture - Imports      | Wheat, Rice, Cotton                              |
-| Agriculture - Exports      | Wheat, Rice, Cotton                              |
-| Agriculture - Transmission | Land, Air, Sea                                   |
-| Agriculture - Distribution | Land, Air, Sea                                   |
-| Agriculture - Demands      | Consumption, Fodder, Industry                    |
-
-<p id="tabcap">Table 4: Expected land data examples</p> 
-
-| Land                       | Data examples                                    |
-|----------------------------|--------------------------------------------------|
-| Land - Quality             | Grades                                           |
-| Land - Primary             | Forest, Residential, Commerical, Agricultural    |
-| Land - Conversion          | Deforestation, commercialization                 |
-
-<p id="tabcap">Table 5: Expected administration data examples</p> 
-
-| Admin                      | Data examples                                    |
-|----------------------------|--------------------------------------------------|
-| Admin - Boundaries         | Country, Province, River basin, County etc.      |
-| Admin - Econ               | GDP, Income, Interest rates                      |
-| Admin - Demographics       | Urban, Rural, Male, Female, Education            |
-
-<br><br>
 
 # Processed Data Summary
 
@@ -153,6 +46,7 @@ The following table gives a summary of the data sets that have been processed.
 |	Admin	  |	Road network	    |	processed_admin_roads	        |	@OSM2017	                                  |
 |	Water	  |	Water temperature	|	processed_water_temp	        |	IIASA Water	                                |
 |	Energy	|	Transmission lines|	processed_energy_transmission	|	@WorldBank2017_PakTransmissionMap	          |
+|	Energy	|	Hydropower	|	processed_energy_hydropower	|	@vanVliet2016_hydropowerNCC, @CARMA2009_Energydata, @GRAND2011_globaldams, @Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP  |
 |	Energy	|	Powerplants	      |	processed_energy_powerplants	|	@raptis2016_globalpp,@CARMA2009_Energydata	|
 
 
@@ -246,6 +140,9 @@ Sources: @lehner2013_HYDROBASINS
 
 ## Admin_population
 
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_admin_population](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+Sources: IIASA SSP2 RCP4 gridded projections
+
 |	Admin population data files	|
 |	-----------------------------------------------------------------------------------------------------	|
 |	anim_ChartIndus_IIASA_total_pop_2010to2090_byCOUNTRY.gif	|
@@ -322,6 +219,9 @@ Sources: @lehner2013_HYDROBASINS
 
 ## Water_temp
 
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_water_temp](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+Sources: IIASA daily water temperatre projections
+
 |	Water temperature	|
 |	-----------------------------------------------------------------------------------------------------	|
 |	anim_ChartIndus_IIASA_waterTemp_2006_Jan_01_2006toJul_21_2008_byCOUNTRY.gif	|
@@ -388,6 +288,9 @@ Sources: @lehner2013_HYDROBASINS
 
 ## Energy_transmission
 
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_energy_transmission_elec](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+Sources: @OSM2017
+
 |	Energy transmission electric data files	|
 |	-----------------------------------------------------------------------------------------------------	|
 |	f_Map_Indus_IIASA_Edit_overpassRTrasmission.pdf	|
@@ -435,6 +338,52 @@ Electricity lines going across PID’s are identified as transfer technologies a
 |	e_tran_electric_grid_132kV_PID2216to2219_1	|	2216	|	2219	|	132	|
 
 
+## Energy_hydropower
+
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_energy_hydropower](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+Sources: <br>
+vanVliet2016 - @vanVliet2016_hydropowerNCC <br> 
+CARMA2009 - @CARMA2009_Energydata <br> 
+GRAND2011 - @GRAND2011_globaldams <br> 
+WIKI2017 - @Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP <br>
+
+Note: Each individual powerplant from the wikipedia power station lists (@Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP) were checked for year of comission and coordinate locations then verified using google maps.
+
+
+|	Energy hydropower	|
+|	-----------------------------------------------------------------------------------------------------	|
+|	f_Chart_Indus_IIASA_MULTI_Comb_OPRbyCOUNTRYbySOURCE.pdf	|
+|	f_Chart_Indus_IIASA_MULTI_Comb_OPRbyCOUNTRYbySOURCEbyVINTAGE.pdf	|
+|	f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCE.pdf	|
+|	f_Map_Indus_GRAND2011_Orig_OPRbyPOINTbySOURCE.pdf	|
+|	f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCE.pdf	|
+|	f_Map_Indus_vanVliet2016_Orig_OPRbyPOINTbySOURCE.pdf	|
+|	f_Map_Indus_WIKI2017_Orig_OPRbyPOINTbySOURCE.pdf	|
+|	t_Indus_MULTI_bySTATUSbySOURCEbyCOUNTRY.csv	|
+|	t_Indus_MULTI_bySTATUSbySOURCEbyCOUNTRYbyVINTAGE.csv	|
+|	t_Indus_MULTI_bySTATUSbySOURCEbyPID.csv	|
+|	t_Indus_MULTI_bySTATUSbySOURCEbyPIDbyVintage.csv	|
+|	t_Indus_MULTI_bySTATUSbySOURCEbyPOINTbyVintage.csv	|
+
+
+<p id="figcap"> Chart showing comparison of aggregated hydropower capacity by country from the different sources used (vanVliet2016 (@vanVliet2016_hydropowerNCC), CARMA2009 (@CARMA2009_Energydata), GRAND2011 (@GRAND2011_globaldams), WIKI2017 (@Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP))</p>
+<center>
+<div id="fig">
+![](figures\f_Chart_Indus_IIASA_hydropowerCompare.png)
+</div>
+</center>
+
+<br><br>
+
+<p id="figcap"> Maps showing comparison of spatial distribution of hydropower capacity by country from the different sources used (vanVliet2016 (@vanVliet2016_hydropowerNCC), CARMA2009 (@CARMA2009_Energydata), GRAND2011 (@GRAND2011_globaldams), WIKI2017 (@Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP))</p>
+<center>
+<div id="fig">
+![](figures\f_Map_Indus_IIASA_hydropowerCompare.png)
+</div>
+</center>
+
+<br><br>
+
 
 ## Road_Network
 
@@ -451,8 +400,6 @@ Electricity lines going across PID’s are identified as transfer technologies a
 |	t_Indus_overpassR_Roads_ACROSSPIDs.csv	|
 |	t_Indus_overpassR_Roads_tecNames.csv	|
 |	t_Indus_overpassR_Roads_WITHINPIDs.csv	|
-
-
 
 
 <p id="figcap"> Road network OSM (@OSM2017)</p>

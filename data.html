@@ -350,10 +350,10 @@ code – Contains code used to process raw data.
 <p>Data used in this project is available in several different formats. Some of these are:</p>
 <ul>
 <li>
-Spatial polygons – By boundaries
+Spatial polygons – By regional boundaries
 </li>
 <li>
-Spatial grid cells – By X,Y coordinates and cell size
+Spatial grid cells or rasters – By X,Y coordinates and cell size
 </li>
 <li>
 Flow/directional data – For flow or connecting lines
@@ -365,268 +365,6 @@ Parameters for processes – Individual processes
 Temporal ranges – Annual, monthly, daily etc.
 </li>
 </ul>
-<div id="spatial-data" class="section level2">
-<h2>Spatial data</h2>
-<p>Spatial data can be either polygon data or gridded data as shown in Figure 1 below.</p>
-<p id="figcap">
-Figure 1: Polygon and gridded spatial data examples
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_data_formatsSpatial.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-</div>
-<div id="flow-or-directional-data" class="section level2">
-<h2>Flow or directional data</h2>
-<p>Data can also indicate infrastructure or flow paths from one spatial to another as shown in Figure 2 below.</p>
-<p id="figcap">
-Figure 2: Directional data examples
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_data_formatsFlow.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-</div>
-<div id="temporal-data-ranges" class="section level2">
-<h2>Temporal data ranges</h2>
-<p>Data can also vary by temporal scales as shown in Figure 3 below.</p>
-<p id="figcap">
-Figure 3: Temporal data range examples
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_data_formatsTemporal.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-</div>
-</div>
-<div id="expected-data" class="section level1">
-<h1>Expected Data</h1>
-<p>Data from the different disciplines involved in the ISWEL project are broadly categorized as shown below. As the particular data is gathered and processed it will be further classified.</p>
-<p id="tabcap">
-Table 1: Expected energy data examples
-</p>
-<table>
-<thead>
-<tr class="header">
-<th>Energy</th>
-<th>Data examples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Energy - Quality</td>
-<td>Grades</td>
-</tr>
-<tr class="even">
-<td>Energy - Primary</td>
-<td>Coal, Oil, Gas, Nuclear</td>
-</tr>
-<tr class="odd">
-<td>Energy - Extraction</td>
-<td>Mining</td>
-</tr>
-<tr class="even">
-<td>Energy - Conversion</td>
-<td>Powerplants</td>
-</tr>
-<tr class="odd">
-<td>Energy - Storage</td>
-<td>Hydropower</td>
-</tr>
-<tr class="even">
-<td>Energy - Imports</td>
-<td>Coal, Oil, Gas, Nuclear, Electricity</td>
-</tr>
-<tr class="odd">
-<td>Energy - Exports</td>
-<td>Coal, Oil, Gas, Nuclear, Electricity</td>
-</tr>
-<tr class="even">
-<td>Energy - Transmission</td>
-<td>Voltage</td>
-</tr>
-<tr class="odd">
-<td>Energy - Distribution</td>
-<td>Voltage</td>
-</tr>
-<tr class="even">
-<td>Energy - Demands</td>
-<td>Industry, Services, Agriculture, Residential</td>
-</tr>
-</tbody>
-</table>
-<p id="tabcap">
-Table 2: Expected water data examples
-</p>
-<table>
-<thead>
-<tr class="header">
-<th>Water</th>
-<th>Data examples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Water - Quality</td>
-<td>Grades</td>
-</tr>
-<tr class="even">
-<td>Water - Primary</td>
-<td>Rain, Snow/Ice, Aquifers, Soil</td>
-</tr>
-<tr class="odd">
-<td>Water - Extraction</td>
-<td>Pumping</td>
-</tr>
-<tr class="even">
-<td>Water - Conversion</td>
-<td>Desalination, Purification, Wastewater Treatment</td>
-</tr>
-<tr class="odd">
-<td>Water - Storage</td>
-<td>Reservoirs, Rainwater Harvesting</td>
-</tr>
-<tr class="even">
-<td>Water - Imports</td>
-<td>Water</td>
-</tr>
-<tr class="odd">
-<td>Water - Exports</td>
-<td>Water</td>
-</tr>
-<tr class="even">
-<td>Water - Transmission</td>
-<td>Canals, Pipes</td>
-</tr>
-<tr class="odd">
-<td>Water - Distribution</td>
-<td>Pipes</td>
-</tr>
-<tr class="even">
-<td>Water - Demands</td>
-<td>Industry, Services, Agriculture, Residential</td>
-</tr>
-</tbody>
-</table>
-<p id="tabcap">
-Table 3: Expected agricultural data examples
-</p>
-<table>
-<thead>
-<tr class="header">
-<th>Agriculture</th>
-<th>Data examples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Agriculture - Quality</td>
-<td>Grades</td>
-</tr>
-<tr class="even">
-<td>Agriculture - Primary</td>
-<td>Wheat, Rice, Cotton</td>
-</tr>
-<tr class="odd">
-<td>Agriculture - Extraction</td>
-<td>Harvesting</td>
-</tr>
-<tr class="even">
-<td>Agriculture - Conversion</td>
-<td>Tillage, Irrigation, Fertilizers</td>
-</tr>
-<tr class="odd">
-<td>Agriculture - Storage</td>
-<td>Silos, graineries</td>
-</tr>
-<tr class="even">
-<td>Agriculture - Imports</td>
-<td>Wheat, Rice, Cotton</td>
-</tr>
-<tr class="odd">
-<td>Agriculture - Exports</td>
-<td>Wheat, Rice, Cotton</td>
-</tr>
-<tr class="even">
-<td>Agriculture - Transmission</td>
-<td>Land, Air, Sea</td>
-</tr>
-<tr class="odd">
-<td>Agriculture - Distribution</td>
-<td>Land, Air, Sea</td>
-</tr>
-<tr class="even">
-<td>Agriculture - Demands</td>
-<td>Consumption, Fodder, Industry</td>
-</tr>
-</tbody>
-</table>
-<p id="tabcap">
-Table 4: Expected land data examples
-</p>
-<table>
-<thead>
-<tr class="header">
-<th>Land</th>
-<th>Data examples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Land - Quality</td>
-<td>Grades</td>
-</tr>
-<tr class="even">
-<td>Land - Primary</td>
-<td>Forest, Residential, Commerical, Agricultural</td>
-</tr>
-<tr class="odd">
-<td>Land - Conversion</td>
-<td>Deforestation, commercialization</td>
-</tr>
-</tbody>
-</table>
-<p id="tabcap">
-Table 5: Expected administration data examples
-</p>
-<table>
-<thead>
-<tr class="header">
-<th>Admin</th>
-<th>Data examples</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Admin - Boundaries</td>
-<td>Country, Province, River basin, County etc.</td>
-</tr>
-<tr class="even">
-<td>Admin - Econ</td>
-<td>GDP, Income, Interest rates</td>
-</tr>
-<tr class="odd">
-<td>Admin - Demographics</td>
-<td>Urban, Rural, Male, Female, Education</td>
-</tr>
-</tbody>
-</table>
-<p><br><br></p>
 </div>
 <div id="processed-data-summary" class="section level1">
 <h1>Processed Data Summary</h1>
@@ -682,6 +420,12 @@ Processed Data
 <td><span class="citation">World Bank (<a href="#ref-WorldBank2017_PakTransmissionMap">2017</a>)</span></td>
 </tr>
 <tr class="even">
+<td>Energy</td>
+<td>Hydropower</td>
+<td>processed_energy_hydropower</td>
+<td><span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span>, <span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span>, <span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span></td>
+</tr>
+<tr class="odd">
 <td>Energy</td>
 <td>Powerplants</td>
 <td>processed_energy_powerplants</td>
@@ -1029,6 +773,7 @@ Table 1: Indus Basin spatial polygon unit IDs and locations. For more details on
 </div>
 <div id="admin_population" class="section level2">
 <h2>Admin_population</h2>
+<p>IIASA folder: <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\processed_admin_population</a>.<br> Sources: IIASA SSP2 RCP4 gridded projections</p>
 <table>
 <thead>
 <tr class="header">
@@ -1194,6 +939,7 @@ Admin population example: rural population charts
 </div>
 <div id="water_temp" class="section level2">
 <h2>Water_temp</h2>
+<p>IIASA folder: <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\processed_water_temp</a>.<br> Sources: IIASA daily water temperatre projections</p>
 <table>
 <colgroup>
 <col width="100%" />
@@ -1326,6 +1072,7 @@ Water temperature data example: 2006 daily chart
 </div>
 <div id="energy_transmission" class="section level2">
 <h2>Energy_transmission</h2>
+<p>IIASA folder: <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\processed_energy_transmission_elec</a>.<br> Sources: <span class="citation">OSM (<a href="#ref-OSM2017">2017</a>)</span></p>
 <table>
 <thead>
 <tr class="header">
@@ -1460,6 +1207,80 @@ Electricity transmission network OSM (<span class="citation">OSM (<a href="#ref-
 </tbody>
 </table>
 </div>
+<div id="energy_hydropower" class="section level2">
+<h2>Energy_hydropower</h2>
+<p>IIASA folder: <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\processed_energy_hydropower</a>.<br> Sources: <br> vanVliet2016 - <span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span> <br> CARMA2009 - <span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span> <br> GRAND2011 - <span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span> <br> WIKI2017 - <span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span> <br></p>
+<p>Note: Each individual powerplant from the wikipedia power station lists (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>) were checked for year of comission and coordinate locations then verified using google maps.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Energy hydropower</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>f_Chart_Indus_IIASA_MULTI_Comb_OPRbyCOUNTRYbySOURCE.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Chart_Indus_IIASA_MULTI_Comb_OPRbyCOUNTRYbySOURCEbyVINTAGE.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCE.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_GRAND2011_Orig_OPRbyPOINTbySOURCE.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCE.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_vanVliet2016_Orig_OPRbyPOINTbySOURCE.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_WIKI2017_Orig_OPRbyPOINTbySOURCE.pdf</td>
+</tr>
+<tr class="even">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyCOUNTRY.csv</td>
+</tr>
+<tr class="odd">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyCOUNTRYbyVINTAGE.csv</td>
+</tr>
+<tr class="even">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyPID.csv</td>
+</tr>
+<tr class="odd">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyPIDbyVintage.csv</td>
+</tr>
+<tr class="even">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyPOINTbyVintage.csv</td>
+</tr>
+</tbody>
+</table>
+<p id="figcap">
+Chart showing comparison of aggregated hydropower capacity by country from the different sources used (vanVliet2016 (<span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span>), CARMA2009 (<span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span>), GRAND2011 (<span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span>), WIKI2017 (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>))
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_Chart_Indus_IIASA_hydropowerCompare.png" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p id="figcap">
+Maps showing comparison of spatial distribution of hydropower capacity by country from the different sources used (vanVliet2016 (<span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span>), CARMA2009 (<span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span>), GRAND2011 (<span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span>), WIKI2017 (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>))
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_Map_Indus_IIASA_hydropowerCompare.png" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+</div>
 <div id="road_network" class="section level2">
 <h2>Road_Network</h2>
 <table>
@@ -1575,11 +1396,29 @@ Road network OSM (<span class="citation">OSM (<a href="#ref-OSM2017">2017</a>)</
 <div id="ref-lehner2013_HYDROBASINS">
 <p>Lehner, Bernhard, and Günther Grill. 2013. “Global River Hydrography and Network Routing: Baseline Data and New Approaches to Study the World’s Large River Systems.” <em>Hydrological Processes</em> 27 (15). Wiley Online Library: 2171–86. <a href="http://www.hydrosheds.org" class="uri">http://www.hydrosheds.org</a>.</p>
 </div>
+<div id="ref-GRAND2011_globaldams">
+<p>Lehner, Bernhard, Catherine Reidy Liermann, Carmen Revenga, Charles Vorosmarty, Balazs Fekete, Philippe Crouzet, Petra Doll, et al. 2011. <em>Global Reservoir and Dam (GRanD) Database, Technical Documentation, Version 1.1</em>. GRanD. <a href="http://www.gwsp.org/85.html" class="uri">http://www.gwsp.org/85.html</a>.</p>
+</div>
 <div id="ref-OSM2017">
 <p>OSM. 2017. <em>OpenStreetMap(OSM) Data</em>. <a href="https://www.openstreetmap.org" class="uri">https://www.openstreetmap.org</a>.</p>
 </div>
 <div id="ref-raptis2016_globalpp">
 <p>Raptis, Catherine E, and Stephan Pfister. 2016. “Global Freshwater Thermal Emissions from Steam-Electric Power Plants with Once-Through Cooling Systems.” <em>Energy</em> 97. Elsevier: 46–57.</p>
+</div>
+<div id="ref-vanVliet2016_hydropowerNCC">
+<p>Van Vliet, Michelle TH, David Wiberg, Sylvain Leduc, and Keywan Riahi. 2016. “Power-Generation System Vulnerability and Adaptation to Changes in Climate and Water Resources.” <em>Nature Climate Change</em> 6 (4). Nature Research: 375–80.</p>
+</div>
+<div id="ref-Wiki2017_AfgPP">
+<p>various. 2017a. <em>List of power stations in Afghanistan</em>. Wikipedia. <a href="https://en.wikipedia.org/wiki/List_of_power_stations_in_Afghanistan" class="uri">https://en.wikipedia.org/wiki/List_of_power_stations_in_Afghanistan</a>.</p>
+</div>
+<div id="ref-Wiki2017_ChnPP">
+<p>———. 2017b. <em>List of power stations in China</em>. Wikipedia. <a href="https://en.wikipedia.org/wiki/List_of_power_stations_in_China" class="uri">https://en.wikipedia.org/wiki/List_of_power_stations_in_China</a>.</p>
+</div>
+<div id="ref-Wiki2017_IndPP">
+<p>———. 2017c. <em>List of power stations in India</em>. Wikipedia. <a href="https://en.wikipedia.org/wiki/List_of_power_stations_in_India" class="uri">https://en.wikipedia.org/wiki/List_of_power_stations_in_India</a>.</p>
+</div>
+<div id="ref-Wiki2017_PakPP">
+<p>———. 2017d. <em>List of power stations in Pakistan</em>. Wikipedia. <a href="https://en.wikipedia.org/wiki/List_of_power_stations_in_Pakistan" class="uri">https://en.wikipedia.org/wiki/List_of_power_stations_in_Pakistan</a>.</p>
 </div>
 <div id="ref-WorldBank2017_PakTransmissionMap">
 <p>World Bank. 2017. <em>Pakistan Transmission Network (GeoJSON File)</em>. World Bank Group. <a href="https://energydata.info/dataset/pakistan-transmission-network/resource/c3e700d6-e082-40d5-af34-fa745273926a?inner_span=True" class="uri">https://energydata.info/dataset/pakistan-transmission-network/resource/c3e700d6-e082-40d5-af34-fa745273926a?inner_span=True</a>.</p>
