@@ -354,15 +354,15 @@ WIKI2017 - @Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP <b
 
 <center>
 <div id="box">
-Power from falling water = &rho q g h
+Power from falling water = $\rho$ q g h
 </div>
 </center>
 
 Where:
 <ul>
-<li> &rho = density (kg/m3)(~ 1000 kg/m3 for water)</li>
-<li> q = water flow (m3/s)</li>
-<li> g = acceleration of gravity (9.81 m/s2)</li>
+<li> $\rho$ = density (kg/m$^3$)(~ 1000 kg/m$^3$ for water)</li>
+<li> q = water flow (m$^3$/s)</li>
+<li> g = acceleration of gravity (9.81 m/s$^2$)</li>
 <li> h = falling height, head (m) </li>
 </ul>
 
