@@ -1211,7 +1211,7 @@ Electricity transmission network OSM (<span class="citation">OSM (<a href="#ref-
 <h2>Energy_hydropower</h2>
 <p>IIASA folder: <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\processed\processed_energy_hydropower</a>.<br> Sources: <br> vanVliet2016 - <span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span> <br> CARMA2009 - <span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span> <br> GRAND2011 - <span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span> <br> WIKI2017 - <span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span> <br></p>
 <p><strong>Note 1:</strong> Each individual powerplant from the wikipedia power station lists (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>) were checked for year of comission and coordinate locations then verified using google maps. The raw “.csv” files lie in <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\raw\Others\WikiPowerplants</a>.</p>
-<p><strong>Note 2:</strong> Hydropwer from the GRaND data base was calculated based on the height of the different dams. # <a href="https://www.engineeringtoolbox.com/hydropower-d_1359.html" class="uri">https://www.engineeringtoolbox.com/hydropower-d_1359.html</a></p>
+<p><strong>Note 2:</strong> Hydropower from the GRaND data base was calculated based on the height (GRaND parameter: DAM_HGT_M) and flow of water (GRaND parameter: DIS_AVG_LS) for the different dams.</p>
 <center>
 <div id="box">
 <p>Power from falling water = <span class="math inline">\(\rho\)</span> q g h</p>
@@ -1232,7 +1232,7 @@ g = acceleration of gravity (9.81 m/s<span class="math inline">\(^2\)</span>)
 h = falling height, head (m)
 </li>
 </ul>
-<p>The theoretically power available from a flow of 1 m3/s water with a fall of 100 m can be calculated as: P = (1000 kg/m3) (1 m3/s) (9.81 m/s2) (100 m) = 981 000 W = 0.981 GW</p>
+<p>The theoretically power available from a flow of 1 m3/s water with a fall of 100 m can be calculated as: P = (1000 kg/m<span class="math inline">\(^3\)</span>) (1 m<span class="math inline">\(^3\)</span>/s) (9.81 m/s<span class="math inline">\(^2\)</span>) (100 m) = 981 000 W = 0.981 GW</p>
 <p><br></p>
 <table>
 <thead>
@@ -1292,7 +1292,7 @@ Chart showing comparison of aggregated hydropower capacity by country from the d
 </center>
 <p><br><br></p>
 <p id="figcap">
-Maps showing comparison of spatial distribution of hydropower capacity by country from the different sources used (vanVliet2016 (<span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span>), CARMA2009 (<span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span>), GRAND2011 (<span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span>), WIKI2017 (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>))
+Maps showing comparison of spatial distribution of hydropower capacity by PID from the different sources used (vanVliet2016 (<span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span>), CARMA2009 (<span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span>), GRAND2011 (<span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span>), WIKI2017 (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>))
 </p>
 <center>
 <div id="fig">
@@ -1306,8 +1306,194 @@ Maps showing comparison of spatial distribution of hydropower capacity by countr
 </div>
 <div id="energy_powerplants" class="section level2">
 <h2>Energy_powerplants</h2>
-<p>IIASA folder: <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\processed\processed_energy_hydropower</a>.<br> Sources: <br> vanVliet2016 - <span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span> <br> Raptis2016 - <span class="citation">Raptis and Pfister (<a href="#ref-raptis2016_globalpp">2016</a>)</span> <br> CARMA2009 - <span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span> <br> GRAND2011 - <span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span> <br> WIKI2017 - <span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span> <br></p>
+<p>IIASA folder: <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\processed\processed_energy_powerplants</a>.<br> Sources: <br> vanVliet2016 - <span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span> <br> Raptis2016 - <span class="citation">Raptis and Pfister (<a href="#ref-raptis2016_globalpp">2016</a>)</span> <br> CARMA2009 - <span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span> <br> GRAND2011 - <span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span> <br> WIKI2017 - <span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span> <br></p>
 <p>Note: The raw “.csv” files for the wikipedia power station lists (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>) lie in <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&amp;v=resource_1304000562.324190.2&amp;si=0&amp;ri=0&amp;pi=0&amp;sb=name&amp;so=asc&amp;dir=is-wel%5Cindus\datagis">pdrive\is-wel\indus\datagis\raw\Others\WikiPowerplants</a>. References and geo-coordinates for each individual plant need to be checked and entered in the “.csv” files before the source: WIKI2017 will show all plants. This has been done for hydropower and needs to be done for the other fuel types.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Energy powerplant data files</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>—————————————————————————————————–</td>
+</tr>
+<tr class="even">
+<td>f_Chart_Indus_IIASA_MULTI_Comb_OPRbyCOUNTRYbySOURCEbyFUEL.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Chart_Indus_IIASA_MULTI_Comb_OPRbyCOUNTRYbySOURCEbyFUELbyVINTAGE.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELBiogas.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELCoal.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELGas.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELGeo.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELHydro.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELNuclear.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELOil.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELSolar.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELUnknown.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELWasteHeat.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_CARMA2009_Orig_OPRbyPOINTbySOURCEbyFUELWind.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_GRAND2011_Orig_OPRbyPOINTbySOURCEbyFUELHydro.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Biofuel.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Biogas.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Coal.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Gas.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Geo.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Hydro.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Nuclear.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Oil.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Solar.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Unknown.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_WasteHeat.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Wind.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_MULTI_Comb_OPRbyPIDbySOURCEbyFUEL_Wsth.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_Raptis2016_Orig_OPRbyPOINTbySOURCEbyFUELBiofuel.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_Raptis2016_Orig_OPRbyPOINTbySOURCEbyFUELCoal.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_Raptis2016_Orig_OPRbyPOINTbySOURCEbyFUELGas.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_Raptis2016_Orig_OPRbyPOINTbySOURCEbyFUELNuclear.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_Raptis2016_Orig_OPRbyPOINTbySOURCEbyFUELOil.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_Raptis2016_Orig_OPRbyPOINTbySOURCEbyFUELUnknown.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_Raptis2016_Orig_OPRbyPOINTbySOURCEbyFUELWsth.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_vanVliet2016_Orig_OPRbyPOINTbySOURCEbyFUELHydro.pdf</td>
+</tr>
+<tr class="odd">
+<td>f_Map_Indus_WIKI2017_Orig_OPRbyPOINTbySOURCEbyFUELCoal.pdf</td>
+</tr>
+<tr class="even">
+<td>f_Map_Indus_WIKI2017_Orig_OPRbyPOINTbySOURCEbyFUELHydro.pdf</td>
+</tr>
+<tr class="odd">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyFUELbyCOUNTRY.csv</td>
+</tr>
+<tr class="even">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyFUELbyCOUNTRYbyVINTAGE.csv</td>
+</tr>
+<tr class="odd">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyFUELbyPID.csv</td>
+</tr>
+<tr class="even">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyFUELbyPIDbyVintage.csv</td>
+</tr>
+<tr class="odd">
+<td>t_Indus_MULTI_bySTATUSbySOURCEbyFUELbyPOINTbyVintage.csv</td>
+</tr>
+</tbody>
+</table>
+<p id="figcap">
+Chart showing comparison of aggregated powerplant capacity by country from the different sources used (CARMA2009 (<span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span>), GRAND2011 (<span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span>), Raptis2016 (<span class="citation">Raptis and Pfister (<a href="#ref-raptis2016_globalpp">2016</a>)</span>), vanVliet2016 (<span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span>), WIKI2017 (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>))
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_Chart_Indus_IIASA_powerplantCompare.png" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p id="figcap">
+Maps showing comparison of spatial distribution of powerplant capacity by PID from the different sources used when available. Example 1 for Fuel “Coal” (CARMA2009 (<span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span>), GRAND2011 (<span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span>), Raptis2016 (<span class="citation">Raptis and Pfister (<a href="#ref-raptis2016_globalpp">2016</a>)</span>), vanVliet2016 (<span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span>), WIKI2017 (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>)))
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_Map_Indus_IIASA_coalpowerCompare.png" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p id="figcap">
+Maps showing comparison of spatial distribution of powerplant capacity by PID from the different sources used when available. Example 2 for Fuel “Gas” (CARMA2009 (<span class="citation">CARMA (<a href="#ref-CARMA2009_Energydata">2009</a>)</span>), GRAND2011 (<span class="citation">Lehner et al. (<a href="#ref-GRAND2011_globaldams">2011</a>)</span>), Raptis2016 (<span class="citation">Raptis and Pfister (<a href="#ref-raptis2016_globalpp">2016</a>)</span>), vanVliet2016 (<span class="citation">Van Vliet et al. (<a href="#ref-vanVliet2016_hydropowerNCC">2016</a>)</span>), WIKI2017 (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>)))
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_Map_Indus_IIASA_gaspowerCompare.png" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p id="figcap">
+Maps showing comparison of spatial distribution of individual powerplants from the different sources used when available for individual fuel types. Example 1 for Fuel “Coal” for Raptis2016 (<span class="citation">Raptis and Pfister (<a href="#ref-raptis2016_globalpp">2016</a>)</span>) and WIKI2017 (<span class="citation">various (<a href="#ref-Wiki2017_AfgPP">2017</a><a href="#ref-Wiki2017_AfgPP">a</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_ChnPP">2017</a><a href="#ref-Wiki2017_ChnPP">b</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_IndPP">2017</a><a href="#ref-Wiki2017_IndPP">c</a>)</span>, <span class="citation">various (<a href="#ref-Wiki2017_PakPP">2017</a><a href="#ref-Wiki2017_PakPP">d</a>)</span>)))
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_Map_Indus_IIASA_coalIndvPlantRaptis2016WIKI2017Compare.png" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
 </div>
 <div id="road_network" class="section level2">
 <h2>Road_Network</h2>
