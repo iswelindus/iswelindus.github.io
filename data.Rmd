@@ -56,7 +56,7 @@ Processed data is available in the ISWEL project folder [pdrive\\is-wel\\indus\\
 
 ## Admin_boundaries
 
-IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_admin_boundaries](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed\\processed\\processed_admin_boundaries](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
 Sources: @lehner2013_HYDROBASINS
 
 | Admin boundary data files                      |
@@ -140,7 +140,7 @@ Sources: @lehner2013_HYDROBASINS
 
 ## Admin_population
 
-IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_admin_population](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed\\processed_admin_population](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
 Sources: IIASA SSP2 RCP4 gridded projections
 
 |	Admin population data files	|
@@ -219,7 +219,7 @@ Sources: IIASA SSP2 RCP4 gridded projections
 
 ## Water_temp
 
-IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_water_temp](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed\\processed_water_temp](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
 Sources: IIASA daily water temperatre projections
 
 |	Water temperature	|
@@ -288,7 +288,7 @@ Sources: IIASA daily water temperatre projections
 
 ## Energy_transmission
 
-IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_energy_transmission_elec](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed\\processed_energy_transmission_elec](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
 Sources: @OSM2017
 
 |	Energy transmission electric data files	|
@@ -340,14 +340,35 @@ Electricity lines going across PID’s are identified as transfer technologies a
 
 ## Energy_hydropower
 
-IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_energy_hydropower](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed\\processed_energy_hydropower](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
 Sources: <br>
 vanVliet2016 - @vanVliet2016_hydropowerNCC <br> 
 CARMA2009 - @CARMA2009_Energydata <br> 
 GRAND2011 - @GRAND2011_globaldams <br> 
 WIKI2017 - @Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP <br>
 
-Note: Each individual powerplant from the wikipedia power station lists (@Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP) were checked for year of comission and coordinate locations then verified using google maps.
+**Note 1:** Each individual powerplant from the wikipedia power station lists (@Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP) were checked for year of comission and coordinate locations then verified using google maps. The raw ".csv" files lie in [pdrive\\is-wel\\indus\\datagis\\raw\\Others\\WikiPowerplants](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).
+
+**Note 2:** Hydropwer from the GRaND data base was calculated based on the height of the different dams. 
+# https://www.engineeringtoolbox.com/hydropower-d_1359.html
+
+<center>
+<div id="box">
+Power from falling water = &rho q g h
+</div>
+</center>
+
+Where:
+<ul>
+<li> &rho = density (kg/m3)(~ 1000 kg/m3 for water)</li>
+<li> q = water flow (m3/s)</li>
+<li> g = acceleration of gravity (9.81 m/s2)</li>
+<li> h = falling height, head (m) </li>
+</ul>
+
+The theoretically power available from a flow of 1 m3/s water with a fall of 100 m can be calculated as: P = (1000 kg/m3) (1 m3/s) (9.81 m/s2) (100 m) = 981 000 W = 0.981 GW
+
+<br>
 
 
 |	Energy hydropower data files|
@@ -384,10 +405,22 @@ Note: Each individual powerplant from the wikipedia power station lists (@Wiki20
 
 <br><br>
 
+## Energy_powerplants
+
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed\\processed_energy_hydropower](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+Sources: <br>
+vanVliet2016 - @vanVliet2016_hydropowerNCC <br> 
+Raptis2016 - @raptis2016_globalpp <br> 
+CARMA2009 - @CARMA2009_Energydata <br> 
+GRAND2011 - @GRAND2011_globaldams <br> 
+WIKI2017 - @Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP <br>
+
+Note: The raw ".csv" files for the wikipedia power station lists (@Wiki2017_AfgPP, @Wiki2017_ChnPP, @Wiki2017_IndPP, @Wiki2017_PakPP) lie in [pdrive\\is-wel\\indus\\datagis\\raw\\Others\\WikiPowerplants](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis). References and geo-coordinates for each individual plant need to be checked and entered in the ".csv" files before the source: WIKI2017 will show all plants. This has been done for hydropower and needs to be done for the other fuel types.
+
 
 ## Road_Network
 
-IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed_admin_roads](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
+IIASA folder: [pdrive\\is-wel\\indus\\datagis\\processed\\processed_admin_roads](https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\datagis).<br>
 Sources: @OSM2017 <br>
 
 
