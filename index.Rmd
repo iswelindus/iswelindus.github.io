@@ -86,7 +86,7 @@ Table 2 shows the distribution of folders and data storage location for the ISWE
 
 | Data Management | Shared                                | Contents                                                                                           |
 |-----------------|---------------------------------------|----------------------------------------------------------------------------------------------------|
-| Website         | https://zarrarkhan.github.io/         | Overview, Stakeholders, SDGs, Policies, Data, Model, Baseline, Pathways, Analysis, Library, Summary |
+| Website         | https://iswelindus.github.io/         | Overview, Stakeholders, SDGs, Policies, Data, Model, Baseline, Pathways, Analysis, Library, Summary |
 | Reports         | <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\reports">pdrive\\is-wel\\indus\\reports</a>       | Overview, Stakeholders, SDGs, Policies, Emerging Techs, Data, Model, Baseline, Pathways, Analysis, Library, Summary |
 | Publications    | <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\publications">pdrive\\is-wel\\indus\\publications</a>  | SDGs, Policies, Emerging Techs, Data, Model, Baseline, Pathways, Analysis                                          |
 | Presentations   | <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus\presentations">pdrive\\is-wel\\indus\\presentations</a> | Overview, Stakeholders, SDGs, Policies, Emerging Techs, Data, Model, Baseline, Pathways, Analysis, Library, Summary |
