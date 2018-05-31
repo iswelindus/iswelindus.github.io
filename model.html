@@ -338,18 +338,203 @@ div.tocify {
 MESSAGEix IIASA private github repository: <a href="https://github.com/iiasa/message_ix" class="uri">https://github.com/iiasa/message_ix</a>
 </li>
 <li>
-MESSAGEix User guide (available from within IIASA network): <a href="http://ienecat:8787/message_ix_doc/" class="uri">http://ienecat:8787/message_ix_doc/</a>
+MESSAGEix Documentation User guide and ath formulation: <a href="http://messageix.iiasa.ac.at/" class="uri">http://messageix.iiasa.ac.at/</a>
 </li>
-<li>
-MESSAGEix Documentation – Available on IIASA pdrive: <a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus%5Cmodel\Guides">pdrive\is-wel\indus\model\Guides\MESSAGEixDocumentation</a>
-</li>
-<li>
-MESSAGEV Math formulation – Available on IIASA pdrive:<a href="https://portal.iiasa.ac.at/dana/fb/smb/wfb.cgi?t=p&v=resource_1304000562.324190.2&si=0&ri=0&pi=0&sb=name&so=asc&dir=is-wel%5Cindus%5Cmodel\Guides">pdrive\is-wel\indus\model\Guides\MESSAGEVMathFormulation</a>
-</li>
+</div>
+<div id="model-features" class="section level1">
+<h1>Model features</h1>
+<div id="regions" class="section level2">
+<h2>Regions</h2>
+</div>
+<div id="time-horizon-and-time-steps" class="section level2">
+<h2>Time horizon and time steps</h2>
+<p>The time horizon of the model goes from 1990 to 2060 with time steps of 10 year. However, also 2015 is included and the model is calibrated up to this year. Periods from 2020 onwards, are object of the optimization process that minimizes total system’s costs.</p>
+<p>To address seasonal variations, such as wet and dry seasons, months are considered in the model as an additional dimension for several variables.</p>
+</div>
+<div id="technologies-and-resources-flows" class="section level2">
+<h2>Technologies and Resources flows</h2>
+<p>The regional data are aggregated into subregions, or catchments (based on hydrogeological sub-basin borders, administrative regions and feedbacks during stakeholder engagement processes), each of them is considered as a node of the model.</p>
+<p>Exchange of resources among nodes is modelled, as water flows through rivers and canals flows and electricty transmission lines.</p>
+<p>Within each node, the MESSAGEix model tracks flows of commodities from insitu or local availability through different processes to a final exogenous demand. The list of sets, parameters, variables and equations are detailed in the subsequent sections.</p>
+<p id="figcap">
+Figure 2: ISWEL Indus Basin model breakdown
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_network_scheme.png" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+</div>
+<div id="technologies" class="section level2">
+<h2>Technologies</h2>
+<div id="energy-sector" class="section level3">
+<h3>Energy sector</h3>
+<p>Several power plants have different cooling technologies, such as once through and closed loop freshwater cooling (<em>ot</em> and <em>cl</em> in the technology names), air cooling and sea water cooling (<em>ac</em> and <em>sw</em> respectively)</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Technology</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>gas_cc_ot, gas_cc_cl, gas_cc_ac, gas_cc_sw</td>
+<td>Natural gas fired combined cycle</td>
+</tr>
+<tr class="even">
+<td>gas_st_ot, gas_st_cl, gas_st_ac, gas_st_sw</td>
+<td>Natural gas fired steam turbine</td>
+</tr>
+<tr class="odd">
+<td>gas_gt</td>
+<td>Gas turbine</td>
+</tr>
+<tr class="even">
+<td>oil_cc_ot, oil_cc_cl, oil_cc_ac, oil_cc_sw</td>
+<td>Oil fired combined cycle</td>
+</tr>
+<tr class="odd">
+<td>oil_st_ot, oil_st_cl, oil_st_ac, oil_st_sw</td>
+<td>Oil steam turbine</td>
+</tr>
+<tr class="even">
+<td>oil_gt</td>
+<td>Oil turbine</td>
+</tr>
+<tr class="odd">
+<td>coal_st_ot, coal_st_cl, coal_st_ac, coal_st_sw</td>
+<td>Coal fired steam turbine</td>
+</tr>
+<tr class="even">
+<td>igcc_ot, igcc_cl, igcc_ac, igcc_sw</td>
+<td>Coal fired integrated gasification combined cycle</td>
+</tr>
+<tr class="odd">
+<td>nuclear_sw, nuclear_ot, nuclear_cl</td>
+<td>Nuclear plant</td>
+</tr>
+<tr class="even">
+<td>geothermal_sw, geothermal_ot, geothermal_cl</td>
+<td>Geothermal plant</td>
+</tr>
+<tr class="odd">
+<td>biomass_st_ac, biomass_st_cl, biomass_st_sw</td>
+<td>Biomass fired steam turbine</td>
+</tr>
+<tr class="even">
+<td>solar_pv_1, solar_pv_2, solar_pv_3</td>
+<td>Solar PV with different levels of capacity factor</td>
+</tr>
+<tr class="odd">
+<td>wind_1, wind_2, wind_3</td>
+<td>Wind turbine with different levels of capacity factor</td>
+</tr>
+<tr class="even">
+<td>hydro_old</td>
+<td>Existing hydroelectric power plants</td>
+</tr>
+<tr class="odd">
+<td>hydro_river</td>
+<td>New hydropower river technologies</td>
+</tr>
+<tr class="even">
+<td>hydro_canal</td>
+<td>New hydro on small run-offs independent of upstream flow</td>
+</tr>
+<tr class="odd">
+<td>electricity_distribution</td>
+<td>Distribution grid potential within each region</td>
+</tr>
+<tr class="even">
+<td>trs_REG*_REG*</td>
+<td>Transmission grid capacity among regions</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="water-technologies" class="section level3">
+<h3>Water Technologies</h3>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Technology</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>sw_extract</td>
+<td>Surface water available for diversion</td>
+</tr>
+<tr class="even">
+<td>gw_extract</td>
+<td>Groundwater available for diversion</td>
+</tr>
+<tr class="odd">
+<td>urban_sw_diversion, rural_sw_diversion, irrigation_sw_diversion</td>
+<td>Diversion of surface water</td>
+</tr>
+<tr class="even">
+<td>urban_gw_diversion, rural_gw_diversion, irrigation_gw_diversion</td>
+<td>Diversion of groundwater</td>
+</tr>
+<tr class="odd">
+<td>urban_piped_distribution, rural_piped_distribution</td>
+<td>Water distribution through pipes</td>
+</tr>
+<tr class="even">
+<td>urban_unpiped_distribution, rural_unpiped_distribution</td>
+<td>Unimproved water distribution</td>
+</tr>
+<tr class="odd">
+<td>urban_wastewater_collection, rural_wastewater_collection</td>
+<td>Water collection from treatment</td>
+</tr>
+<tr class="even">
+<td>urban_wastewater_release , rural_wastewater_release</td>
+<td>water release into the river</td>
+</tr>
+<tr class="odd">
+<td>urban_wastewater_treatment, rural_wastewater_treatment</td>
+<td>Watewater treatment before returning to river</td>
+</tr>
+<tr class="even">
+<td>urban_wastewater_recycling, rural_wastewater_recycling</td>
+<td>Water recycling for distribution</td>
+</tr>
+<tr class="odd">
+<td>urban_desal_seawater</td>
+<td>Desalination technology providing water for distribution</td>
+</tr>
+<tr class="even">
+<td>river_REG*_REG*</td>
+<td>River surface water transfers among regions</td>
+</tr>
+<tr class="odd">
+<td>river_REG*_REG*</td>
+<td>Canal surface water transfers among regions</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="framework" class="section level1">
 <h1>Framework</h1>
-<p>The MESSAGEix Indus basin model is run using R to read input data from various formats including .txt, .csv, .xls, .xlsx and .gdx files. R then interacts with GAMS to run the model code. These basic connections are shown in Figure 1. Figure 2 shows all the folders and files which are used to run the model. Figure 3 gives a summary of how the model is run using these different files.</p>
+<p>The MESSAGEix Indus basin model is built using R to read input data from various formats including .txt, .csv, .xls, .nc and .shp files. With R, spatial data are aggregated according to the catchment level, parameters, sets and variable constraints are defined according to the GAMS formulation of the model. Then the model parametrization is loaded online as a scenario on the ix modelling platform. This allow to update and create new scenarios from existing ones, as well as solving the model with GAMS and visualizing some outputs.</p>
 <p id="figcap">
 Figure 1: ISWEL Indus Basin model software
 </p>
@@ -362,1053 +547,8 @@ Figure 1: ISWEL Indus Basin model software
 </div>
 </center>
 <p><br><br></p>
-<p id="figcap">
-Figure 2: ISWEL Indus Basin model folders and files
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_folders.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p id="figcap">
-Figure 3: Summary of ISWEL Indus Basin model run
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_run.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-</div>
-<div id="resources-flows" class="section level1">
-<h1>Resources flows</h1>
-<p>The MESSAGEix model tracks flows of commodities from insitu or local availability through different processes to a final exogenous demand. The list of sets, parameters, variables and equations are detailed in the subsequent sections. In this section a small example is used to explain how these work in the model. Figure 4 shows how the demand for 0.1 units of lighting in spatial unit Node A is met using electrcitiy produced by a coal power plant also in Node A. The coal needed for this production is transported from Node B where the coal is assumed to be available. In addition to raw coal, the power plant also required water for cooling, which is extracted from surface water SW and then purified onsite to the required quality. Because the water extraction and purification processes consume energy, overall additional energy is needed. The additional energy needs in turn also feedback to the water system, until a balance is met.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 4: Example of water and energy resource flows from extraction to final use
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_resourceflowExample.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p>For each technology an “input”&quot; parameter defines the amount of commodity of a certain level that goes into the technology and then an “output”&quot; parameter defines the amount of commodity of a certain level which is subsequently produced. These parameters are used to define the efficiency of the processes as well as spatial and temporal transfers. The overall goal of the model is to meet the demand for a commodity of a certain level for each node and time period defined by the parameter “demand”. The table below shows the “input” and “output” parameters defined for different commodities of different levels for each technology process from the example from Figure 4. The column labelled “Activity” is the optimal activity of each technology. As seen in the table for the technology “Coal trans” we can use different “Nodes” to define processes which transfer a commodity by taking inputs at one node and producing an output at another node. Furthermore, the energy technologies defined here all have an efficiency of 100% i.e. they take in a commodity of 1 unit and produce a commodity of 1 unit without any losses. Efficiencies can be defined by making the inputs greater than the outputs. With this efficiency, in theory, the demand for 0.1 units of lighting would be met with 0.1 units of electricty, produced from 0.1 units of coal. However, because of the feedbacks with the water system and the corresponding requirements the energy demands of the whole system are slightly higher.</p>
-<p><br><br></p>
-<p id="figcap">
-Table: Water and energy input and output parameters for commodity flows through different technology processes for the example from Figure 4
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/t_model_resourceflowInputOutput.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p>A simplified form of the commodity balance equation can be defined as shown in the equation below where the variable “ACT”, dictates how many units of “output” and “input” are processed for each commodity and level. The table that follows then shows how the balance is met for all the commodity transformations and levels from the example from Figure 4. Some commodity levels are excluded from the demand balance such as “insitu” resource volumes or resources which are released back into the environment such as “untreated” waste water. Insitu volumes are excluded because they are constrained in another equation based on the amount of resources available. Releases to the environment are excluded because they do not constrain the system. Any requirements for environmental flows are defined explicitly as a demand.</p>
-<p><br><br></p>
-<center>
-<div id="box">
-<p>input*ACT - output*ACT + demand = 0</p>
-</div>
-</center>
-<p><br><br></p>
-<p id="figcap">
-Table: Water and energy commodity balance for the example from Figure 4
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/t_model_resourceflowBalance.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-</div>
-<div id="indus-basin-chosen-tecs-comods" class="section level1">
-<h1>Indus Basin chosen tecs &amp; comods</h1>
-<p><strong>Figure 5</strong> below shows the chosen commodities and technologies for the Indus Basin model. The energy technologies are based on local capacity and classifications made by the IEA in their <a href="https://www.iea.org/statistics/statisticssearch/report/?country=Pakistan&amp;product=electricityandheat">energy statistics reports for Pakistan</a>. Water technologies and commodities are based on previous models at IIASA and local data availability. At this stage the supply of products is classified in simplified groups which can later be further disaggregated to represent more detailed end-user technologies.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 5: Chosen technologies and commodities for Indus Basin model
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_indusTecsComs.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-</div>
-<div id="example-run-demo-data-only" class="section level1">
-<h1>Example run (Demo data only)</h1>
-<p>In this section the model is used to run a small example using a few actual PIDs (Polygon IDs) from the Indus Basin as shown in <strong>Figure 6</strong> below. PIDs 2229 and 2239 from Pakistan, 2249 from India and 2251 from Afghanistan are chosen.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 6: Chosen PIDs in the Indus basin for example run
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_SelectedPIDs.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p>The conceptual framework of the demands and infrastructure considered is shown in <strong>Figure 7</strong>. It assumed that there is a demand for urban electricity in PID 2229 and a demand for Industrial electricity in PID 2251 in Afghanistan. There is a single coal power plant as well as a water processing plant located in PID 2229. Raw coal for the power plant is onnly available in PID 2249 while water is only available in PID 2239. Water extraction will also need additional energy in PID 2239 and the coal power plant in PID 2229 also requires water for power plant cooling.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 7: Conceptual framework of infrastructure and demands
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_conceptualflows.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p>The following figures and paragraphs describe how the conceptual example from above is setup in the model. All inputs are managed in the <strong>aaaModelNew.xls</strong> excel file. <strong>Figure 8</strong> shows how the chosen PIDs are assigned in the model in the set “node” in the “sets” tab. The corresponding countries also need to be assigned in the set “map_spatial_hierarchy”.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 8: Assigning spatial units in set “node” in “sets” tab in aaaModelNew.xls
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_setstab.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p><strong>Figure 9</strong> shows an example of how different technology characteristics are defined using GAMS parameters in the “param_tec” tab. The figure shows the assignment of investment costs <strong>(inv_cost)</strong> for each technology, node and year. For this example to keep matters simple all technologies have been assigned the same cost for all nodes and years. This can of course be updated to reflect any differences in costs across borders and to account for forecasts in costs across years.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 9: Assigning technology parameters in “param_tec” tab in aaaModelNew.xls
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_paramTectab.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p>A separate tab (“param_tecInOut”) in the excel sheet is reserved for assigning the flow of commodities through each technologies in the parameters <strong>input</strong> and <strong>output</strong>. <strong>Figure 10</strong> shows an example of these key parameters. Any technology can take in multiple inputs and produce different outputs. This allows the MESSAGE model to easily track flows of resource across sectors. For example if we zoom into the figure here we can see that the coal power plant <strong>e_conv_cntrl_ppl_coal</strong> located in PID 2229 take in both water and electrcitiy as an input and then outputs electrcity. Furthermore in this figure we can see that how transmission technologies are defined for each pair of spatial units.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 10: Assigning flows of commodities through technology parameters in “param_tecInOut” tab in aaaModelNew.xls
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_paramTecInOuttab.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p><strong>Figure 11</strong> shows how resource availability and existing stocks of commodities are defined for each PID in the model, in the tab “param_res”.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 11: Assigning resource availability per spatial units for each commodity “param_res” tab in aaaModelNew.xls
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_paramRestab.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p><strong>Figure 12</strong> shows how exogenous demands for different commodities are defined in the model for spatial unit and year. In the current example as seen in the conceptual diagram in <strong>Figure 7</strong> a demand for urban electrcity is defined in PID 2229 and a demand for industrial electricity is defined in PID 2251. The greyed out country names are added for information.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 12: Assigning demands per spatial unit and commodity in “param_res” tab in aaaModelNew.xls
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_paramDemtab.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p>After the model has been setup as shown in the preceeding figures it can then be run either directly from GAMS or using R as a front end. <strong>Figure 13</strong> shows the GAMS project file <strong>message_project.gpr</strong> which contains the different GAMS runs. The model is run using the <strong>MESSAGE_masterExcel.gms</strong> file which reads the input excel sheet <strong>aaaModelNew.xls</strong> as well as calls all the other MESSAGE model gams files located in different folders. After the model runs the gdx file <strong>MSGOutput_Indus.gdx</strong> can be opened from the <strong>output</strong> folder. <strong>Figure 14</strong> shows a snapshot of the gdx file showing the variable ACT which shows the activity of each technology for each PID and vintage.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 13: GAMS message_project.gpr
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_GAMSprj.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p id="figcap">
-Figure 14: GAMS MSGOutput_Indus.gdx file
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_GAMSoutGDX.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p><strong>Figure 15</strong> shows an alternative way to run the model using R by opening the <strong>MESSAGEX.Rproj</strong> project folder which contains the <strong>MESSAGEX_Run.R</strong> file which is a front end which calls the GAMS files from before. R can be used to directly read the gdx output file and then process the results to create corresponding outputs.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 15: RStudio project alternative
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_RProj.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p><strong>Figure 16</strong> shows the conceptual framework with an overlay representing the model output for commodity flows across each technology. As can be seen in the current example there are no losses and total mass balance is maintained. In order to meet the total demand of 0.2 electricty units (0.1 urban electricty in PID 2229 and 0.1 industrial electricity in PID 2251) 0.25 units needed to be produced. This was because additional electricity was needed for the water purification unit as well as for the water extraction in PID 2239. The water was needed to cool the coal power plant in PID 2229. The example shows how the model can track the feedback across the sectors.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 16: Model resource flow outputs overlay on conceptual figure
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_conceptualflowsResults.PNG" />
-
-</div>
-</div>
-</center>
-<p><br><br></p>
-<p><strong>Figure 17</strong> shows an example of outputs from an R script which reads the variable ACT, representing activity for each technology from the gdx file and can process it into figure for each PID and year. From the figure we can see the maximum activity is in PID 2229 which contains the coal powerplant, the water purification unit and the urban demand. PID 2239 has some activity related to water extraction involving water pumping and canal transfers and some electricty usage for the water processes. PID 2249 shows activity related to extracting and transporting raw coal and PID 2251 has activity related to electricty distribution and final supply of electricty to industries.</p>
-<p><br><br></p>
-<p id="figcap">
-Figure 17: Model outputs for Variable ACT per PID and tec
-</p>
-<center>
-<div id="fig">
-<div class="figure">
-<img src="figures/f_model_egrun_modelResultsChart.PNG" />
-
-</div>
-</div>
-</center>
-</div>
-<div id="sets" class="section level1">
-<h1>Sets</h1>
-<div id="base-sets" class="section level2">
-<h2>Base sets</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sets</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>year_all</td>
-<td>years (over entire model horizon)</td>
-</tr>
-<tr class="even">
-<td>year</td>
-<td>years included in a model instance (for myopic or rolling-horizon optimization)</td>
-</tr>
-<tr class="odd">
-<td>vintage</td>
-<td>alias for year_all</td>
-</tr>
-<tr class="even">
-<td>time</td>
-<td>subannual time periods (seasons - days - hours)</td>
-</tr>
-<tr class="odd">
-<td>time2</td>
-<td>alias for time</td>
-</tr>
-<tr class="even">
-<td>node</td>
-<td>world - regions - countries - grid cells</td>
-</tr>
-<tr class="odd">
-<td>location</td>
-<td>alias for node</td>
-</tr>
-<tr class="even">
-<td>commodity</td>
-<td>resources - electricity - water - land availability - etc.</td>
-</tr>
-<tr class="odd">
-<td>grade</td>
-<td>grades of extraction of raw materials</td>
-</tr>
-<tr class="even">
-<td>level</td>
-<td>commodity states eg. primary, final, treated</td>
-</tr>
-<tr class="odd">
-<td>level_resource(level)</td>
-<td>subset of ‘level’ for initial extraction of resources to exclude from commodity balance</td>
-</tr>
-<tr class="even">
-<td>tec</td>
-<td>technologies</td>
-</tr>
-<tr class="odd">
-<td>mode</td>
-<td>modes of operation</td>
-</tr>
-<tr class="even">
-<td>emission</td>
-<td>greenhouse gases - pollutants - etc.</td>
-</tr>
-<tr class="odd">
-<td>lvl_spatial</td>
-<td>hierarchical levels of spatial resolution</td>
-</tr>
-<tr class="even">
-<td>lvl_temporal</td>
-<td>hierarchical levels of temporal resolution</td>
-</tr>
-<tr class="odd">
-<td>relation</td>
-<td>generic user-defined relations (included as legacy from MESSAGE V)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="category-type-sets" class="section level2">
-<h2>Category type sets</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sets</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>type_year</td>
-<td>types of year aggregations</td>
-</tr>
-<tr class="even">
-<td>type_tec</td>
-<td>types of technologies</td>
-</tr>
-<tr class="odd">
-<td>cat_tec(type_tec,tec)</td>
-<td>mapping of technologies to respective categories</td>
-</tr>
-<tr class="even">
-<td>cat_year(type_year,year_all)</td>
-<td>mapping of years to respective categories</td>
-</tr>
-<tr class="odd">
-<td>type_emission</td>
-<td>types of emission aggregations</td>
-</tr>
-<tr class="even">
-<td>cat_emission(type_emission,emission)</td>
-<td>mapping of emissions to respective categories</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="mapping-sets" class="section level2">
-<h2>Mapping sets</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sets</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>map_spatial_hierarchy(lvl_spatial,node,node)</td>
-<td>mapping of spatial resolution to nodes (last index is ‘parent’)</td>
-</tr>
-<tr class="even">
-<td>map_temporal_hierarchy(lvl_temporal,time,time)</td>
-<td>mapping of temporal resolution to time (last index is ‘parent’)</td>
-</tr>
-<tr class="odd">
-<td>map_node(node,location)</td>
-<td>mapping of nodes across hierarchy levels (location is in node)</td>
-</tr>
-<tr class="even">
-<td>map_time(time,time2)</td>
-<td>mapping of time periods across hierarchy levels (time2 is in time)</td>
-</tr>
-<tr class="odd">
-<td>map_commodity(node,commodity,level,year_all,time)</td>
-<td>mapping of commodity-level to node and time</td>
-</tr>
-<tr class="even">
-<td>map_tec(node,tec,year_all)</td>
-<td>mapping of technology to node and years</td>
-</tr>
-<tr class="odd">
-<td>map_tec_time(node,tec,year_all,time)</td>
-<td>mapping of technology to temporal dissagregation (time)</td>
-</tr>
-<tr class="even">
-<td>map_tec_mode(node,tec,year_all,mode)</td>
-<td>mapping of technology to modes</td>
-</tr>
-<tr class="odd">
-<td>map_resource(node,commodity,grade,year_all)</td>
-<td>mapping of resources and grades to node over time</td>
-</tr>
-<tr class="even">
-<td>map_stocks(node,commodity,level,year_all)</td>
-<td>mapping of commodity-level to node and time</td>
-</tr>
-<tr class="odd">
-<td>map_relation(relation,node,year_all)</td>
-<td>mapping of generic relations to nodes and years</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="sets-with-flags-for-bounds" class="section level2">
-<h2>Sets with flags for bounds</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sets</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>is_bound_new_capacity_up(node,tec,year_all)</td>
-<td>flag whether upper bound exists for new capacity</td>
-</tr>
-<tr class="even">
-<td>is_bound_activity_up(node,tec,year_all,mode,time)</td>
-<td>flag whether upper bound exists for a technology activity</td>
-</tr>
-<tr class="odd">
-<td>is_dynamic_activity_up(node,tec,year_all,time)</td>
-<td>flag whether upper dynamic constraint exists for a technology (activity)</td>
-</tr>
-<tr class="even">
-<td>is_bound_extraction_up(node,commodity,grade,year_all)</td>
-<td>flag whether upper bound exists for extraction of commodity</td>
-</tr>
-<tr class="odd">
-<td>is_bound_new_capacity_lo(node,tec,year_all)</td>
-<td>flag whether lower bound exists for new capacity</td>
-</tr>
-<tr class="even">
-<td>is_bound_total_capacity_up(node,tec,year_all)</td>
-<td>flag whether upper bound exists for total installed capacity</td>
-</tr>
-<tr class="odd">
-<td>is_bound_total_capacity_lo(node,tec,year_all)</td>
-<td>flag whether lower bound exists for total installed capacity</td>
-</tr>
-<tr class="even">
-<td>is_dynamic_new_capacity_up(node,tec,year_all)</td>
-<td>flag whether upper dynamic constraint exists for new capacity (investment)</td>
-</tr>
-<tr class="odd">
-<td>is_dynamic_new_capacity_lo(node,tec,year_all)</td>
-<td>flag whether lower dynamic constraint exists for new capacity (investment)</td>
-</tr>
-<tr class="even">
-<td>is_dynamic_activity_lo(node,tec,year_all,time)</td>
-<td>flag whether lower dynamic constraint exists for a technology (activity)</td>
-</tr>
-<tr class="odd">
-<td>is_relation_upper(relation,node,year_all)</td>
-<td>flag whether upper bounds exists for generic relation</td>
-</tr>
-<tr class="even">
-<td>is_relation_lower(relation,node,year_all)</td>
-<td>flag whether lower bounds exists for generic relation</td>
-</tr>
-<tr class="odd">
-<td>is_bound_emission(node,type_emission,type_tec,type_year)</td>
-<td>flag whether emissions bound exists</td>
-</tr>
-<tr class="even">
-<td>is_fixed_extraction(node,commodity,grade,year_all)</td>
-<td>flag whether extraction variable is fixed</td>
-</tr>
-<tr class="odd">
-<td>is_fixed_stock(node,commodity,level,year_all)</td>
-<td>flag whether stock variableis fixed</td>
-</tr>
-<tr class="even">
-<td>is_fixed_new_capacity(node,tec,year_all)</td>
-<td>flag whether new capacity variableis fixed</td>
-</tr>
-<tr class="odd">
-<td>is_fixed_capacity(node,tec,vintage,year_all)</td>
-<td>flag whether maintained capacity variableis fixed</td>
-</tr>
-<tr class="even">
-<td>is_fixed_activity(node,tec,vintage,year_all,mode,time)</td>
-<td>flag whether activity variableis fixed</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="water-energy-nexus-sets" class="section level2">
-<h2>Water energy nexus sets</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Sets</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>pp_cooltech</td>
-<td>Power plant cooling technologies</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="scalars" class="section level1">
-<h1>Scalars</h1>
-<div id="general-scalars" class="section level2">
-<h2>General Scalars</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Scalars</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>s_beta</td>
-<td>used for param demand calc</td>
-</tr>
-<tr class="even">
-<td>s_elec_demand_per_year</td>
-<td>GWa 55209 for 8760 # from IEA statistics</td>
-</tr>
-<tr class="odd">
-<td>s_light_demand_per_year</td>
-<td>GWa 6134 for 8760 # from IEA statistics</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="parameters" class="section level1">
-<h1>Parameters</h1>
-<div id="general-parameters" class="section level2">
-<h2>General parameters</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>duration_period(year_all)</td>
-<td>duration of one multi-year period (in years)</td>
-</tr>
-<tr class="even">
-<td>duration_time(time)</td>
-<td>duration of one time slice (relative to 1)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="economic-parameters" class="section level2">
-<h2>Economic parameters</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>interestrate(year_all)</td>
-<td>Area_km2</td>
-</tr>
-<tr class="even">
-<td>p_GDP(year_all)</td>
-<td>GDP</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="resource-and-commodity-parameters" class="section level2">
-<h2>Resource and commodity parameters</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>resource_volume(node,commodity,grade)</td>
-<td>volume of resources in-situ at start of the model horizon</td>
-</tr>
-<tr class="even">
-<td>resource_cost(node,commodity,grade,year_all)</td>
-<td>extraction costs for resource</td>
-</tr>
-<tr class="odd">
-<td>resource_remaining(node,commodity,grade,year_all)</td>
-<td>maximum extraction relative to remaining resources (by year)</td>
-</tr>
-<tr class="even">
-<td>commodity_stock(node,commodity,level,year_all)</td>
-<td>exogenous (initial) quantity of commodity in stock</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="demand-parameters" class="section level2">
-<h2>Demand parameters</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>demand(node,commodity,level,year_all,time)</td>
-<td>s_commodity_demand_per_year*p_GDP**s_beta</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="technology-parameters" class="section level2">
-<h2>Technology parameters</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>input(node,tec,vintage,year_all,mode,node,commodity,level,time,time)</td>
-<td>relative share of input per unit of activity</td>
-</tr>
-<tr class="even">
-<td>output(node,tec,vintage,year_all,mode,node,commodity,level,time,time)</td>
-<td>relative share of input per unit of activity</td>
-</tr>
-<tr class="odd">
-<td>inv_cost(node,tec,year_all)</td>
-<td>investment costs (per unit of new capacity)</td>
-</tr>
-<tr class="even">
-<td>fix_cost(node,tec,vintage,year_all)</td>
-<td>fixed costs per year (per unit of capacity maintained)</td>
-</tr>
-<tr class="odd">
-<td>var_cost(node,tec,vintage,year_all,mode,time)</td>
-<td>variable costs of operation (per unit of capacity maintained)</td>
-</tr>
-<tr class="even">
-<td>construction_time(node,tec,vintage)</td>
-<td>duration of construction of new capacity (in years)</td>
-</tr>
-<tr class="odd">
-<td>operation_factor(node,tec,vintage,year_all)</td>
-<td>yearly total operation factor</td>
-</tr>
-<tr class="even">
-<td>min_utilization_factor(node,tec,vintage,year_all)</td>
-<td>yearly minimum utilization factor</td>
-</tr>
-<tr class="odd">
-<td>emission_factor(node,tec,year_all,mode,emission)</td>
-<td>emission intensity of activity</td>
-</tr>
-<tr class="even">
-<td>technical_lifetime(node,tec,vintage)</td>
-<td>maximum technical lifetime (from year of construction)</td>
-</tr>
-<tr class="odd">
-<td>capacity_factor(node,tec,vintage,year_all,time)</td>
-<td>capacity factor by subannual time slice</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="bounds-on-capacity-and-activity-parameters" class="section level2">
-<h2>Bounds on capacity and activity parameters</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>bound_new_capacity_up(node,tec,year_all)</td>
-<td>upper bound on new capacity</td>
-</tr>
-<tr class="even">
-<td>bound_activity_up(node,tec,year_all,mode,time)</td>
-<td>upper bound on activity (aggregated over all vintages)</td>
-</tr>
-<tr class="odd">
-<td>bound_activity_lo(node,tec,year_all,mode,time)</td>
-<td>lower bound on activity</td>
-</tr>
-<tr class="even">
-<td>bound_extraction_up(node,commodity,grade,year_all)</td>
-<td>upper bound on extraction of resources by grade</td>
-</tr>
-<tr class="odd">
-<td>bound_new_capacity_lo(node,tec,year_all)</td>
-<td>lower bound on new capacity</td>
-</tr>
-<tr class="even">
-<td>bound_total_capacity_up(node,tec,year_all)</td>
-<td>upper bound on total installed capacity</td>
-</tr>
-<tr class="odd">
-<td>bound_total_capacity_lo(node,tec,year_all)</td>
-<td>lower bound on total installed capacity</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="dynamic-constraints-on-capacity-and-activity" class="section level2">
-<h2>Dynamic constraints on capacity and activity</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>initial_activity_up(node,tec,year_all,time)</td>
-<td>dynamic upper bound on activity (fixed initial term)</td>
-</tr>
-<tr class="even">
-<td>growth_activity_up(node,tec,year_all,time)</td>
-<td>dynamic upper bound on activity (growth rate)</td>
-</tr>
-<tr class="odd">
-<td>initial_new_capacity_up(node,tec,year_all)</td>
-<td>dynamic upper bound on new capacity (fixed initial term)</td>
-</tr>
-<tr class="even">
-<td>growth_new_capacity_up(node,tec,year_all)</td>
-<td>dynamic upper bound on new capacity (growth rate)</td>
-</tr>
-<tr class="odd">
-<td>initial_new_capacity_lo(node,tec,year_all)</td>
-<td>dynamic lower bound on new capacity (fixed initial term)</td>
-</tr>
-<tr class="even">
-<td>growth_new_capacity_lo(node,tec,year_all)</td>
-<td>dynamic lower bound on new capacity (growth rate)</td>
-</tr>
-<tr class="odd">
-<td>initial_activity_lo(node,tec,year_all,time)</td>
-<td>dynamic lower bound on activity (fixed initial term)</td>
-</tr>
-<tr class="even">
-<td>growth_activity_lo(node,tec,year_all,time)</td>
-<td>dynamic lower bound on activity (growth rate)</td>
-</tr>
-<tr class="odd">
-<td>soft_new_capacity_up(node,tec,year_all)</td>
-<td>soft relaxation of dynamic upper bound on new capacity (growth rate)</td>
-</tr>
-<tr class="even">
-<td>soft_new_capacity_lo(node,tec,year_all)</td>
-<td>soft relaxation of dynamic lower bound on new capacity (growth rate)</td>
-</tr>
-<tr class="odd">
-<td>soft_activity_up(node,tec,year_all,time)</td>
-<td>soft relaxation of dynamic upper bound on activity (growth rate)</td>
-</tr>
-<tr class="even">
-<td>soft_activity_lo(node,tec,year_all,time)</td>
-<td>soft relaxation of dynamic lower bound on activity (growth rate)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="soft-relaxation-of-dynamic-constraint-parameters" class="section level2">
-<h2>Soft relaxation of dynamic constraint parameters</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>abs_cost_new_capacity_soft_up(node,tec,year_all)</td>
-<td>absolute cost of dynamic new capacity constraint relaxation (upwards)</td>
-</tr>
-<tr class="even">
-<td>abs_cost_new_capacity_soft_lo(node,tec,year_all)</td>
-<td>absolute cost of dynamic new capacity constraint relaxation (downwards)</td>
-</tr>
-<tr class="odd">
-<td>level_cost_new_capacity_soft_up(node,tec,year_all)</td>
-<td>levelized cost multiplier of dynamic new capacity constraint relaxation (upwards)</td>
-</tr>
-<tr class="even">
-<td>level_cost_new_capacity_soft_lo(node,tec,year_all)</td>
-<td>levelized cost multiplier of dynamic new capacity constraint relaxation (downwards)</td>
-</tr>
-<tr class="odd">
-<td>abs_cost_activity_soft_up(node,tec,year_all,time)</td>
-<td>absolute cost of dynamic activity constraint relaxation (upwards)</td>
-</tr>
-<tr class="even">
-<td>abs_cost_activity_soft_lo(node,tec,year_all,time)</td>
-<td>absolute cost of dynamic activity constraint relaxation (downwards)</td>
-</tr>
-<tr class="odd">
-<td>level_cost_activity_soft_up(node,tec,year_all,time)</td>
-<td>levelized cost multiplier of dynamic activity constraint relaxation (upwards)</td>
-</tr>
-<tr class="even">
-<td>level_cost_activity_soft_lo(node,tec,year_all,time)</td>
-<td>levelized cost multiplier of dynamic activity constraint relaxation (downwards)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="historical-and-reference-values-of-new-capacity-investment-activity-and-extraction" class="section level2">
-<h2>Historical and reference values of new capacity investment, activity and extraction</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>historical_new_capacity(node,tec,year_all)</td>
-<td>historical new capacity</td>
-</tr>
-<tr class="even">
-<td>historical_activity(node,tec,year_all,mode,time)</td>
-<td>historical acitivity</td>
-</tr>
-<tr class="odd">
-<td>historical_extraction(node,commodity,grade,year_all)</td>
-<td>historical extraction</td>
-</tr>
-<tr class="even">
-<td>ref_new_capacity(node,tec,year_all)</td>
-<td>reference new capacity levels</td>
-</tr>
-<tr class="odd">
-<td>ref_activity(node,tec,year_all,mode,time)</td>
-<td>reference activity levels</td>
-</tr>
-<tr class="even">
-<td>ref_extraction(node,commodity,grade,year_all)</td>
-<td>reference value of extraction</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="emissions-parameters" class="section level2">
-<h2>Emissions parameters</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>emission_scaling(type_emission,emission)</td>
-<td>scaling factor to harmonize bounds or taxes across tpes</td>
-</tr>
-<tr class="even">
-<td>bound_emission(node,type_emission,type_tec,type_year)</td>
-<td>upper bound on emissions</td>
-</tr>
-<tr class="odd">
-<td>tax_emission(node,type_emission,type_tec,year_all)</td>
-<td>emission tax</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="generic-relation-parameters-legacy-from-message-v" class="section level2">
-<h2>Generic relation parameters (legacy from MESSAGE V)</h2>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>relation_upper(relation,node,year_all)</td>
-<td>upper bound of generic relation</td>
-</tr>
-<tr class="even">
-<td>relation_lower(relation,node,year_all)</td>
-<td>lower bound of generic relation</td>
-</tr>
-<tr class="odd">
-<td>relation_cost(relation,node,year_all)</td>
-<td>cost of investment and activities included in generic relation</td>
-</tr>
-<tr class="even">
-<td>relation_new_capacity(relation,node,year_all,tec)</td>
-<td>new capacity factor (multiplier) of generic relation</td>
-</tr>
-<tr class="odd">
-<td>relation_total_capacity(relation,node,year_all,tec)</td>
-<td>total capacity factor (multiplier) of generic relation</td>
-</tr>
-<tr class="even">
-<td>relation_activity(relation,node,year_all,node,tec,year_all,mode)</td>
-<td>activity factor (multiplier) of generic relation</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="fixing-variable-parameters" class="section level2">
-<h2>Fixing variable parameters</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Parameters</th>
-<th>Label</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>fixed_extraction(node,commodity,grade,year_all)</td>
-<td>fixed extraction level</td>
-</tr>
-<tr class="even">
-<td>fixed_stock(node,commodity,level,year_all)</td>
-<td>fixed stock level</td>
-</tr>
-<tr class="odd">
-<td>fixed_new_capacity(node,tec,year_all)</td>
-<td>fixed new-built capacity</td>
-</tr>
-<tr class="even">
-<td>fixed_capacity(node,tec,vintage,year_all)</td>
-<td>fixed maintained capacity</td>
-</tr>
-<tr class="odd">
-<td>fixed_activity(node,tec,vintage,year_all,mode,time)</td>
-<td>fixed activity level</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>The model is written in GAMS according to the MESSAGEix modelling framework, which code is open source and online at <a href="https://github.com/iiasa/message_ix" class="uri">https://github.com/iiasa/message_ix</a>.</p>
+<p>The <a href="http://messageix.iiasa.ac.at/">MESSAGEix Documentation</a> includes a comprehensive description of all the sets, parameters, variables, constraints and equations of the model. The Indus-Basin model fully relies on this framework with the addition of few parameters and variable that help addressing some mode specific issues.</p>
 <div id="water-energy-nexus-parameters" class="section level2">
 <h2>Water energy nexus parameters</h2>
 <table>
@@ -1427,11 +567,241 @@ Figure 17: Model outputs for Variable ACT per PID and tec
 </table>
 </div>
 </div>
-<div id="variables" class="section level1">
-<h1>Variables</h1>
+<div id="example" class="section level1">
+<h1>Example</h1>
+<p>In this section a small example is used to explain how these work in the model. Figure 3 shows how the demand for 0.1 units of lighting in spatial unit Node A is met using electrcitiy produced by a coal power plant also in Node A. The coal needed for this production is transported from Node B where the coal is assumed to be available. In addition to raw coal, the power plant also required water for cooling, which is extracted from surface water SW and then purified onsite to the required quality. Because the water extraction and purification processes consume energy, overall additional energy is needed. The additional energy needs in turn also feedback to the water system, until a balance is met.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 3: Example of water and energy resource flows from extraction to final use
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_resourceflowExample.PNG" />
+
 </div>
-<div id="equations" class="section level1">
-<h1>Equations</h1>
+</div>
+</center>
+<p><br><br></p>
+<p>For each technology an “input”&quot; parameter defines the amount of commodity of a certain level that goes into the technology and then an “output”&quot; parameter defines the amount of commodity of a certain level which is subsequently produced. These parameters are used to define the efficiency of the processes as well as spatial and temporal transfers. The overall goal of the model is to meet the demand for a commodity of a certain level for each node and time period defined by the parameter “demand”. The table below shows the “input” and “output” parameters defined for different commodities of different levels for each technology process from the example from Figure 4. The column labelled “Activity” is the optimal activity of each technology. As seen in the table for the technology “Coal trans” we can use different “Nodes” to define processes which transfer a commodity by taking inputs at one node and producing an output at another node. Furthermore, the energy technologies defined here all have an efficiency of 100% i.e. they take in a commodity of 1 unit and produce a commodity of 1 unit without any losses. Efficiencies can be defined by making the inputs greater than the outputs. With this efficiency, in theory, the demand for 0.1 units of lighting would be met with 0.1 units of electricty, produced from 0.1 units of coal. However, because of the feedbacks with the water system and the corresponding requirements the energy demands of the whole system are slightly higher.</p>
+<p><br><br></p>
+<p id="figcap">
+Table: Water and energy input and output parameters for commodity flows through different technology processes for the example from Figure 3
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/t_model_resourceflowInputOutput.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p>A simplified form of the commodity balance equation can be defined as shown in the equation below where the variable “ACT”, dictates how many units of “output” and “input” are processed for each commodity and level. The table that follows then shows how the balance is met for all the commodity transformations and levels from the example from Figure 3. Some commodity levels are excluded from the demand balance such as “insitu” resource volumes or resources which are released back into the environment such as “untreated” waste water. Insitu volumes are excluded because they are constrained in another equation based on the amount of resources available. Releases to the environment are excluded because they do not constrain the system. Any requirements for environmental flows are defined explicitly as a demand.</p>
+<p><br><br></p>
+<center>
+<div id="box">
+<p>input*ACT - output*ACT + demand = 0</p>
+</div>
+</center>
+<p><br><br></p>
+<p id="figcap">
+Table: Water and energy commodity balance for the example from Figure 3
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/t_model_resourceflowBalance.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<div id="indus-basin-chosen-tecs-comods" class="section level2">
+<h2>Indus Basin chosen tecs &amp; comods</h2>
+<p><strong>Figure 4</strong> below shows the chosen commodities and technologies for the Indus Basin model. The energy technologies are based on local capacity and classifications made by the IEA in their <a href="https://www.iea.org/statistics/statisticssearch/report/?country=Pakistan&amp;product=electricityandheat">energy statistics reports for Pakistan</a>. Water technologies and commodities are based on previous models at IIASA and local data availability. At this stage the supply of products is classified in simplified groups which can later be further disaggregated to represent more detailed end-user technologies.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 4: Chosen technologies and commodities for Indus Basin model
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_indusTecsComs.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+</div>
+<div id="example-run-demo-data-only" class="section level2">
+<h2>Example run (Demo data only)</h2>
+<p>In this section the model is used to run a small example using a few actual PIDs (Polygon IDs) from the Indus Basin as shown in <strong>Figure 5</strong> below. PIDs 2229 and 2239 from Pakistan, 2249 from India and 2251 from Afghanistan are chosen.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 5: Chosen PIDs in the Indus basin for example run
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_SelectedPIDs.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p>The conceptual framework of the demands and infrastructure considered is shown in <strong>Figure 6</strong>. It assumed that there is a demand for urban electricity in PID 2229 and a demand for Industrial electricity in PID 2251 in Afghanistan. There is a single coal power plant as well as a water processing plant located in PID 2229. Raw coal for the power plant is onnly available in PID 2249 while water is only available in PID 2239. Water extraction will also need additional energy in PID 2239 and the coal power plant in PID 2229 also requires water for power plant cooling.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 6: Conceptual framework of infrastructure and demands
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_conceptualflows.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p>The following figures and paragraphs describe how the conceptual example from above is setup in the model. All inputs are managed in the <strong>aaaModelNew.xls</strong> excel file. <strong>Figure 7</strong> shows how the chosen PIDs are assigned in the model in the set “node” in the “sets” tab. The corresponding countries also need to be assigned in the set “map_spatial_hierarchy”.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 7: Assigning spatial units in set “node” in “sets” tab in aaaModelNew.xls
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_setstab.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p><strong>Figure 8</strong> shows an example of how different technology characteristics are defined using GAMS parameters in the “param_tec” tab. The figure shows the assignment of investment costs <strong>(inv_cost)</strong> for each technology, node and year. For this example to keep matters simple all technologies have been assigned the same cost for all nodes and years. This can of course be updated to reflect any differences in costs across borders and to account for forecasts in costs across years.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 8: Assigning technology parameters in “param_tec” tab in aaaModelNew.xls
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_paramTectab.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p>A separate tab (“param_tecInOut”) in the excel sheet is reserved for assigning the flow of commodities through each technologies in the parameters <strong>input</strong> and <strong>output</strong>. <strong>Figure 9</strong> shows an example of these key parameters. Any technology can take in multiple inputs and produce different outputs. This allows the MESSAGE model to easily track flows of resource across sectors. For example if we zoom into the figure here we can see that the coal power plant <strong>e_conv_cntrl_ppl_coal</strong> located in PID 2229 take in both water and electrcitiy as an input and then outputs electrcity. Furthermore in this figure we can see that how transmission technologies are defined for each pair of spatial units.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 9: Assigning flows of commodities through technology parameters in “param_tecInOut” tab in aaaModelNew.xls
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_paramTecInOuttab.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p><strong>Figure 10</strong> shows how resource availability and existing stocks of commodities are defined for each PID in the model, in the tab “param_res”.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 10: Assigning resource availability per spatial units for each commodity “param_res” tab in aaaModelNew.xls
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_paramRestab.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p><strong>Figure 11</strong> shows how exogenous demands for different commodities are defined in the model for spatial unit and year. In the current example as seen in the conceptual diagram in <strong>Figure 6</strong> a demand for urban electrcity is defined in PID 2229 and a demand for industrial electricity is defined in PID 2251. The greyed out country names are added for information.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 11: Assigning demands per spatial unit and commodity in “param_res” tab in aaaModelNew.xls
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_paramDemtab.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p>After the model has been setup as shown in the preceeding figures it can then be run either directly from GAMS or using R as a front end. <strong>Figure 12</strong> shows the GAMS project file <strong>message_project.gpr</strong> which contains the different GAMS runs. The model is run using the <strong>MESSAGE_masterExcel.gms</strong> file which reads the input excel sheet <strong>aaaModelNew.xls</strong> as well as calls all the other MESSAGE model gams files located in different folders. After the model runs the gdx file <strong>MSGOutput_Indus.gdx</strong> can be opened from the <strong>output</strong> folder. <strong>Figure 13</strong> shows a snapshot of the gdx file showing the variable ACT which shows the activity of each technology for each PID and vintage.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 12: GAMS message_project.gpr
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_GAMSprj.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p id="figcap">
+Figure 13: GAMS MSGOutput_Indus.gdx file
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_GAMSoutGDX.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p><strong>Figure 14</strong> shows an alternative way to run the model using R by opening the <strong>MESSAGEX.Rproj</strong> project folder which contains the <strong>MESSAGEX_Run.R</strong> file which is a front end which calls the GAMS files from before. R can be used to directly read the gdx output file and then process the results to create corresponding outputs.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 14: RStudio project alternative
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_RProj.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p><strong>Figure 15</strong> shows the conceptual framework with an overlay representing the model output for commodity flows across each technology. As can be seen in the current example there are no losses and total mass balance is maintained. In order to meet the total demand of 0.2 electricty units (0.1 urban electricty in PID 2229 and 0.1 industrial electricity in PID 2251) 0.25 units needed to be produced. This was because additional electricity was needed for the water purification unit as well as for the water extraction in PID 2239. The water was needed to cool the coal power plant in PID 2229. The example shows how the model can track the feedback across the sectors.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 15: Model resource flow outputs overlay on conceptual figure
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_conceptualflowsResults.PNG" />
+
+</div>
+</div>
+</center>
+<p><br><br></p>
+<p><strong>Figure 16</strong> shows an example of outputs from an R script which reads the variable ACT, representing activity for each technology from the gdx file and can process it into figure for each PID and year. From the figure we can see the maximum activity is in PID 2229 which contains the coal powerplant, the water purification unit and the urban demand. PID 2239 has some activity related to water extraction involving water pumping and canal transfers and some electricty usage for the water processes. PID 2249 shows activity related to extracting and transporting raw coal and PID 2251 has activity related to electricty distribution and final supply of electricty to industries.</p>
+<p><br><br></p>
+<p id="figcap">
+Figure 16: Model outputs for Variable ACT per PID and tec
+</p>
+<center>
+<div id="fig">
+<div class="figure">
+<img src="figures/f_model_egrun_modelResultsChart.PNG" />
+
+</div>
+</div>
+</center>
+</div>
 </div>
 
 <p id="footer">Copyright &copy; 2017 IIASA All rights reserved.</p>
