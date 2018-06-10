@@ -9,7 +9,12 @@ output:
 ---
 
 # Basin Delineation
-A river basin is defined by a geographic area where all incident precipitation converted to runoff is directed towards a single outlet to the sea (or inland lake). In this work, the Indus river basin is delineated based on this hydrological definition using the [HydroBASINS](http://www.hydrosheds.org/page/hydrobasins) global dataset. HydroBASINS is a series of polygon layers that depict basin and sub-basin delineations at a global scale. Using hydrologically corrected digital elevation data from NASA's Shuttle Radar Topography Mission at 15 arc-second resolution, watersheds (or sub-basins) are delineated in a consistent manner in HydroBASINS at different scales, and a hierarchical sub-basin breakdown is created following the topological concept of the Pfafstetter coding system [@Lehner2013].
+A river basin is defined by a geographic area where all incident precipitation converted to runoff is directed towards a single outlet to the sea (or inland lake). In this work, the Indus river basin is delineated based on this hydrological definition using the [HydroBASINS](http://www.hydrosheds.org/page/hydrobasins) global dataset. HydroBASINS is a series of polygon layers that depict basin and sub-basin delineations at a global scale. Using hydrologically corrected digital elevation data from NASA's Shuttle Radar Topography Mission at 15 arc-second resolution, watersheds (or sub-basins) are delineated in a consistent manner in HydroBASINS at different scales, and a hierarchical sub-basin breakdown is created following the topological concept of the Pfafstetter coding system [@Lehner2013]. In MESSAGE-Indus, the basin is dissaggregated into sub-basins using the hierarchical breakdown to enable consistent tracking of surface water flows across the basin. 
+
+Transboundary effects are a critical feature of basin management in many regions, including in the Indus where existing allocation policies (e.g., the Indus Water Treaty) are driving forces. To enable a transboundary perspective, MESSAGE-Indus further intersects the sub-basin boundaries from HydroBASINS with country administrative units from the Global Adminstrative Areas database [(GADM)](https://gadm.org/). Like HydroBASINS, GADM also features a hierarchical nesting of higher order administrative regions (e.g., provinces, districts, etc.) for some regions. The current version of MESSAGE-Indus utilizes country boundaries but also has the capabilities to zoom into the provinces of India, Pakistan and Afghanistan. 
+
+The intersection of the administrative and sub-basin units results in a new classification of spatial units referred to as Basin Country Units (BCU). A reduced-form network is estimated between BCUs using flow-accumulation data from hydroBASINS at 15 arc-seconds. Namely, the direction of flow between BCUs is identified by examining the locations surrounding the maximum flow-accumulation within each BCU (i.e., the main BCU outlet) and selecting the adjacent cell within a different BCU that has greater flow-accumulation. If an adjacent cell with greater flow-accumulation can not be identified, the BCU must be an inland sink or outlet to the sea. The figure below depicts the derived BCUs and reduced form network for the Indus river basin. In total there are 24 spatial units.  
+
 
 <center>
 <div id="fig">
@@ -22,12 +27,28 @@ A river basin is defined by a geographic area where all incident precipitation c
 
 # Demographics
 
-# Climate
+MESSAGE-Indus utilizes the Shared Socioeconomic Pathways (SSP) to define demographic trajectories. The SSPs are part of a new framework that the climate change research community has adopted to facilitate the integrated analysis of future climate impacts, vulnerabilities, adaptation, and mitigation. The SSPs consist of five narratives that bridge challenges and opportunities associated with mitigation and adaptation to climate change [@ONeill2017]. Quantitative, spatially-explicit projections of population, urbanization and GDP consistent with the SSP narratives were developed in previous work [@Samir2017, @Dellink2017, @Jiang2017, @Jones2016, @Gidden2018]. These data are available at 7.5 arc-minutes covering a time span of 2010 to 2100 in decadal time-steps, and are used to parameterize socioeconomic inputs in MESSSAGE-Indus. The figure below depicts an example of the SSP projections estimated for the Indus basin delineation shown above aggregated by country for the year 2050.
 
-# Hydrology
+<center>
+<div id="fig">
+![](figures\indus_barplot_ssp.png)
+<p id="figcap"> Socioeconomic projections for the Indus basin consistent with SSP1, 2 and 5.</p>
+</div>
+</center>
+<br><br>
+
+# Hydro-climate
+
+Hydro-climate data associated with MESSAGE-Indus is harmonized with the Community Water Model [(CWatM)](https://cwatm.github.io/). Daily run-off simulated with CWaTM is aggregated into each BCU to estimate average monthly flow into the reduced form river network introduced above. Air temperature and evapotranspiration rates are used to estimate demand intensities in the municipal sector (described in greater detail below). Evaporation rates are also used to estimate losses from reservoirs assuming a general form reservoir systems. Alternative future climate scenarios are considered by integrating hydro-climate projections consistent with the Representative Concentration Pathways (RCP) [@vanVuuren2011]. MESSAGE-Indus is thus able to explore cost-optimal pathways that adapt to climate change. 
+
+Significant uncertainty is associated with the Indus hydro-climate projections. To avoid potential errors, the flows into the reduced form network are calibrated to match the historical flows considered in the Indus Water Treaty. Future climate change impacts are then imposed onto the flows by scaling the seasonal pattern changes using the projections from CWaTM. Ongoing work will consider decision-scaling methods to test a range of plausible climate futures and to identify pathways that are particular risky to Indus infrastructure planning [@Brown2012]. 
+
+# Demands
 
 # Water Infrastructure
 
 # Energy Infrastructure
 
 # Land-use
+
+# References
