@@ -4,9 +4,18 @@ bibliography: bib_iswelindus.bib
 link-citations: true
 output:
   html_document:
-    toc: true  
+    toc: true 
     toc_float: true 
 ---
 
-# Project
+# Introduction
 This website presents the MESSAGE-Indus integrated assessment model. MESSAGE-Indus is currently being developed as part of the Integrated Solutions for Water, Energy and Land [(IS-WEL)](http://www.iiasa.ac.at/web/home/research/researchProjects/Nexus_Solutions.html) at the International Institute for Applied Systems Analysis (IIASA). 
+
+# Indus Basin
+Indus basin overview
+
+# Nexus Challenges
+Overview of nexus challenges
+
+# Research Objectives
+Overview of research objectives

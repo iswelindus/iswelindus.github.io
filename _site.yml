@@ -1,29 +1,29 @@
 name: "my-website"
 navbar:
-  title: "IS-WEL Indus"
+  title: "MESSAGE-Indus"
   left:
     - text: "Overview"
       href: index.html
-#    - text: "Stakeholders"
-#      href: stakeholders.html
-    - text: "SDGs"
-      href: sdgs.html
-    - text: "Issues"
-      href: issues.html
-    - text: "Policy"
-      href: policy.html
-    - text: "Emerging Techs"
-      href: emergingtechs.html
+    - text: "Framework"
+      href: modeling_framework.html
     - text: "Data"
-      href: data.html
-    - text: "Model"
-      href: model.html
-    - text: "Baseline"
-      href: baseline.html
-    - text: "Pathways"
-      href: pathways.html
+      href: input_data.html
     - text: "Analysis"
       href: analysis.html
+    - text: "Results"
+      href: results.html
+    - text: "Team"
+      href: team.html
+#    - text: "Data"
+#      href: data.html
+#    - text: "Model"
+#      href: model.html
+#    - text: "Baseline"
+#      href: baseline.html
+#    - text: "Pathways"
+#      href: pathways.html
+#    - text: "Analysis"
+#      href: analysis.html
   right:
     - text: "Library"
       icon: fa-book
