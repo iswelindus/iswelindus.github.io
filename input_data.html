@@ -320,7 +320,9 @@ div.tocify {
 
 <div id="basin-delineation" class="section level1">
 <h1>Basin Delineation</h1>
-<p>A river basin is defined by a geographic area where all incident precipitation converted to runoff is directed towards a single outlet to the sea (or inland lake). In this work, the Indus river basin is delineated based on this hydrological definition using the <a href="http://www.hydrosheds.org/page/hydrobasins">HydroBASINS</a> global dataset. HydroBASINS is a series of polygon layers that depict basin and sub-basin delineations at a global scale. Using hydrologically corrected digital elevation data from NASA’s Shuttle Radar Topography Mission at 15 arc-second resolution, watersheds (or sub-basins) are delineated in a consistent manner in HydroBASINS at different scales, and a hierarchical sub-basin breakdown is created following the topological concept of the Pfafstetter coding system <span class="citation">(Lehner and Grill <a href="#ref-Lehner2013">2013</a>)</span>.</p>
+<p>A river basin is defined by a geographic area where all incident precipitation converted to runoff is directed towards a single outlet to the sea (or inland lake). In this work, the Indus river basin is delineated based on this hydrological definition using the <a href="http://www.hydrosheds.org/page/hydrobasins">HydroBASINS</a> global dataset. HydroBASINS is a series of polygon layers that depict basin and sub-basin delineations at a global scale. Using hydrologically corrected digital elevation data from NASA’s Shuttle Radar Topography Mission at 15 arc-second resolution, watersheds (or sub-basins) are delineated in a consistent manner in HydroBASINS at different scales, and a hierarchical sub-basin breakdown is created following the topological concept of the Pfafstetter coding system <span class="citation">(Lehner and Grill <a href="#ref-Lehner2013">2013</a>)</span>. In MESSAGE-Indus, the basin is dissaggregated into sub-basins using the hierarchical breakdown to enable consistent tracking of surface water flows across the basin.</p>
+<p>Transboundary effects are a critical feature of basin management in many regions, including in the Indus where existing allocation policies (e.g., the Indus Water Treaty) are driving forces. To enable a transboundary perspective, MESSAGE-Indus further intersects the sub-basin boundaries from HydroBASINS with country administrative units from the Global Adminstrative Areas database <a href="https://gadm.org/">(GADM)</a>. Like HydroBASINS, GADM also features a hierarchical nesting of higher order administrative regions (e.g., provinces, districts, etc.) for some regions. The current version of MESSAGE-Indus utilizes country boundaries but also has the capabilities to zoom into the provinces of India, Pakistan and Afghanistan.</p>
+<p>The intersection of the administrative and sub-basin units results in a new classification of spatial units referred to as Basin Country Units (BCU). A reduced-form network is estimated between BCUs using flow-accumulation data from hydroBASINS at 15 arc-seconds. Namely, the direction of flow between BCUs is identified by examining the locations surrounding the maximum flow-accumulation within each BCU (i.e., the main BCU outlet) and selecting the adjacent cell within a different BCU that has greater flow-accumulation. If an adjacent cell with greater flow-accumulation can not be identified, the BCU must be an inland sink or outlet to the sea. The figure below depicts the derived BCUs and reduced form network for the Indus river basin. In total there are 24 spatial units.</p>
 <center>
 <div id="fig">
 <img src="figures/indus_map_cmb.png" />
@@ -333,12 +335,24 @@ Delineation of the Indus river basin into Basin Country Units (BCU).
 </div>
 <div id="demographics" class="section level1">
 <h1>Demographics</h1>
+<p>MESSAGE-Indus utilizes the Shared Socioeconomic Pathways (SSP) to define demographic trajectories. The SSPs are part of a new framework that the climate change research community has adopted to facilitate the integrated analysis of future climate impacts, vulnerabilities, adaptation, and mitigation. The SSPs consist of five narratives that bridge challenges and opportunities associated with mitigation and adaptation to climate change <span class="citation">(B. C. O’Neill et al. <a href="#ref-ONeill2017">2017</a>)</span>. Quantitative, spatially-explicit projections of population, urbanization and GDP consistent with the SSP narratives were developed in previous work <span class="citation">(Samir and Lutz <a href="#ref-Samir2017">2017</a>, <span class="citation">Dellink et al. (<a href="#ref-Dellink2017">2017</a>)</span>, <span class="citation">Jiang and O’Neill (<a href="#ref-Jiang2017">2017</a>)</span>, <span class="citation">Jones and O’Neill (<a href="#ref-Jones2016">2016</a>)</span>, <span class="citation">Gidden et al. (<a href="#ref-Gidden2018">2018</a>)</span>)</span>. These data are available at 7.5 arc-minutes covering a time span of 2010 to 2100 in decadal time-steps, and are used to parameterize socioeconomic inputs in MESSSAGE-Indus. The figure below depicts an example of the SSP projections estimated for the Indus basin delineation shown above aggregated by country for the year 2050.</p>
+<center>
+<div id="fig">
+<img src="figures/indus_barplot_ssp.png" />
+<p id="figcap">
+Socioeconomic projections for the Indus basin consistent with SSP1, 2 and 5.
+</p>
 </div>
-<div id="climate" class="section level1">
-<h1>Climate</h1>
+</center>
+<p><br><br></p>
 </div>
-<div id="hydrology" class="section level1">
-<h1>Hydrology</h1>
+<div id="hydro-climate" class="section level1">
+<h1>Hydro-climate</h1>
+<p>Hydro-climate data associated with MESSAGE-Indus is harmonized with the Community Water Model <a href="https://cwatm.github.io/">(CWatM)</a>. Daily run-off simulated with CWaTM is aggregated into each BCU to estimate average monthly flow into the reduced form river network introduced above. Air temperature and evapotranspiration rates are used to estimate demand intensities in the municipal sector (described in greater detail below). Evaporation rates are also used to estimate losses from reservoirs assuming a general form reservoir systems. Alternative future climate scenarios are considered by integrating hydro-climate projections consistent with the Representative Concentration Pathways (RCP) <span class="citation">(Van Vuuren et al. <a href="#ref-vanVuuren2011">2011</a>)</span>. MESSAGE-Indus is thus able to explore cost-optimal pathways that adapt to climate change.</p>
+<p>Significant uncertainty is associated with the Indus hydro-climate projections. To avoid potential errors, the flows into the reduced form network are calibrated to match the historical flows considered in the Indus Water Treaty. Future climate change impacts are then imposed onto the flows by scaling the seasonal pattern changes using the projections from CWaTM. Ongoing work will consider decision-scaling methods to test a range of plausible climate futures and to identify pathways that are particular risky to Indus infrastructure planning <span class="citation">(Brown et al. <a href="#ref-Brown2012">2012</a>)</span>.</p>
+</div>
+<div id="demands" class="section level1">
+<h1>Demands</h1>
 </div>
 <div id="water-infrastructure" class="section level1">
 <h1>Water Infrastructure</h1>
@@ -346,11 +360,38 @@ Delineation of the Indus river basin into Basin Country Units (BCU).
 <div id="energy-infrastructure" class="section level1">
 <h1>Energy Infrastructure</h1>
 </div>
-<div id="land-use" class="section level1 unnumbered">
+<div id="land-use" class="section level1">
 <h1>Land-use</h1>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
 <div id="refs" class="references">
+<div id="ref-Brown2012">
+<p>Brown, Casey, Yonas Ghile, Mikaela Laverty, and Ke Li. 2012. “Decision Scaling: Linking Bottom-up Vulnerability Analysis with Climate Projections in the Water Sector.” <em>Water Resources Research</em> 48 (9). Wiley Online Library.</p>
+</div>
+<div id="ref-Dellink2017">
+<p>Dellink, Rob, Jean Chateau, Elisa Lanzi, and Bertrand Magné. 2017. “Long-Term Economic Growth Projections in the Shared Socioeconomic Pathways.” <em>Global Environmental Change</em> 42. Elsevier: 200–214.</p>
+</div>
+<div id="ref-Gidden2018">
+<p>Gidden, Matthew, Narasimha Rao, Simon Parkinson, and Keywan Riahi. 2018. “Spatially Explicit Urban and Rural Poverty Estimates Under Different Global Socioeconomic Futures.” <em>IIASA Working Paper</em> 18. International Institute for Applied Systems Analysis: 1–35.</p>
+</div>
+<div id="ref-Jiang2017">
+<p>Jiang, Leiwen, and Brian C O’Neill. 2017. “Global Urbanization Projections for the Shared Socioeconomic Pathways.” <em>Global Environmental Change</em> 42. Elsevier: 193–99.</p>
+</div>
+<div id="ref-Jones2016">
+<p>Jones, Bryan, and BC O’Neill. 2016. “Spatially Explicit Global Population Scenarios Consistent with the Shared Socioeconomic Pathways.” <em>Environmental Research Letters</em> 11 (8). IOP Publishing: 084003.</p>
+</div>
 <div id="ref-Lehner2013">
 <p>Lehner, Bernhard, and Günther Grill. 2013. “Global River Hydrography and Network Routing: Baseline Data and New Approaches to Study the World’s Large River Systems.” <em>Hydrological Processes</em> 27 (15). Wiley Online Library: 2171–86.</p>
+</div>
+<div id="ref-ONeill2017">
+<p>O’Neill, Brian C, Elmar Kriegler, Kristie L Ebi, Eric Kemp-Benedict, Keywan Riahi, Dale S Rothman, Bas J van Ruijven, et al. 2017. “The Roads Ahead: Narratives for Shared Socioeconomic Pathways Describing World Futures in the 21st Century.” <em>Global Environmental Change</em> 42. Elsevier: 169–80.</p>
+</div>
+<div id="ref-Samir2017">
+<p>Samir, KC, and Wolfgang Lutz. 2017. “The Human Core of the Shared Socioeconomic Pathways: Population Scenarios by Age, Sex and Level of Education for All Countries to 2100.” <em>Global Environmental Change</em> 42. Elsevier: 181–92.</p>
+</div>
+<div id="ref-vanVuuren2011">
+<p>Van Vuuren, Detlef P, Jae Edmonds, Mikiko Kainuma, Keywan Riahi, Allison Thomson, Kathy Hibbard, George C Hurtt, et al. 2011. “The Representative Concentration Pathways: An Overview.” <em>Climatic Change</em> 109 (1-2). Springer: 5.</p>
 </div>
 </div>
 </div>
