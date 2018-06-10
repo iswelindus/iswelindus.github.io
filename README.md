@@ -1,2 +1,2 @@
-# ISWEL-Indus
-IIASA IS-WEL Indus Basin Webpage (https://iswelindus.github.io/)
+# MESSAGE-Indus
+MESSAGE-Indus Webpage (https://iswelindus.github.io/)
