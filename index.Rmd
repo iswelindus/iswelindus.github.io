@@ -9,13 +9,29 @@ output:
 ---
 
 # Introduction
-This website presents the MESSAGE-Indus integrated assessment model. MESSAGE-Indus is currently being developed as part of the Integrated Solutions for Water, Energy and Land [(IS-WEL)](http://www.iiasa.ac.at/web/home/research/researchProjects/Nexus_Solutions.html) at the International Institute for Applied Systems Analysis (IIASA). 
+Given the interdependencies, the sustainable management and provision of energy, water, food and fibre should be conducted using integrated approaches that are based on a broader systems perspective [@Liu2015]. The concept of nexus thinking has gained traction and is increasingly applied in the context of the linkages among water, energy and land resources [@Hoff2011]. A nexus approach gives equal weight to each sector (including the environmental needs) and strives to identify the linkages and interactions among sectors to better understand the synergies and trade-offs involved in meeting future resource demands of both human and ecological systems in a sustainable way. The ultimate objective is to identify solutions that capitalize on synergies, minimize counterproductive policies and investments, and ensure that humanity remains within planetary boundaries.
 
-# Indus Basin
-Indus basin overview
+This website presents the MESSAGE-Indus integrated assessment model, a new tool for water-energy-land nexus analysis. MESSAGE-Indus is being developed within the Integrated Solutions for Water, Energy and Land [(IS-WEL)](http://www.iiasa.ac.at/web/home/research/researchProjects/Nexus_Solutions.html) project led by the International Institute for Applied Systems Analysis (IIASA). The framework provides a consistent platform for modeling long-term pathways for water, energy and land systems. The approach is innovative because it hard-links management of interdependent systems across the entire basin and for multiple future time periods. Scenarios explored with the tool are derived through interactive stakeholder engagement incorporating views and objectives from people living and working throughout the basin. This perspective provides unique capabilities to develop pathways relevant in the local context that communicate important information regarding the cost and characteristics of infrastructure systems supporting sustainable human development.
+
+# The Indus Basin
+The Indus river basin located in South Asia is a transboundary river basin covering area in Pakistan, India, Afghanistan and China. The region is a cradle for human civilization, and the rivers running through the basin are critical for human survival and regional economic prosperity. For example, more than 80% of the food consumed in Pakistan and 30% of the food consumed in India is grown in the Indus basin []. In fact, the basin hosts the largest irrigation and canal network in the world []. Moreover the extreme elevation changes as water flows from the Himalayas in Tibet to the Indus delta in the Arabian Sea provide excellent opportunities to generate low-carbon hydropower generation. 
+
+<center>
+<div id="fig">
+![](figures\indus_where_is_it.png)
+<p id="figcap"> Geographic location of the Indus basin (note country borders are disputed in some regions).</p>
+</div>
+</center>
+
+Despite significant natural resources, the Indus basin has emerged as one of the most water-stressed regions in the world []. Almost all of the surface water within the basin has been allocated to specfic uses, and for parts of year the lower Indus rivers run dry with no flow reaching the sea [].  The history of the region also provides a complicated political backdrop that water management must fit into. Yet, the region has been able to thus far manage potential conflicts through implementation of the hugely successful Indus River Water Treaty [], a transboundary water management policy that promotes equitable access to water resources across the India-Pakistan divide []. The future nonetheless remains uncertain due to a rapidly expanding population (particularly in urban areas) and impacts of climate change. Integrated solutions are urgently needed to ensure the region avoids crisis and transforms towards a system that supports long-term human development while maintaining environmental integrity.      
 
 # Nexus Challenges
-Overview of nexus challenges
+Overview of nexus challenges 
+
+# Previous Work
+The Indus basin has been the subject of many previous studies. Notably, previous studies focus on identifying impacts of human activities and climate variability and change on the Indus system in specific parts of the basin. There remains a fundamental knowledge gap in terms of integrated solutions, i.e., how to address multiple interdependent challenges during system transformation from the perspective of the entire basin. For example, recent work led by the World Bank provides a comprehensive analysis of future conditions in Pakistan's portion of the basin including an assessment of adaptation options, but focuses mainly on adaptive solutions from the water perspective, thus missing broader transformations of energy and land systems throughout the entire river basin. New quantitative integrated assessment tools are needed to identify policies enabling sustainable management of the region's stressed water resources. 
 
 # Research Objectives
 Overview of research objectives
+
+# References
