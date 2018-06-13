@@ -320,12 +320,40 @@ div.tocify {
 
 <div id="message-basin" class="section level1">
 <h1>MESSAGE-Basin</h1>
+<p>MESSAGE-Basin is an integrated tool for water-energy-land nexus analysis. The tool combines a infrastructure plannning model with a hydrological model to provide improved insight into the cost and characteristics of development pathways that achieve sustainability targets (figure below). A geospatial database houses various input datasets that are shared between the model. Up- and down-scaling tools are used to soft-link and synchronize the infrastructure and hydrological modeling. The models are run sequentially to find pathways that achieve human development targets while maintaining environmental integrity. Naturalized water availability is initially simulated and passed (upscaled) to the infrastructure planning tool to constrain water use. The infrastructure planning tool finds a portfolio of technologies that can meet w. Optimal water use projections are then downscaled and run through the hydrological modeling tool to understand how the management impacts water sustainability at a high spatial resolution. The tool can thus be used to quantify policy implementation costs covering multiple sectors and development targets. The embedded tools along with the specific geographic and technological representation for the Indus region described is described below.</p>
+<center>
+<div id="fig">
+<img src="figures/message_basin_framework.png" />
+<p id="figcap">
+The MESSAGE-Basin modeling framework.
+</p>
+</div>
+</center>
 </div>
 <div id="messageix" class="section level1">
 <h1>MESSAGEix</h1>
+<p>The <a href="https://messageix.iiasa.ac.at/">MESSAGEix</a> modeling framework combines an engineering-economic model witha data warehouse for high-powered numerical scenario analysis (i.e., ix modeling platform) <span class="citation">(Huppmann et al. <a href="#ref-Huppmann2018">2018</a>)</span>. MESSAGE (Model for Energy Supply Strategy Alternatives and their General Environmental impact) was originally designed as a linear programming (LP) energy engineering model, but is readily extended to any type of technological supply-chain (i.e., infrastructure system). MESSAGE is a modeling framework for medium- to long-term infrastructure planning, policy analysis, and scenario development. Scenario analysis with MESSAGE is used in two major areas: 1) description of future uncertainties, and 2) the development of robust technology strategies and related investment portfolios to meet a range of user-specified policy objectives. The extension of MESSAGE to include water infrastructure systems is based on previous work that developed fundamental concepts for synchronizing water and energy planning over multiple spatial and temporal scales <span class="citation">(S. C. Parkinson et al. <a href="#ref-Parkinson2016a">2016</a>, <span class="citation">Khan et al. (<a href="#ref-Khan2018">2018</a>)</span>)</span>.</p>
 </div>
 <div id="cwatm" class="section level1">
 <h1>CWatM</h1>
+<p>The Community Water Model <a href="https://cwatm.github.io/">(CWatM)</a> provides a grid-based representation of terrestrial hydrology with a spatial resolution of 5 arc-minutes (grid-cells approximately 8 km wide near the equator) on a daily basis <span class="citation">(Burek et al. <a href="#ref-Burek2018">2018</a>)</span>. Similar to other large-scale hydrological models, CWaTM uses process-based equations to compute moisture storage in vertically stacked soil layers as well as the water exchange between the soil and the atmosphere and a groundwater reservoir. Run-off and groundwater recharge information from CWaTM computed at 5 arc-minutes are upscaled to the region-scale defined in MESSAGEix providing a consistent representation of water resource availability. CWaTM forcing data includes future climate conditions simulated and downscaled from global climate model. This provides foundation for deriving least-cost climate change adaptation strategies for infrastructure systems modeled in MESSSAGEix.</p>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-Burek2018">
+<p>Burek, Peter, Yusuke Satoh, Peter Greve, Taher Kahil, and Yoshi Wada. 2018. “Development of the CWatM (Community Water Model): A High Resolution Hydrological Model for Regional and Global Assessment of Integrated Water Management Options.” <em>In Preparation</em>, 1–14.</p>
+</div>
+<div id="ref-Huppmann2018">
+<p>Huppmann, Daniel, Matthew Gidden, Oliver Fricko, Peter Kolp, Clara Orthofer, Michael Pimmer, Adriano Vinca, Alessio Mastrucci, Keywan Riahi, and Volker Krey. 2018. “The Messageix Integrated Assessment Model and the Ix Modeling Platform (Ixmp).” <em>Environmental Modelling &amp; Software</em>. Elsevier.</p>
+</div>
+<div id="ref-Khan2018">
+<p>Khan, Zarrar, Pedro Linares, Martine Rutten, Simon Parkinson, Nils Johnson, and Javier García-González. 2018. “Spatial and Temporal Synchronization of Water and Energy Systems: Towards a Single Integrated Optimization Model for Long-Term Resource Planning.” <em>Applied Energy</em> 210: 499–517.</p>
+</div>
+<div id="ref-Parkinson2016a">
+<p>Parkinson, Simon C, Ned Djilali, Volker Krey, Oliver Fricko, Nils Johnson, Zarrar Khan, Khaled Sedraoui, and Abdulrahman H Almasoud. 2016. “Impacts of Groundwater Constraints on Saudi Arabia’s Low-Carbon Electricity Supply Strategy.” <em>Environmental Science &amp; Technology</em> 50 (4): 1653–62.</p>
+</div>
+</div>
 </div>
 
 <p id="footer">Copyright &copy; 2018 IIASA All rights reserved.</p>
