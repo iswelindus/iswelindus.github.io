@@ -41,14 +41,14 @@ There are immense development challenges in the Indus stemming from the water-en
 - Agricultural practices often involve burning of crop residues left on fields [@Cusworth2018]. The combustion is a major source of air pollution throughout the region. 
 
 # Previous Work
-The Indus basin has been the subject of many previous studies. Notably, previous studies focus on identifying impacts of human activities and climate variability and change on the Indus system. There remains a fundamental knowledge gap in terms of integrated solutions, i.e., how to address multiple interdependent challenges during system transformation from the perspective of the entire basin. For example, recent work led by the World Bank provides a comprehensive analysis of future conditions in Pakistan's portion of the basin including an assessment of adaptation options, but focuses mainly on adaptive solutions from the water perspective, thus missing broader transformations of energy and land systems across basin. New quantitative integrated assessment tools are needed to identify policies enabling sustainable management of the region's stressed water resources. 
+The Indus basin has been the subject of many previous studies. Notably, previous studies focus on identifying impacts of human activities and climate variability and change on the Indus system, e.g., [@Fowler2006, @Immerzeel2010, @Cheema2014, @Lutz2016, @Mukhopadhyay2015, @Wescoat2018]. These studies provide invaluable foundation for understanding Indus basin challenges. Yet, there remains a fundamental knowledge gap in terms of integrated solutions, i.e., how to address multiple interdependent challenges during system transformation from the perspective of the entire basin. For example, recent work led by the World Bank provides a comprehensive analysis of future conditions in the basin including an assessment of adaptation options [@Yu2013, @Yang2014, @Yang2016], but focused mainly on adaptive solutions from the water perspective in Pakistan, thus missing broader transformations of energy and land systems across the basin. New quantitative integrated assessment tools are needed to identify policies enabling sustainable management of the region's stressed water resources. 
 
 # Research Objectives
 The objective of the research is to develop a new nexus tool to identify sustainable development pathways at the river basin-scale i.e., MESSAGE-Indus. The framework aims at filling the knowledge gap identified above by incorporating the following features: 
 
 - Balances human development and environmental objectives
 
-- Integrates water energy infrastructure planning with land-use management
+- Integrates water and energy infrastructure planning with land-use management across the entire basin
 
 - Incorporates key global change processes in the assessment of resource availability
 
