@@ -39,15 +39,82 @@ MESSAGE-Indus utilizes the Shared Socioeconomic Pathways (SSP) to define demogra
 
 # Hydro-climate
 
-Hydro-climate data associated with MESSAGE-Indus is harmonized with the Community Water Model [(CWatM)](https://cwatm.github.io/). Daily run-off simulated with CWaTM is aggregated into each BCU to estimate average monthly flow into the reduced form river network introduced above. Air temperature and evapotranspiration rates are used to estimate demand intensities in the municipal sector (described in greater detail below). Evaporation rates are also used to estimate losses from reservoirs assuming a general form reservoir systems. Alternative future climate scenarios are considered by integrating hydro-climate projections consistent with the Representative Concentration Pathways (RCP) [@vanVuuren2011]. MESSAGE-Indus is thus able to explore cost-optimal pathways that adapt to climate change. 
+Hydro-climate data associated with MESSAGE-Indus is harmonized with the Community Water Model [(CWatM)](https://cwatm.github.io/). Daily run-off simulated with CWaTM is aggregated into each BCU to estimate average monthly flow into the reduced form river network introduced above. Air temperature and evapotranspiration rates are used to estimate demand intensities in the municipal sector (described in greater detail below). Evaporation rates are also used to estimate losses from reservoirs assuming a general form reservoir systems. Likewise, on-field irrigation water requirements are calculated as part of the CWaT simulation based on the modeled evapotranspiration and current cropping pattern. This data is input to MESSAGEix to define irrigation water requirements. 
+
+Alternative future climate scenarios are considered by integrating hydro-climate projections consistent with the Representative Concentration Pathways (RCP) [@vanVuuren2011]. MESSAGE-Indus is thus able to explore cost-optimal pathways that adapt to climate change. 
 
 Significant uncertainty is associated with the Indus hydro-climate projections. To avoid potential errors, the flows into the reduced form network are calibrated to match the historical flows considered in the Indus Water Treaty. Future climate change impacts are then imposed onto the flows by scaling the seasonal pattern changes using the projections from CWaTM. Ongoing work will consider decision-scaling methods to test a range of plausible climate futures and to identify pathways that are particular risky to Indus infrastructure planning [@Brown2012]. 
 
 # Demands
 
+A sectoral approach is used to define demands in MESSAGE-Indus. Urban domestic, rural domestic and manufacturing water withdrawals and return-flows are exogenous parameters in the model and are estimated at 7.5 arc-minutes using the SSP demographic data described above and statistical models fit to historical national withdrawals and return-flows reported by AQUASTAT [@Parkinson2016b]. Likewise electricity demands are estimated based on statistical models fit to data from IEA, and projected forward using the SSP demographic data described above. Preliminary results aggregated across the bain are depicted below. This data will be calibrated to city- or regional-scale data in the future. 
+
+<center>
+<div id="fig">
+![](figures\indus_demands.png)
+<p id="figcap"> Projected urban and rural electricity and water demands aggregated to the basin-level.</p>
+</div>
+</center>
+<br><br>
+
+On-field irrigation water withdrawals are calculated with CWaTM to enable to consistent representation across the infrastructure and hydrological model. Namely, water requirements for existing crops are estimated based on growing season (kharif and rabi) using modeled evapotranspiration, crop coefficients and the soil water balance simulated in CWaTM. CWaTM also links the irrigation to groundwater recharge.These results are aggregated to the BCU-level for implementation in MESSAGEix.
+
 # Water Infrastructure
 
+## Supply technologies
+
+
+## Canals
+
 # Energy Infrastructure
+
+## Supply technologies
+
+<p id="tabcap"> Power generation technologies considered in MESSAGE-Indus </p> 									
+|	Technology	|	Investment cost	            |	Fixed cost	            |	Variable cost |
+|---------|-------------------|-------------------------------|---------------------------------------------|
+|	Natural gas combined-cycle |	| | |
+|	Natural gas single-cycle	  |		 | | |
+|	Nature gas turbine	   |		 | | |		
+|	Oil combined-cycle	   |		 | | |		 
+|	Oil single-cycle	 |		 | | |	
+|	Oil turbine	 |		 | | |	
+|	Diesel genset	 |		 | | |	
+|	Pulverized coal  |		 | | |	
+|	Integrated gasification combined-cycle	 |		 | | |	
+|	Nuclear reactor	 |		 | | |
+| Hydropower with reservoir  |		 | | |
+| Run-of-river hydropower  |		 | | |
+| Wind turbine  |		 | | |
+| Solar photovoltaic  |		 | | |
+
+
+## Transmission
+
+<center>
+<div id="fig">
+![](figures\indus_transmission.png)
+<p id="figcap"> Electricity transmission in the Indus from OpenStreetMap.</p>
+</div>
+</center>
+<br><br>
+
+## Hydropower potential
+
+## Wind and solar potential
+
+
+<center>
+<div id="fig">
+![](figures\renewables_indus.png)
+<p id="figcap"> Projected urban and rural electricity and water demands aggregated to the basin-level.</p>
+</div>
+</center>
+<br><br>
+
+
+
+[Renewables.ninja](https://www.renewables.ninja/)
 
 # Land-use
 
