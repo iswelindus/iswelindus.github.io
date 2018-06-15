@@ -120,7 +120,6 @@ On-field irrigation water withdrawals are calculated with CWaTM to enable to con
 
 ## Hydropower potential
 
-<p id="tabcap"> Recent and planned hydropower projects in the Indus </p> 	
 | Name | Country | Lon |	Lat |	Capacity [ MW ] | Storage [ km3 ] | Opening |
 |------|---------|-----|------|-----------------|-----------------|---------|
 | Azad Pattan | Pakistan | 73.57 | 33.77 | 700 | - | 2022 |
@@ -150,17 +149,18 @@ On-field irrigation water withdrawals are calculated with CWaTM to enable to con
 | Kwar  |	India |	75.83 |	33.36 |	540 | - | proposed |
 | Kiru  |	India |	75.89 |	33.35 |	624 | - |	proposed |
 | Bursar  |	India |	75.70 |	33.39	| 800	| 0.6	| proposed |
-| Ujh project |	India |	75.52 |	32.56 |	212 | - |	proposed |
+| Ujh  |	India |	75.52 |	32.56 |	212 | - |	proposed |
+<p id="tabcap"> Recent and planned hydropower projects in the Indus </p> 	
 
 
+## Wind and solar PV potential
 
-## Wind and solar potential
-
+Wind and solar PV potential is estimated with data from [Renewables.ninja](https://www.renewables.ninja/) [@Pfenninger2016, @Staffell2016]. The datasets provide estimates of the hourly output from wind turbines and solar PV systems at 0.05 arc-minutes (grid-cells approximately 5 km wide near the equator) from 1960-2016. An example of the data aggregated to the monthly scale for 2013 is depcited below. Total potential in each BCU is estimated using exclusion zone maps that define areas unsuitable for technology siting due to terrain slope, elevation, existing land-use (e.g., populated, forested or protected areas), distance to populated areas, and siting density [@Mentis2015, @Eurek2017].    
 
 <center>
 <div id="fig">
 ![](figures\renewables_indus.png)
-<p id="figcap"> Projected urban and rural electricity and water demands aggregated to the basin-level.</p>
+<p id="figcap"> Monthly solar PV and wind capacity factor for 2013 from [Renewables.ninja](https://www.renewables.ninja/).</p>
 </div>
 </center>
 <br><br>
