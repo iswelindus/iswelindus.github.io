@@ -1,38 +1,26 @@
-name: "my-website"
+name: my-website
 navbar:
-  title: "MESSAGE-Indus"
+  title: '<img id="logo" style="width: 60px;" src="figures/nest_logo.png" />'
   left:
-    - text: "Overview"
-      href: index.html
-    - text: "Framework"
-      href: modeling_framework.html
-    - text: "Data"
-      href: input_data.html
-    - text: "Analysis"
-      href: analysis.html
-    - text: "Results"
-      href: results.html
-    - text: "Team"
-      href: team.html
-#    - text: "Data"
-#      href: data.html
-#    - text: "Model"
-#      href: model.html
-#    - text: "Baseline"
-#      href: baseline.html
-#    - text: "Pathways"
-#      href: pathways.html
-#    - text: "Analysis"
-#      href: analysis.html
-  right:
-    - text: "Library"
-      icon: fa-book
-      href: library.html
+  - text: Framework
+    href: modeling_framework.html
+  - text: Applications
+    href: input_data.html
+  - text: Team
+    href: team.html
+  right:  
+  - text: IIASA
+    href: http://www.iiasa.ac.at  
+  - text: UVic
+    href: https://www.uvic.ca/research/centres/iesvic/index.php  
 output:
   html_document:
-    theme: cosmo
-    highlight: textmate
-    include:
+    theme: lumen
+    highlight: default
+    includes:
       after_body: footer.html
     css: styles.css
-output_dir: "."
+    lib_dir: site_libs
+    self_contained: no
+output_dir: '.'
+
