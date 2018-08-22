@@ -1,5 +1,5 @@
 ---
-title: "Data"
+title: "Applications"
 bibliography: bib_iswelindus.bib
 link-citations: true
 output:
@@ -8,167 +8,176 @@ output:
     toc_float: true  
 ---
 
-# Basin Delineation
-A river basin is defined by a geographic area where all incident precipitation converted to runoff is directed towards a single outlet to the sea (or inland lake). In this work, the Indus river basin is delineated based on this hydrological definition using the [HydroBASINS](http://www.hydrosheds.org/page/hydrobasins) global dataset. HydroBASINS is a series of polygon layers that depict basin and sub-basin delineations at a global scale. Using hydrologically corrected digital elevation data from NASA's Shuttle Radar Topography Mission at 15 arc-second resolution, watersheds (or sub-basins) are delineated in a consistent manner in HydroBASINS at different scales, and a hierarchical sub-basin breakdown is created following the topological concept of the Pfafstetter coding system [@Lehner2013]. In MESSAGE-Indus, the basin is dissaggregated into sub-basins using the hierarchical breakdown to enable consistent tracking of surface water flows across the basin. 
+# Indus 
 
-Transboundary effects are a critical feature of basin management in many regions, including in the Indus where existing allocation policies (e.g., the Indus Water Treaty) are driving forces. To enable a transboundary perspective, MESSAGE-Indus further intersects the sub-basin boundaries from HydroBASINS with country administrative units from the Global Adminstrative Areas database [(GADM)](https://gadm.org/). Like HydroBASINS, GADM also features a hierarchical nesting of higher order administrative regions (e.g., provinces, districts, etc.) for some regions. The current version of MESSAGE-Indus utilizes country boundaries but also has the capabilities to zoom into the provinces of India, Pakistan and Afghanistan. 
+# Zambezi
 
-The intersection of the administrative and sub-basin units results in a new classification of spatial units referred to as Basin Country Units (BCU). A reduced-form network is estimated between BCUs using flow-accumulation data from hydroBASINS at 15 arc-seconds. Namely, the direction of flow between BCUs is identified by examining the locations surrounding the maximum flow-accumulation within each BCU (i.e., the main BCU outlet) and selecting the adjacent cell within a different BCU that has greater flow-accumulation. If an adjacent cell with greater flow-accumulation can not be identified, the BCU must be an inland sink or outlet to the sea. The figure below depicts the derived BCUs and reduced form network for the Indus river basin. In total there are 24 spatial units.  
+<!-- # Basin Delineation -->
+<!-- A river basin is defined by a geographic area where all incident precipitation converted to runoff is directed towards a single outlet to the sea (or inland lake). In this work, the Indus river basin is delineated based on this hydrological definition using the [HydroBASINS](http://www.hydrosheds.org/page/hydrobasins) global dataset. HydroBASINS is a series of polygon layers that depict basin and sub-basin delineations at a global scale. Using hydrologically corrected digital elevation data from NASA's Shuttle Radar Topography Mission at 15 arc-second resolution, watersheds (or sub-basins) are delineated in a consistent manner in HydroBASINS at different scales, and a hierarchical sub-basin breakdown is created following the topological concept of the Pfafstetter coding system [@Lehner2013]. In MESSAGE-Indus, the basin is dissaggregated into sub-basins using the hierarchical breakdown to enable consistent tracking of surface water flows across the basin.  -->
 
+<!-- Transboundary effects are a critical feature of basin management in many regions, including in the Indus where existing allocation policies (e.g., the Indus Water Treaty) are driving forces. To enable a transboundary perspective, MESSAGE-Indus further intersects the sub-basin boundaries from HydroBASINS with country administrative units from the Global Adminstrative Areas database [(GADM)](https://gadm.org/). Like HydroBASINS, GADM also features a hierarchical nesting of higher order administrative regions (e.g., provinces, districts, etc.) for some regions. The current version of MESSAGE-Indus utilizes country boundaries but also has the capabilities to zoom into the provinces of India, Pakistan and Afghanistan.  -->
 
-<center>
-<div id="fig">
-![](figures\indus_map_cmb.png)
-<p id="figcap"> Delineation of the Indus river basin into Basin Country Units (BCU).</p>
-</div>
-</center>
-
-<br><br>
-
-# Demographics
-
-MESSAGE-Indus utilizes the Shared Socioeconomic Pathways (SSP) to define demographic trajectories. The SSPs are part of a new framework that the climate change research community has adopted to facilitate the integrated analysis of future climate impacts, vulnerabilities, adaptation, and mitigation. The SSPs consist of five narratives that bridge challenges and opportunities associated with mitigation and adaptation to climate change [@ONeill2017]. Quantitative, spatially-explicit projections of population, urbanization and GDP consistent with the SSP narratives were developed in previous work [@Samir2017, @Dellink2017, @Jiang2017, @Jones2016, @Gidden2018]. These data are available at 7.5 arc-minutes covering a time span of 2010 to 2100 in decadal time-steps, and are used to parameterize socioeconomic inputs in MESSSAGE-Indus. The figure below depicts an example of the SSP projections estimated for the Indus basin delineation shown above aggregated by country for the year 2050.
-
-<center>
-<div id="fig">
-![](figures\indus_barplot_ssp.png)
-<p id="figcap"> Socioeconomic projections for the Indus basin consistent with SSP1, 2 and 5.</p>
-</div>
-</center>
-<br><br>
-
-# Hydro-climate
-
-Hydro-climate data associated with MESSAGE-Indus is harmonized with the Community Water Model [(CWatM)](https://cwatm.github.io/). Daily run-off simulated with CWaTM is aggregated into each BCU to estimate average monthly flow into the reduced form river network introduced above. Air temperature and evapotranspiration rates are used to estimate demand intensities in the municipal sector (described in greater detail below). Evaporation rates are also used to estimate losses from reservoirs assuming a general form reservoir systems. Likewise, on-field irrigation water requirements are calculated as part of the CWaT simulation based on the modeled evapotranspiration and current cropping pattern. This data is input to MESSAGEix to define irrigation water requirements. 
-
-Alternative future climate scenarios are considered by integrating hydro-climate projections consistent with the Representative Concentration Pathways (RCP) [@vanVuuren2011]. MESSAGE-Indus is thus able to explore cost-optimal pathways that adapt to climate change. 
-
-Significant uncertainty is associated with the Indus hydro-climate projections. To avoid potential errors, the flows into the reduced form network are calibrated to match the historical flows considered in the Indus Water Treaty. Future climate change impacts are then imposed onto the flows by scaling the seasonal pattern changes using the projections from CWaTM. Ongoing work will consider decision-scaling methods to test a range of plausible climate futures and to identify pathways that are particular risky to Indus infrastructure planning [@Brown2012]. 
-
-# Demands
-
-A sectoral approach is used to define demands in MESSAGE-Indus. Urban domestic, rural domestic and manufacturing water withdrawals and return-flows are exogenous parameters in the model and are estimated at 7.5 arc-minutes using the SSP demographic data described above and statistical models fit to historical national withdrawals and return-flows reported by AQUASTAT [@Parkinson2016b]. Likewise electricity demands are estimated based on statistical models fit to data from IEA, and projected forward using the SSP demographic data described above. Preliminary results aggregated across the bain are depicted below. This data will be calibrated to city- or regional-scale data in the future. 
-
-<center>
-<div id="fig">
-![](figures\indus_demands.png)
-<p id="figcap"> Projected urban and rural electricity and water demands aggregated to the basin-level.</p>
-</div>
-</center>
-<br><br>
-
-On-field irrigation water withdrawals are calculated with CWaTM to enable to consistent representation across the infrastructure and hydrological model. Namely, water requirements for existing crops are estimated based on growing season (kharif and rabi) using modeled evapotranspiration, crop coefficients and the soil water balance simulated in CWaTM. CWaTM also links the irrigation to groundwater recharge.These results are aggregated to the BCU-level for implementation in MESSAGEix.
-
-# Water Infrastructure
-
-## Supply technologies
+<!-- The intersection of the administrative and sub-basin units results in a new classification of spatial units referred to as Basin Country Units (BCU). A reduced-form network is estimated between BCUs using flow-accumulation data from hydroBASINS at 15 arc-seconds. Namely, the direction of flow between BCUs is identified by examining the locations surrounding the maximum flow-accumulation within each BCU (i.e., the main BCU outlet) and selecting the adjacent cell within a different BCU that has greater flow-accumulation. If an adjacent cell with greater flow-accumulation can not be identified, the BCU must be an inland sink or outlet to the sea. The figure below depicts the derived BCUs and reduced form network for the Indus river basin. In total there are 24 spatial units.   -->
 
 
-## Canals
+<!-- <center> -->
+<!-- <div id="fig"> -->
+<!-- ![](figures\indus_map_cmb.png) -->
+<!-- <p id="figcap"> Delineation of the Indus river basin into Basin Country Units (BCU).</p> -->
+<!-- </div> -->
+<!-- </center> -->
 
-<p id="tabcap"> Inter-river and inter-basin linkages (inter-basin linkages outlets are outside the basin) </p> 	
-| Name | Capacity [cusecs] |	Length [km] |	Inlet Lon |	Inlet Lat |	Outlet Lon |	Outlet Lat |
-|------|------------------------|-------------|-----------|-----------|------------|-------------|
-| Rasul-Qadirabad |	538 |	 44 |	 73.52 |	32.68 |	73.71 |	32.34 |
-| Qadirabad-Bulloki |	527 |	129 |	73.69 |	32.32 |	73.91 |	31.30 |
-| Balloki-Sulemanki |	524 |	87 | 73.86 |	31.22 |	73.92 |	30.50 |
-| Trimmu-Sidhnai | 312 | 64 |	72.15 |	31.14 |	72.19 |	30.57 |
-| Sidhnai-Mailsi |	283 |	94 |	72.16 |	30.57 |	72.25 |	29.73 |
-| Chashma-Jhelum |	615 |	135 |	71.38 |	32.44 |	72.22 |	31.97 |
-| Taunsa-Panjnad |	340 |	72 | 70.85 | 30.51 | 71.37 | 30.27 |
-| Marala-Ravi |	622 |	97 | 74.47 | 32.67 | 74.62 |	31.90 |
-| Ravi-Bedian |	142 |	82 |	74.47 |	31.72 |	74.18 |	30.73 |
-| Bambanwala-Ravi |	142 |	82 |	74.29 |	32.36 |	74.47 |	31.72 |
-| Chenab-Bambanwala |	453 |	28 | 74.47 |	32.67 |	74.29 |	32.36 |
-| Chenab-Ravi |	311 |	44 |	74.29 |	32.36 |	74.08 |	31.41 |
-| Indira-Ghandi | 138 | 649 | 74.95 |	31.15 | - | - |
-| Sutlej-Yamuna | 136 | 649 | 76.37 |	31.38 | - | - |
-| Kinjhar-Karachi | 28 | 150 | 67.99 | 24.84 | - | - |
+<!-- <br><br> -->
 
-# Energy Infrastructure
+<!-- # Demographics -->
 
-## Supply technologies
+<!-- MESSAGE-Indus utilizes the Shared Socioeconomic Pathways (SSP) to define demographic trajectories. The SSPs are part of a new framework that the climate change research community has adopted to facilitate the integrated analysis of future climate impacts, vulnerabilities, adaptation, and mitigation. The SSPs consist of five narratives that bridge challenges and opportunities associated with mitigation and adaptation to climate change [@ONeill2017]. Quantitative, spatially-explicit projections of population, urbanization and GDP consistent with the SSP narratives were developed in previous work [@Samir2017, @Dellink2017, @Jiang2017, @Jones2016, @Gidden2018]. These data are available at 7.5 arc-minutes covering a time span of 2010 to 2100 in decadal time-steps, and are used to parameterize socioeconomic inputs in MESSSAGE-Indus. The figure below depicts an example of the SSP projections estimated for the Indus basin delineation shown above aggregated by country for the year 2050. -->
 
-<p id="tabcap"> Power generation technologies considered in MESSAGE-Indus </p> 									
-|	Technology	|	Investment cost	            |	Fixed cost	            |	Variable cost |
-|---------|-------------------|-------------------------------|---------------------------------------------|
-|	Natural gas combined-cycle |	| | |
-|	Natural gas single-cycle	  |		 | | |
-|	Nature gas turbine	   |		 | | |		
-|	Oil combined-cycle	   |		 | | |		 
-|	Oil single-cycle	 |		 | | |	
-|	Oil turbine	 |		 | | |	
-|	Diesel genset	 |		 | | |	
-|	Pulverized coal  |		 | | |	
-|	Integrated gasification combined-cycle	 |		 | | |	
-|	Nuclear reactor	 |		 | | |
-| Hydropower with reservoir  |		 | | |
-| Run-of-river hydropower  |		 | | |
-| Wind turbine  |		 | | |
-| Solar photovoltaic  |		 | | |
+<!-- <center> -->
+<!-- <div id="fig"> -->
+<!-- ![](figures\indus_barplot_ssp.png) -->
+<!-- <p id="figcap"> Socioeconomic projections for the Indus basin consistent with SSP1, 2 and 5.</p> -->
+<!-- </div> -->
+<!-- </center> -->
+<!-- <br><br> -->
 
+<!-- # Hydro-climate -->
 
-## Transmission
+<!-- Hydro-climate data associated with MESSAGE-Indus is harmonized with the Community Water Model [(CWatM)](https://cwatm.github.io/). Daily run-off simulated with CWaTM is aggregated into each BCU to estimate average monthly flow into the reduced form river network introduced above. Air temperature and evapotranspiration rates are used to estimate demand intensities in the municipal sector (described in greater detail below). Evaporation rates are also used to estimate losses from reservoirs assuming a general form reservoir systems. Likewise, on-field irrigation water requirements are calculated as part of the CWaT simulation based on the modeled evapotranspiration and current cropping pattern. This data is input to MESSAGEix to define irrigation water requirements.  -->
 
-<center>
-<div id="fig">
-![](figures\indus_transmission.png)
-<p id="figcap"> Electricity transmission in the Indus from OpenStreetMap.</p>
-</div>
-</center>
-<br><br>
+<!-- Alternative future climate scenarios are considered by integrating hydro-climate projections consistent with the Representative Concentration Pathways (RCP) [@vanVuuren2011]. MESSAGE-Indus is thus able to explore cost-optimal pathways that adapt to climate change.  -->
 
-## Hydropower potential
+<!-- Significant uncertainty is associated with the Indus hydro-climate projections. To avoid potential errors, the flows into the reduced form network are calibrated to match the historical flows considered in the Indus Water Treaty. Future climate change impacts are then imposed onto the flows by scaling the seasonal pattern changes using the projections from CWaTM. Ongoing work will consider decision-scaling methods to test a range of plausible climate futures and to identify pathways that are particular risky to Indus infrastructure planning [@Brown2012].  -->
 
-| Name | Country | Lon |	Lat |	Capacity [ MW ] | Storage [ km3 ] | Opening |
-|------|---------|-----|------|-----------------|-----------------|---------|
-| Azad Pattan | Pakistan | 73.57 | 33.77 | 700 | - | 2022 |
-| Patrind |	Pakistan |	73.43 |	34.34 |	150 | - | 	2017 |
-| Gulpur | Pakistan | 73.86 | 33.46 | 102 | - | 2019 |
-| Suki Kinari |	Pakistan |	73.54 |	34.72 |	870 | - |		2022 |
-| Kohala | Pakistan | 73.65 | 34.20 | 1100 | - | 2025 |
-| Athmuqam | Pakistan | 73.91 | 34.59 | 350 | - | 2020 |
-| Golen Gol | Pakistan | 72.01 |	35.92 |	58 | - | 2018 |
-| Mahl |	Pakistan |	73.57 |	34.92 |	590 | - |	2025 |
-| Neelum-Jhelum | Pakistan | 73.72 | 34.39 | 968	| - | 2018 |
-| Diamer-Bhasha | Pakistan |	73.74 |	35.52 |	4500 |	10.5 |	2023 |
-| Tarbela Extension | Pakistan | 72.70 | 34.09 | 1410 | - | 2018 |
-| Karot | Pakistan | 73.60 | 33.60 | 720 | - | 2021 |
-| Kalabagh |	Pakistan |	71.61 |	32.96 |	3600 |	7.5 |	proposed |
-| Munda | Pakistan | 71.53 | 34.35 | 740 | 0.9 | proposed |
-| Bunji |	Pakistan |	74.62 |	35.64 |	7100 |	0.2 |	proposed |
-| Dasu | Pakistan | 73.19 | 35.32 | 4320 | 0.8 |	2021 |
-| Akhori |	Pakistan |	72.45 |	33.69 |	600 |	8.6 |	2025 |
-| Azad Pattan | Pakistan | 73.57 | 33.77 | 700 | - | 2022 |
-| Sharmai | Pakistan |	72.01 |	35.28 |	150 |	0.3 |	2023 |
-| Kishanganga | India | 74.76 | 34.65 | 360 | - | 2018 |
-| Sawalkote | India |	75.08 |	33.17 |	1856 | - |	proposed |
-| Kirthai I |	India |	75.20 |	33.39 |	390	| - |	proposed |
-| Kirthai II | India |	75.2 |	33.39 |	930 | - |	proposed |
-| Pakal Dul |	India |	75.81 |	33.46 |	1000 |	0.1 |	proposed |
-| Kwar  |	India |	75.83 |	33.36 |	540 | - | proposed |
-| Kiru  |	India |	75.89 |	33.35 |	624 | - |	proposed |
-| Bursar  |	India |	75.70 |	33.39	| 800	| 0.6	| proposed |
-| Ujh  |	India |	75.52 |	32.56 |	212 | - |	proposed |
-<p id="tabcap"> Recent and planned hydropower projects in the Indus </p> 	
+<!-- # Demands -->
 
+<!-- A sectoral approach is used to define demands in MESSAGE-Indus. Urban domestic, rural domestic and manufacturing water withdrawals and return-flows are exogenous parameters in the model and are estimated at 7.5 arc-minutes using the SSP demographic data described above and statistical models fit to historical national withdrawals and return-flows reported by AQUASTAT [@Parkinson2016b]. Likewise electricity demands are estimated based on statistical models fit to data from IEA, and projected forward using the SSP demographic data described above. Preliminary results aggregated across the bain are depicted below. This data will be calibrated to city- or regional-scale data in the future.  -->
 
-## Wind and solar PV potential
+<!-- <center> -->
+<!-- <div id="fig"> -->
+<!-- ![](figures\indus_demands.png) -->
+<!-- <p id="figcap"> Projected urban and rural electricity and water demands aggregated to the basin-level.</p> -->
+<!-- </div> -->
+<!-- </center> -->
+<!-- <br><br> -->
 
-Wind and solar PV potential is estimated with data from [Renewables.ninja](https://www.renewables.ninja/) [@Pfenninger2016, @Staffell2016]. The datasets provide estimates of the hourly output from wind turbines and solar PV systems at 0.05 arc-minutes (grid-cells approximately 5 km wide near the equator) from 1960-2016. An example of the data aggregated to the monthly scale for 2013 is depcited below. Total potential in each BCU is estimated using exclusion zone maps that define areas unsuitable for technology siting due to terrain slope, elevation, existing land-use (e.g., populated, forested or protected areas), distance to populated areas, and siting density [@Mentis2015, @Eurek2017].    
+<!-- On-field irrigation water withdrawals are calculated with CWaTM to enable to consistent representation across the infrastructure and hydrological model. Namely, water requirements for existing crops are estimated based on growing season (kharif and rabi) using modeled evapotranspiration, crop coefficients and the soil water balance simulated in CWaTM. CWaTM also links the irrigation to groundwater recharge.These results are aggregated to the BCU-level for implementation in MESSAGEix. -->
 
-<center>
-<div id="fig">
-![](figures\renewables_indus.png)
-<p id="figcap"> Monthly solar PV and wind capacity factor for 2013 from [Renewables.ninja](https://www.renewables.ninja/).</p>
-</div>
-</center>
-<br><br>
+<!-- # Water Infrastructure -->
 
+<!-- ## Technologies -->
 
+<!-- <p id="tabcap"> Power generation technologies considered in MESSAGE-Indus </p> 									 -->
+<!-- |	Technology	|	Investment cost	            |	Fixed cost	            |	Variable cost | -->
+<!-- |---------|-------------------|-------------------------------|---------------------------------------------| -->
+<!-- |	Surface water diversion |	| | | -->
+<!-- |	Diesel groundwater pump	  |		 | | | -->
+<!-- |	Electric groundwater pump	   |		 | | |		 -->
+<!-- |	Urban piped water distribution |		 | | |		  -->
+<!-- |	Rural piped water distribution |		 | | |	 -->
+<!-- |	Urban wastewater treatment |		 | | |	 -->
+<!-- |	Rural wastewater treatment  |		 | | |	 -->
+<!-- |	Urban wastewater recycling	|		 | | |	 -->
+<!-- |	Rural wastewater recycling	|		 | | | -->
+<!-- | Hydropower with reservoir  |		 | | | -->
+<!-- | Run-of-river hydropower  |		 | | | -->
+<!-- | Flood irrigation  |		 | | | -->
+<!-- | Drip irrigation  |		| | | -->
+<!-- | Sprinkler irrigation  |	 | | | -->
 
-[Renewables.ninja](https://www.renewables.ninja/)
+<!-- <p id="tabcap"> Inter-river and inter-basin linkages (inter-basin linkages outlets are outside the basin) </p> 	 -->
+<!-- | Name | Capacity [cusecs] |	Length [km] |	Inlet Lon |	Inlet Lat |	Outlet Lon |	Outlet Lat | -->
+<!-- |------|------------------------|-------------|-----------|-----------|------------|-------------| -->
+<!-- | Rasul-Qadirabad |	538 |	 44 |	 73.52 |	32.68 |	73.71 |	32.34 | -->
+<!-- | Qadirabad-Bulloki |	527 |	129 |	73.69 |	32.32 |	73.91 |	31.30 | -->
+<!-- | Balloki-Sulemanki |	524 |	87 | 73.86 |	31.22 |	73.92 |	30.50 | -->
+<!-- | Trimmu-Sidhnai | 312 | 64 |	72.15 |	31.14 |	72.19 |	30.57 | -->
+<!-- | Sidhnai-Mailsi |	283 |	94 |	72.16 |	30.57 |	72.25 |	29.73 | -->
+<!-- | Chashma-Jhelum |	615 |	135 |	71.38 |	32.44 |	72.22 |	31.97 | -->
+<!-- | Taunsa-Panjnad |	340 |	72 | 70.85 | 30.51 | 71.37 | 30.27 | -->
+<!-- | Marala-Ravi |	622 |	97 | 74.47 | 32.67 | 74.62 |	31.90 | -->
+<!-- | Ravi-Bedian |	142 |	82 |	74.47 |	31.72 |	74.18 |	30.73 | -->
+<!-- | Bambanwala-Ravi |	142 |	82 |	74.29 |	32.36 |	74.47 |	31.72 | -->
+<!-- | Chenab-Bambanwala |	453 |	28 | 74.47 |	32.67 |	74.29 |	32.36 | -->
+<!-- | Chenab-Ravi |	311 |	44 |	74.29 |	32.36 |	74.08 |	31.41 | -->
+<!-- | Indira-Ghandi | 138 | 649 | 74.95 |	31.15 | - | - | -->
+<!-- | Sutlej-Yamuna | 136 | 649 | 76.37 |	31.38 | - | - | -->
+<!-- | Kinjhar-Karachi | 28 | 150 | 67.99 | 24.84 | - | - | -->
 
-# Land-use
+<!-- # Energy Infrastructure -->
 
-# References
+<!-- <p id="tabcap"> Power generation technologies considered in MESSAGE-Indus </p> 									 -->
+<!-- |	Technology	|	Investment cost	            |	Fixed cost	            |	Variable cost | -->
+<!-- |---------|-------------------|-------------------------------|---------------------------------------------| -->
+<!-- |	Natural gas combined-cycle |	| | | -->
+<!-- |	Natural gas single-cycle	  |		 | | | -->
+<!-- |	Nature gas turbine	   |		 | | |		 -->
+<!-- |	Oil combined-cycle	   |		 | | |		  -->
+<!-- |	Oil single-cycle	 |		 | | |	 -->
+<!-- |	Oil turbine	 |		 | | |	 -->
+<!-- |	Diesel genset	 |		 | | |	 -->
+<!-- |	Pulverized coal  |		 | | |	 -->
+<!-- |	Integrated gasification combined-cycle	 |		 | | |	 -->
+<!-- |	Nuclear reactor	 |		 | | | -->
+<!-- | Hydropower with reservoir  |		 | | | -->
+<!-- | Run-of-river hydropower  |		 | | | -->
+<!-- | Wind turbine  |		 | | | -->
+<!-- | Solar photovoltaic  |		 | | | -->
+
+<!-- <center> -->
+<!-- <div id="fig"> -->
+<!-- ![](figures\indus_transmission.png) -->
+<!-- <p id="figcap"> Electricity transmission in the Indus from OpenStreetMap.</p> -->
+<!-- </div> -->
+<!-- </center> -->
+<!-- <br><br> -->
+
+<!-- ## Hydropower potential -->
+
+<!-- | Name | Country | Lon |	Lat |	Capacity [ MW ] | Storage [ km3 ] | Opening | -->
+<!-- |------|---------|-----|------|-----------------|-----------------|---------| -->
+<!-- | Azad Pattan | Pakistan | 73.57 | 33.77 | 700 | - | 2022 | -->
+<!-- | Patrind |	Pakistan |	73.43 |	34.34 |	150 | - | 	2017 | -->
+<!-- | Gulpur | Pakistan | 73.86 | 33.46 | 102 | - | 2019 | -->
+<!-- | Suki Kinari |	Pakistan |	73.54 |	34.72 |	870 | - |		2022 | -->
+<!-- | Kohala | Pakistan | 73.65 | 34.20 | 1100 | - | 2025 | -->
+<!-- | Athmuqam | Pakistan | 73.91 | 34.59 | 350 | - | 2020 | -->
+<!-- | Golen Gol | Pakistan | 72.01 |	35.92 |	58 | - | 2018 | -->
+<!-- | Mahl |	Pakistan |	73.57 |	34.92 |	590 | - |	2025 | -->
+<!-- | Neelum-Jhelum | Pakistan | 73.72 | 34.39 | 968	| - | 2018 | -->
+<!-- | Diamer-Bhasha | Pakistan |	73.74 |	35.52 |	4500 |	10.5 |	2023 | -->
+<!-- | Tarbela Extension | Pakistan | 72.70 | 34.09 | 1410 | - | 2018 | -->
+<!-- | Karot | Pakistan | 73.60 | 33.60 | 720 | - | 2021 | -->
+<!-- | Kalabagh |	Pakistan |	71.61 |	32.96 |	3600 |	7.5 |	proposed | -->
+<!-- | Munda | Pakistan | 71.53 | 34.35 | 740 | 0.9 | proposed | -->
+<!-- | Bunji |	Pakistan |	74.62 |	35.64 |	7100 |	0.2 |	proposed | -->
+<!-- | Dasu | Pakistan | 73.19 | 35.32 | 4320 | 0.8 |	2021 | -->
+<!-- | Akhori |	Pakistan |	72.45 |	33.69 |	600 |	8.6 |	2025 | -->
+<!-- | Azad Pattan | Pakistan | 73.57 | 33.77 | 700 | - | 2022 | -->
+<!-- | Sharmai | Pakistan |	72.01 |	35.28 |	150 |	0.3 |	2023 | -->
+<!-- | Kishanganga | India | 74.76 | 34.65 | 360 | - | 2018 | -->
+<!-- | Sawalkote | India |	75.08 |	33.17 |	1856 | - |	proposed | -->
+<!-- | Kirthai I |	India |	75.20 |	33.39 |	390	| - |	proposed | -->
+<!-- | Kirthai II | India |	75.2 |	33.39 |	930 | - |	proposed | -->
+<!-- | Pakal Dul |	India |	75.81 |	33.46 |	1000 |	0.1 |	proposed | -->
+<!-- | Kwar  |	India |	75.83 |	33.36 |	540 | - | proposed | -->
+<!-- | Kiru  |	India |	75.89 |	33.35 |	624 | - |	proposed | -->
+<!-- | Bursar  |	India |	75.70 |	33.39	| 800	| 0.6	| proposed | -->
+<!-- | Ujh  |	India |	75.52 |	32.56 |	212 | - |	proposed | -->
+<!-- <p id="tabcap"> Recent and planned hydropower projects in the Indus </p> 	 -->
+
+<!-- ## Wind and solar PV potential -->
+
+<!-- Wind and solar PV potential is estimated with data from [Renewables.ninja](https://www.renewables.ninja/) [@Pfenninger2016, @Staffell2016]. The datasets provide estimates of the hourly output from wind turbines and solar PV systems at 0.05 arc-minutes (grid-cells approximately 5 km wide near the equator) from 1960-2016. An example of the data aggregated to the monthly scale for 2013 is depcited below. Total potential in each BCU is estimated using exclusion zone maps that define areas unsuitable for technology siting due to terrain slope, elevation, existing land-use (e.g., populated, forested or protected areas), distance to populated areas, and siting density [@Mentis2015, @Eurek2017].     -->
+
+<!-- <center> -->
+<!-- <div id="fig"> -->
+<!-- ![](figures\renewables_indus.png) -->
+<!-- <p id="figcap"> Monthly solar PV and wind capacity factor for 2013 from [Renewables.ninja](https://www.renewables.ninja/).</p> -->
+<!-- </div> -->
+<!-- </center> -->
+<!-- <br><br> -->
+
+<!-- # Land-use -->
+
+<!-- # References -->

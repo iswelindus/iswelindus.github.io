@@ -11,21 +11,17 @@
 
 
 
-<title>MESSAGE-Indus</title>
+<title>NExus Solutions Tool</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -104,34 +100,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 51px;
+  padding-top: 54px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 
 .section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 .section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 .section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 .section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 .section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 59px;
+  margin-top: -59px;
 }
 </style>
 
@@ -168,101 +164,6 @@ $(document).ready(function () {
 
 
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
-
-
 
 
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -273,24 +174,15 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">MESSAGE-Indus</a>
+      <a class="navbar-brand" href="index.html"><img id="logo" style="width: 60px;" src="figures/nest_logo.png" /></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Overview</a>
-</li>
-<li>
   <a href="modeling_framework.html">Framework</a>
 </li>
 <li>
-  <a href="input_data.html">Data</a>
-</li>
-<li>
-  <a href="analysis.html">Analysis</a>
-</li>
-<li>
-  <a href="results.html">Results</a>
+  <a href="input_data.html">Applications</a>
 </li>
 <li>
   <a href="team.html">Team</a>
@@ -298,11 +190,10 @@ div.tocify {
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="library.html">
-    <span class="fa fa-book"></span>
-     
-    Library
-  </a>
+  <a href="http://www.iiasa.ac.at">IIASA</a>
+</li>
+<li>
+  <a href="https://www.uvic.ca/research/centres/iesvic/index.php">UVic</a>
 </li>
       </ul>
     </div><!--/.nav-collapse -->
@@ -313,136 +204,71 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">MESSAGE-Indus</h1>
+<h1 class="title toc-ignore">NExus Solutions Tool</h1>
 
 </div>
 
 
-<div id="introduction" class="section level1">
-<h1>Introduction</h1>
-<p>Given the interdependencies, the sustainable management and provision of energy, water, food and fibre should be conducted using integrated approaches that are based on a broader systems perspective <span class="citation">(J. Liu et al. <a href="#ref-Liu2015">2015</a>)</span>. The concept of nexus thinking has gained traction and is increasingly applied in the context of the linkages among water, energy and land resources <span class="citation">(Hoff <a href="#ref-Hoff2011">2011</a>, <span class="citation">Howells et al. (<a href="#ref-Howells2013">2013</a>)</span>)</span>. A nexus approach gives equal weight to each sector (including the environmental needs) and strives to identify the linkages and interactions among sectors to better understand the synergies and trade-offs involved in meeting future resource demands of both human and ecological systems in a sustainable way. The ultimate objective is to identify solutions that capitalize on synergies, minimize counterproductive policies and investments, and ensure that humanity remains within planetary boundaries.</p>
-<p>This website presents the MESSAGE-Indus integrated assessment model, a new tool for water-energy-land nexus analysis. MESSAGE-Indus is being developed within the Integrated Solutions for Water, Energy and Land <a href="http://www.iiasa.ac.at/web/home/research/researchProjects/Nexus_Solutions.html">(IS-WEL)</a> project led by the International Institute for Applied Systems Analysis (IIASA). The framework provides a consistent platform for modeling long-term pathways for water, energy and land systems. The approach is innovative because it hard-links management of interdependent systems across the entire basin and for multiple future time periods. Scenarios explored with the tool are derived through interactive stakeholder engagement incorporating views and objectives from people living and working throughout the basin. This perspective provides unique capabilities to develop pathways relevant in the local context that communicate important information regarding the cost and characteristics of infrastructure systems supporting sustainable human development.</p>
-</div>
-<div id="the-indus-basin" class="section level1">
-<h1>The Indus Basin</h1>
-<p>The Indus river basin located in South Asia is a transboundary river basin covering area in Pakistan, India, Afghanistan and China. The region is a cradle for human civilization, and the rivers running through the basin are critical for human survival and regional economic prosperity. For example, more than 90% of the food consumed in Pakistan is grown in the Indus basin <span class="citation">(Qureshi <a href="#ref-Qureshi2011">2011</a>)</span>. In fact, the basin hosts the largest irrigation and canal network in the world <span class="citation">(Yu, Yang, and Savitsky <a href="#ref-Yu2013">2013</a>)</span>. Moreover the extreme elevation changes as water flows from the Himalayas in Tibet to the Indus delta in the Arabian Sea provide excellent opportunities to generate low-carbon hydropower generation <span class="citation">(Siddiqi et al. <a href="#ref-Siddiqi2012">2012</a>)</span>.</p>
-<center>
-<div id="fig">
-<img src="figures/indus_where_is_it.png" />
-<p id="figcap">
-Geographic location of the Indus basin (note country borders are disputed in some regions).
-</p>
-</div>
-</center>
-<p>Despite significant natural resources, the Indus basin has emerged as one of the most water-stressed regions in the world <span class="citation">(Hoekstra et al. <a href="#ref-Hoekstra2012">2012</a>)</span>. Almost all of the surface water within the basin has been allocated to specfic uses, and for parts of year the lower Indus rivers run dry with no flow reaching the sea <span class="citation">(Laghari, Vanham, and Rauch <a href="#ref-Laghari2012">2012</a>)</span>. The history of the region also provides a complicated political backdrop that water management must fit into. Yet, the region has been able to thus far manage potential conflicts through implementation of the hugely successful Indus River Water Treaty, a transboundary water management policy that promotes equitable access to water resources across the India-Pakistan divide <span class="citation">(<em>The Indus Water Treaty</em> <a href="#ref-WB1960">1960</a>, <span class="citation">Wescoat Jr, Halvorson, and Mustafa (<a href="#ref-Wescoat2000">2000</a>)</span>, <span class="citation">Wolf and Newton (<a href="#ref-Wolf2008">2008</a>)</span>)</span>. The future nonetheless remains uncertain due to a rapidly expanding population (particularly in urban areas) and impacts of climate change. Integrated solutions are urgently needed to ensure the region avoids crisis and transforms towards a system that supports long-term human development while maintaining environmental integrity.</p>
-</div>
-<div id="nexus-challenges" class="section level1">
-<h1>Nexus Challenges</h1>
-<p>There are immense development challenges in the Indus stemming from the water-energy-land nexus. Specific nexus challenges are highlighted below.</p>
-<ul>
-<li><p>95% of surface water is used for irrigation but due to losses only 35% actually reaches the field <span class="citation">(Laghari, Vanham, and Rauch <a href="#ref-Laghari2012">2012</a>, <span class="citation">Yu, Yang, and Savitsky (<a href="#ref-Yu2013">2013</a>)</span>)</span>. Thus there exists significant opportunities to improve up- and down-stream water allocation and reduce water stress by improving agricultural management.</p></li>
-<li><p>A lack of available surface water has resulted in acceleratated development of groundwater systems in the Indus <span class="citation">(Cheema, Immerzeel, and Bastiaanssen <a href="#ref-Cheema2014">2014</a>)</span>. The Punjab provinces in both Pakistan and India are now witnessing rapid depletion of groundwater. In other regions, groundwater pumping is needed to manage salinity <span class="citation">(Qureshi et al. <a href="#ref-Qureshi2008">2008</a>)</span>. The energy required for pumping groundwater is also a source of greenhouse gas emissions when fossil energy resources are used <span class="citation">(Siddiqi and Wescoat Jr <a href="#ref-Siddiqi2013">2013</a>)</span>.</p></li>
-<li><p>Water storage capacity is very low throughout the basin, and expanding storage capacity has the potential to impact land availability. Moreover, existing storage capacity is used mainly to support downstream irrigation. This can present conflicts with hydropower generation when electricity demands are not aligned with irrigation uses <span class="citation">(Y.-C. E. Yang et al. <a href="#ref-Yang2016">2016</a>)</span>.</p></li>
-<li><p>The riparian countries are facing an important energy deficit that could be met partly with expanded hydropower generation <span class="citation">(Siddiqi et al. <a href="#ref-Siddiqi2012">2012</a>)</span>. Alternatively, certain regions are planning to expand coal power generation in response to energy deficits, which could place further strain on regional water resources due to the water required for resource extraction and power plant operations.</p></li>
-<li><p>Surface water quality is severely degraded in many locations downstream from urban and industrial areas due to abscence of wastewater treatment <span class="citation">(“Water Quality in the Ravi and Sutlej Rivers, Pakistan: A System View” <a href="#ref-CSIRO2018">2018</a>)</span>. Energy will be needed to support wastewater treatment, and increasingly to support wastewater recycling (advanced treatment and/or pumping to alternative uses).</p></li>
-<li><p>Agricultural practices often involve burning of crop residues left on fields <span class="citation">(Cusworth et al. <a href="#ref-Cusworth2018">2018</a>)</span>. The combustion is a major source of air pollution throughout the region.</p></li>
-</ul>
-</div>
-<div id="previous-work" class="section level1">
-<h1>Previous Work</h1>
-<p>The Indus basin has been the subject of many previous studies. Notably, previous studies focus on identifying impacts of human activities and climate variability and change on the Indus system, e.g., <span class="citation">(Fowler and Archer <a href="#ref-Fowler2006">2006</a>, <span class="citation">W. W. Immerzeel, Van Beek, and Bierkens (<a href="#ref-Immerzeel2010">2010</a>)</span>, <span class="citation">Cheema, Immerzeel, and Bastiaanssen (<a href="#ref-Cheema2014">2014</a>)</span>, <span class="citation">Lutz et al. (<a href="#ref-Lutz2016">2016</a>)</span>, <span class="citation">Mukhopadhyay and Khan (<a href="#ref-Mukhopadhyay2015">2015</a>)</span>, <span class="citation">Wescoat, Siddiqi, and Muhammad (<a href="#ref-Wescoat2018">2018</a>)</span>)</span>. These studies provide invaluable foundation for understanding Indus basin challenges. Yet, there remains a fundamental knowledge gap in terms of integrated solutions, i.e., how to address multiple interdependent challenges during system transformation from the perspective of the entire basin. For example, recent work led by the World Bank provides a comprehensive analysis of future conditions in the basin including an assessment of adaptation options <span class="citation">(Yu, Yang, and Savitsky <a href="#ref-Yu2013">2013</a>, <span class="citation">Y.-C. E. Yang et al. (<a href="#ref-Yang2014">2014</a>)</span>, <span class="citation">Y.-C. E. Yang et al. (<a href="#ref-Yang2016">2016</a>)</span>)</span>, but focused mainly on adaptive solutions from the water perspective in Pakistan, thus missing broader transformations of energy and land systems across the basin. New quantitative integrated assessment tools are needed to identify policies enabling sustainable management of the region’s stressed water resources.</p>
-</div>
-<div id="research-objectives" class="section level1">
-<h1>Research Objectives</h1>
-<p>The objective of the research is to develop a new nexus tool to identify sustainable development pathways at the river basin-scale i.e., MESSAGE-Indus. The framework aims at filling the knowledge gap identified above by incorporating the following features:</p>
-<ul>
-<li><p>Balances human development and environmental objectives</p></li>
-<li><p>Integrates water and energy infrastructure planning with land-use management across the entire basin</p></li>
-<li><p>Incorporates key global change processes in the assessment of resource availability</p></li>
-<li><p>Incorporates key regional and local indicators from stakeholders</p></li>
-<li><p>Flexible approach for application in other basins</p></li>
-</ul>
-</div>
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
-<div id="refs" class="references">
-<div id="ref-Cheema2014">
-<p>Cheema, MJM, WW Immerzeel, and WGM Bastiaanssen. 2014. “Spatial Quantification of Groundwater Abstraction in the Irrigated Indus Basin.” <em>Groundwater</em> 52 (1): 25–36.</p>
-</div>
-<div id="ref-Cusworth2018">
-<p>Cusworth, Daniel H, Loretta J Mickley, Melissa P Sulprizio, Tianjia Liu, Miriam E Marlier, Ruth S DeFries, Sarath K Guttikunda, and Pawan Gupta. 2018. “Quantifying the Influence of Agricultural Fires in Northwest India on Urban Air Pollution in Delhi, India.” <em>Environmental Research Letters</em> 13 (4): 044018.</p>
-</div>
-<div id="ref-Fowler2006">
-<p>Fowler, HJ, and DR Archer. 2006. “Conflicting Signals of Climatic Change in the Upper Indus Basin.” <em>Journal of Climate</em> 19 (17): 4276–93.</p>
-</div>
-<div id="ref-Hoekstra2012">
-<p>Hoekstra, Arjen Y, Mesfin M Mekonnen, Ashok K Chapagain, Ruth E Mathews, and Brian D Richter. 2012. “Global Monthly Water Scarcity: Blue Water Footprints Versus Blue Water Availability.” <em>PLoS One</em> 7 (2): e32688.</p>
-</div>
-<div id="ref-Hoff2011">
-<p>Hoff, Holger. 2011. “Understanding the Nexus: Background Paper for the Bonn 2011 Nexus Conference.” Stockholm Environment Institute.</p>
-</div>
-<div id="ref-Howells2013">
-<p>Howells, Mark, Sebastian Hermann, Manuel Welsch, Morgan Bazilian, Rebecka Segerström, Thomas Alfstad, Dolf Gielen, et al. 2013. “Integrated Analysis of Climate Change, Land-Use, Energy and Water Strategies.” <em>Nature Climate Change</em> 3 (7): 621.</p>
-</div>
-<div id="ref-Immerzeel2010">
-<p>Immerzeel, Walter W, Ludovicus PH Van Beek, and Marc FP Bierkens. 2010. “Climate Change Will Affect the Asian Water Towers.” <em>Science</em> 328 (5984): 1382–5.</p>
-</div>
-<div id="ref-Laghari2012">
-<p>Laghari, AN, Davy Vanham, and Wolfgang Rauch. 2012. “The Indus Basin in the Framework of Current and Future Water Resources Management.” <em>Hydrology and Earth System Sciences</em> 16 (4): 1063.</p>
-</div>
-<div id="ref-Liu2015">
-<p>Liu, Jianguo, Harold Mooney, Vanessa Hull, Steven J Davis, Joanne Gaskell, Thomas Hertel, Jane Lubchenco, et al. 2015. “Systems Integration for Global Sustainability.” <em>Science</em> 347 (6225): 1258832.</p>
-</div>
-<div id="ref-Lutz2016">
-<p>Lutz, Arthur Friedrich, WW Immerzeel, PDA Kraaijenbrink, Arun B Shrestha, and Marc FP Bierkens. 2016. “Climate Change Impacts on the Upper Indus Hydrology: Sources, Shifts and Extremes.” <em>PloS One</em> 11 (11): e0165630.</p>
-</div>
-<div id="ref-Mukhopadhyay2015">
-<p>Mukhopadhyay, Biswajit, and Asif Khan. 2015. “A Re-Evaluation of the Snowmelt and Glacial Melt in River Flows Within Upper Indus Basin and Its Significance in a Changing Climate.” <em>Journal of Hydrology</em> 527: 119–32.</p>
-</div>
-<div id="ref-Qureshi2011">
-<p>Qureshi, Asad Sarwar. 2011. “Water Management in the Indus Basin in Pakistan: Challenges and Opportunities.” <em>Mountain Research and Development</em> 31 (3): 252–60.</p>
-</div>
-<div id="ref-Qureshi2008">
-<p>Qureshi, Asad Sarwar, Peter G McCornick, Manzoor Qadir, and Z Aslam. 2008. “Managing Salinity and Waterlogging in the Indus Basin of Pakistan.” <em>Agricultural Water Management</em> 95 (1): 1–10.</p>
-</div>
-<div id="ref-Siddiqi2013">
-<p>Siddiqi, Afreen, and James L Wescoat Jr. 2013. “Energy Use in Large-Scale Irrigated Agriculture in the Punjab Province of Pakistan.” <em>Water International</em> 38 (5): 571–86.</p>
-</div>
-<div id="ref-Siddiqi2012">
-<p>Siddiqi, Afreen, James L Wescoat Jr, Salal Humair, and Khurram Afridi. 2012. “An Empirical Analysis of the Hydropower Portfolio in Pakistan.” <em>Energy Policy</em> 50: 228–41.</p>
-</div>
-<div id="ref-WB1960">
-<p><em>The Indus Water Treaty</em>. 1960. World Bank Publications.</p>
-</div>
-<div id="ref-CSIRO2018">
-<p>“Water Quality in the Ravi and Sutlej Rivers, Pakistan: A System View.” 2018. CSIRO.</p>
-</div>
-<div id="ref-Wescoat2018">
-<p>Wescoat, James L, Afreen Siddiqi, and Abubakr Muhammad. 2018. “Socio-Hydrology of Channel Flows in Complex River Basins: Rivers, Canals, and Distributaries in Punjab, Pakistan.” <em>Water Resources Research</em> 54 (1): 464–79.</p>
-</div>
-<div id="ref-Wescoat2000">
-<p>Wescoat Jr, James L, Sarah J Halvorson, and Daanish Mustafa. 2000. “Water Management in the Indus Basin of Pakistan: A Half-Century Perspective.” <em>International Journal of Water Resources Development</em> 16 (3): 391–406.</p>
-</div>
-<div id="ref-Wolf2008">
-<p>Wolf, Aaron T, and Joshua T Newton. 2008. “Case Study of Transboundary Dispute Resolution: The Indus Water Treaty.” <em>Department of Geosciences. Oregon State University</em>.</p>
-</div>
-<div id="ref-Yang2014">
-<p>Yang, Yi-Chen E, Casey Brown, Winston Yu, James Wescoat Jr, and Claudia Ringler. 2014. “Water Governance and Adaptation to Climate Change in the Indus River Basin.” <em>Journal of Hydrology</em> 519: 2527–37.</p>
-</div>
-<div id="ref-Yang2016">
-<p>Yang, Yi-Chen E, Claudia Ringler, Casey Brown, and Md Alam Hossain Mondal. 2016. “Modeling the Agricultural Water–energy–food Nexus in the Indus River Basin, Pakistan.” <em>Journal of Water Resources Planning and Management</em> 142 (12): 04016062.</p>
-</div>
-<div id="ref-Yu2013">
-<p>Yu, Winston, Yi-Chen Yang, and Andre Savitsky. 2013. <em>The Indus Basin of Pakistan: The Impacts of Climate Risks on Water and Agriculture</em>. World Bank Publications.</p>
-</div>
-</div>
+<script>
+   $(document).ready(function() {
+     $head = $('#header');
+     $head.prepend('<img src=\"figures/combined_logo.png\" style=\"float: right;width: 510px;\"/>')
+     $head.prepend('<img src=\"figures/nest_logo2.png\" style=\"float: center;width: 180px;\"/>')
+   });
+</script>
+<!-- <style type='text/css'> -->
+<!-- h1.title{ -->
+<!-- font-size: 35px; -->
+<!-- font-weight: 400; -->
+<!-- color: DarkBlue; -->
+<!-- text-align: left; -->
+<!-- } -->
+<!-- h3.subtitle{ -->
+<!-- font-size: 20px; -->
+<!-- color: DarkBlue; -->
+<!-- text-align: left; -->
+<!-- } -->
+<!-- </style> -->
+<div id="integrated-assessment-for-transforming-water-energy-land-systems" class="section level1">
+<h1>Integrated assessment for transforming water-energy-land systems</h1>
+<p>The NExus Solutions Tool (NEST) is an open-access scientific computing framework designed to aid decision-makers with complex choices regarding the development of water, energy and land systems in a given river basin or administrative region. NEST links an engineering-economic model (<a href="https://messageix.iiasa.ac.at/">MESSAGE</a>) representing investment and allocation decisions across water, energy and land-use sectors to a distributed hydrological model (<a href="https://cwatm.github.io/">CWatM</a>) representing the detailed land surface processes at high spatial and temporal resolutions. NEST provides insights into:</p>
+<ol style="list-style-type: decimal">
+<li><p>the vulnerability of water, energy and land systems to future socioeconomic and climatic change; and</p></li>
+<li><p>how policies, technological solutions and investments can improve the resiliency and sustainability of transformation pathways while avoiding counterproductive interactions among sectors.</p></li>
+</ol>
+<!-- This website presents the MESSAGE-Indus integrated assessment model, a new tool for water-energy-land nexus analysis. MESSAGE-Indus is being developed within the Integrated Solutions for Water, Energy and Land [(IS-WEL)](http://www.iiasa.ac.at/web/home/research/researchProjects/Nexus_Solutions.html) project led by the International Institute for Applied Systems Analysis (IIASA). The framework provides a consistent platform for modeling long-term pathways for water, energy and land systems. The approach is innovative because it hard-links management of interdependent systems across the entire basin and for multiple future time periods. Scenarios explored with the tool are derived through interactive stakeholder engagement incorporating views and objectives from people living and working throughout the basin. This perspective provides unique capabilities to develop pathways relevant in the local contexts that communicate important information regarding the cost and characteristics of infrastructure systems supporting sustainable human development. -->
+<!-- # The Indus Basin -->
+<!-- The Indus river basin located in South Asia is a transboundary river basin covering area in Pakistan, India, Afghanistan and China. The region is a cradle for human civilization, and the rivers running through the basin are critical for human survival and regional economic prosperity. For example, more than 90% of the food consumed in Pakistan is grown in the Indus basin [@Qureshi2011]. In fact, the basin hosts the largest irrigation and canal network in the world [@Yu2013]. Moreover the extreme elevation changes as water flows from the Himalayas in Tibet to the Indus delta in the Arabian Sea provide excellent opportunities to generate low-carbon hydropower generation [@Siddiqi2012].  -->
+<!-- <center> -->
+<!-- <div id="fig"> -->
+<!-- ![](figures\indus_where_is_it.png) -->
+<!-- <p id="figcap"> Geographic location of the Indus basin (note country borders are disputed in some regions).</p> -->
+<!-- </div> -->
+<!-- </center> -->
+<!-- Despite significant natural resources, the Indus basin has emerged as one of the most water-stressed regions in the world [@Hoekstra2012]. Almost all of the surface water within the basin has been allocated to specfic uses, and for parts of year the lower Indus rivers run dry with no flow reaching the sea [@Laghari2012].  The history of the region also provides a complicated political backdrop that water management must fit into. Yet, the region has been able to thus far manage potential conflicts through implementation of the hugely successful Indus River Water Treaty, a transboundary water management policy that promotes equitable access to water resources across the India-Pakistan divide [@WB1960, @Wescoat2000, @Wolf2008]. The future nonetheless remains uncertain due to a rapidly expanding population (particularly in urban areas) and impacts of climate change. Integrated solutions are urgently needed to ensure the region avoids crisis and transforms towards a system that supports long-term human development while maintaining environmental integrity.       -->
+<!-- # Nexus Challenges -->
+<!-- There are immense development challenges in the Indus stemming from the water-energy-land nexus. Specific nexus challenges are highlighted below.  -->
+<!-- - 95% of surface water is used for irrigation but due to losses only 35% actually reaches the field [@Laghari2012, @Yu2013]. Thus there exists significant opportunities to improve up- and down-stream water allocation and reduce water stress by improving agricultural management.  -->
+<!-- - A lack of available surface water has resulted in acceleratated development of groundwater systems in the Indus [@Cheema2014]. The Punjab provinces in both Pakistan and India are now witnessing rapid depletion of groundwater. In other regions, groundwater pumping is needed to manage salinity [@Qureshi2008]. The energy required for pumping groundwater is also a source of greenhouse gas emissions when fossil energy resources are used [@Siddiqi2013]. -->
+<!-- - Water storage capacity is very low throughout the basin, and expanding storage capacity has the potential to impact land availability. Moreover, existing storage capacity is used mainly to support downstream irrigation. This can present conflicts with hydropower generation when electricity demands are not aligned with irrigation uses [@Yang2016].  -->
+<!-- - The riparian countries are facing an important energy deficit that could be met partly with expanded hydropower generation [@Siddiqi2012]. Alternatively, certain regions are planning to expand coal power generation in response to energy deficits, which could place further strain on regional water resources due to the water required for resource extraction and power plant operations. -->
+<!-- - Surface water quality is severely degraded in many locations downstream from urban and industrial areas due to abscence of wastewater treatment [@CSIRO2018]. Energy will be needed to support wastewater treatment, and increasingly to support wastewater recycling (advanced treatment and/or pumping to alternative uses). -->
+<!-- - Agricultural practices often involve burning of crop residues left on fields [@Cusworth2018]. The combustion is a major source of air pollution throughout the region.  -->
+<!-- # Previous Work -->
+<!-- The Indus basin has been the subject of many previous studies. Notably, previous studies focus on identifying impacts of human activities and climate variability and change on the Indus system, e.g., [@Fowler2006, @Immerzeel2010, @Cheema2014, @Lutz2016, @Mukhopadhyay2015, @Wescoat2018]. These studies provide invaluable foundation for understanding Indus basin challenges. Yet, there remains a fundamental knowledge gap in terms of integrated solutions, i.e., how to address multiple interdependent challenges during system transformation from the perspective of the entire basin. For example, recent work led by the World Bank provides a comprehensive analysis of future conditions in the basin including an assessment of adaptation options [@Yu2013, @Yang2014, @Yang2016], but focused mainly on adaptive solutions from the water perspective in Pakistan, thus missing broader transformations of energy and land systems across the basin. New quantitative integrated assessment tools are needed to identify policies enabling sustainable management of the region's stressed water resources.  -->
+<!-- # Research Objectives -->
+<!-- The objective of the research is to develop a new nexus tool to identify sustainable development pathways at the river basin-scale i.e., MESSAGE-Indus. The framework aims at filling the knowledge gap identified above by incorporating the following features:  -->
+<!-- - Balances human development and environmental objectives -->
+<!-- - Integrates water and energy infrastructure planning with land-use management across the entire basin -->
+<!-- - Incorporates key global change processes in the assessment of resource availability -->
+<!-- - Incorporates key regional and local indicators from stakeholders -->
+<!-- - Flexible approach for application in other basins -->
+<!-- # References -->
 </div>
 
 <p id="footer">Copyright &copy; 2018 IIASA All rights reserved.</p>
 
 
-</div>
-</div>
 
 </div>
 
