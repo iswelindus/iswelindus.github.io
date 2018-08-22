@@ -1,6 +1,6 @@
 name: my-website
 navbar:
-  title: '<img id="logo" style="width: 60px;" src="figures/nest_logo.png" />'
+  title: NEST
   left:
   - text: Framework
     href: modeling_framework.html

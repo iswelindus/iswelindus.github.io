@@ -1,6 +1,5 @@
 ---
-title: "NExus Solutions Tool"
-# subtitle: "Integrated assessment modeling for transforming water-energy-land systems"
+title: "NExus Solutions Tool (NEST)"
 bibliography: bib_iswelindus.bib
 link-citations: true
 output:
@@ -12,8 +11,7 @@ output:
 <script>
    $(document).ready(function() {
      $head = $('#header');
-     $head.prepend('<img src=\"figures/combined_logo.png\" style=\"float: right;width: 510px;\"/>')
-     $head.prepend('<img src=\"figures/nest_logo2.png\" style=\"float: center;width: 180px;\"/>')
+     $head.prepend('<img src=\"figures/combined_logo.png\" style=\"float: center;width: 510px;\"/>')
    });
 </script>
 
