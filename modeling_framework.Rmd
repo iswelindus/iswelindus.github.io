@@ -22,6 +22,11 @@ The soft-linking of MESSAGE and CWaTM within NEST provides a powerful platform t
 
 # Systems integration
 
+```{r, out.width = "750px", echo = FALSE, fig.align="center"}
+knitr::include_graphics("figures/nest_reference_water_system.png")
+```
+
+
 ```{r, out.width = "650px", echo = FALSE, fig.align="center"}
 knitr::include_graphics("figures/nest_message_crop_implement.png")
 ```
