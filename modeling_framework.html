@@ -314,6 +314,9 @@ div.tocify {
 <p>The soft-linking of MESSAGE and CWaTM within NEST provides a powerful platform to design future water-enegy-land system pathways that respond to water resource constraints and climate change. The Community Water Model (<a href="https://cwatm.github.io/">CWatM</a>) provides a grid-based representation of terrestrial hydrology with current applications at a spatial resolution of 5 arc-minutes (grid-cells approximately 8 km wide near the equator) and daily temporal resolution <span class="citation">(Burek et al. <a href="#ref-Burek2018">2018</a>)</span>. Similar to other large-scale hydrological models, CWaTM uses process-based equations to compute moisture storage in vertically stacked soil layers as well as the water exchange between the soil and the atmosphere and a groundwater reservoir. CWaTM is initially run under naturalized conditions (i.e., no withdrawals and return flows from human activties) to estimate run-off potentials and a baseline for calculating environmental flow indicators in MESSAGE. Elements of the resulting MESSAGE water system pathway are passed back to CWaTM to simulate the expected human impacts under adaptive management at a high spatial resolution. Up- and down-scaling tools facilitate the exchange of data across disparate spatial and temporal scales in CWaTM and MESSAGE.</p>
 <div id="systems-integration" class="section level1">
 <h1>Systems integration</h1>
+<p><img src="figures/nest_message_crop_implement.png" width="650px" style="display: block; margin: auto;" /></p>
+<p><img src="figures/nes_yield_response_to_irrigation.png" width="500px" style="display: block; margin: auto;" /></p>
+<p><img src="figures/nest_message_cwatm_integration.png" width="500px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="geographic-scope" class="section level1">
 <h1>Geographic scope</h1>
@@ -327,14 +330,15 @@ div.tocify {
 </div>
 <div id="results-explorer" class="section level1">
 <h1>Results explorer</h1>
-<p>NEST generates outputs inluding technology capacities, outputs and emissions for each geographic region. Moreover, NEST generates water resource use and availability . To facilitate efficient browsing and sharing of the data with both , NEST is accompanied by an interactive web-based results explorer (figure below). The explorer enables users to visualize and aggregate results for different regions and variables. Users can also export data directly for further analysis.</p>
-<p><img src="figures/nest_data_dashboard.png" width="600px" /></p>
+<p>The main outputs from NEST inlude the MESSAGE results providing projections over the planning horizon of the technology capacities, outputs and environmental impacts for each geographic region delineated in the model. MESSAGE data and results can be accessed and modified via the ix modeling platform, which enables version control and the ability to access and modify data online. Moreover, NEST generates water resource use and availability projections at a daily time-scale and 5 arc-minute spatial resolution consistent with CWaTM. To facilitate efficient browsing and sharing of the data with both technical and non-technical end-users, NEST is accompanied by an interactive web-based results explorer (figure below).</p>
+<p><img src="figures/nest_data_dashboard.png" width="800px" /></p>
+<p>The explorer is tailored for specific applications and enables users to visualize and aggregate results for different regions and variables. Users can also export data directly for further analysis. The explorer is web-based and connects directly to the results database via post-processing tools.</p>
 </div>
 <div id="software-dependencies" class="section level1">
 <h1>Software dependencies</h1>
 <ul>
-<li>R / Python</li>
-<li>GAMS</li>
+<li><p>R / Python. All data processing and configuration and running of the embedded models is performed via the free-to-use and download R / Python scientific programming environments. A number of</p></li>
+<li><p>GAMS</p></li>
 </ul>
 </div>
 <div id="getting-started" class="section level1">
