@@ -312,8 +312,8 @@ div.tocify {
 <p>NEST is a tool for scenario analysis. Scenarios in this context represent future pathways for water-energy-land systems under consistent sets of input data assumptions. Each scenario is defined by a narrative, which locks-in climate, socioeconomic and policy outcomes that in turn drives harmonization and calibration of input data. Scenarios are compared to explore tradeoffs, synergies and uncertainties associated with alternative future outcomes.</p>
 <p>System transformaton is simulated within NEST using <a href="https://messageix.iiasa.ac.at">MESSAGE</a> (Model for Energy Supply Strategy Alternatives and their General Environmental impact). MESSAGE was originally designed as a linear programming (LP) energy-economic model, but is readily extended to any type of technological supply-chain involving interlinked technologies and commodities. Each technology is characterized by its input and output efficiency (i.e., the rate at which a particular commodity is consumed or produced during technology operation), costs (investment, fixed and variable components), and environmental impacts (e.g., greenhouse gas emissions untreated wastewater, etc.). MESSAGE minimizes the total system cost (water, energy and land) over a future time period while meeting user-specified levels of demand and other technical/policy constraints.</p>
 <p>The soft-linking of MESSAGE and CWaTM within NEST provides a powerful platform to design future water-enegy-land system pathways that respond to water resource constraints and climate change. The Community Water Model (<a href="https://cwatm.github.io/">CWatM</a>) provides a grid-based representation of terrestrial hydrology with current applications at a spatial resolution of 5 arc-minutes (grid-cells approximately 8 km wide near the equator) and daily temporal resolution <span class="citation">(Burek et al. <a href="#ref-Burek2018">2018</a>)</span>. Similar to other large-scale hydrological models, CWaTM uses process-based equations to compute moisture storage in vertically stacked soil layers as well as the water exchange between the soil and the atmosphere and a groundwater reservoir. CWaTM is initially run under naturalized conditions (i.e., no withdrawals and return flows from human activties) to estimate run-off potentials and a baseline for calculating environmental flow indicators in MESSAGE. Elements of the resulting MESSAGE water system pathway are passed back to CWaTM to simulate the expected human impacts under adaptive management at a high spatial resolution. Up- and down-scaling tools facilitate the exchange of data across disparate spatial and temporal scales in CWaTM and MESSAGE.</p>
-<div id="water-energy-land-systems-integration" class="section level1">
-<h1>Water-energy-land systems integration</h1>
+<div id="systems-integration" class="section level1">
+<h1>Systems integration</h1>
 </div>
 <div id="geographic-scope" class="section level1">
 <h1>Geographic scope</h1>
@@ -327,16 +327,15 @@ div.tocify {
 </div>
 <div id="results-explorer" class="section level1">
 <h1>Results explorer</h1>
+<p>NEST generates outputs inluding technology capacities, outputs and emissions for each geographic region. Moreover, NEST generates water resource use and availability . To facilitate efficient browsing and sharing of the data with both , NEST is accompanied by an interactive web-based results explorer (figure below). The explorer enables users to visualize and aggregate results for different regions and variables. Users can also export data directly for further analysis.</p>
 <p><img src="figures/nest_data_dashboard.png" width="600px" /></p>
 </div>
 <div id="software-dependencies" class="section level1">
 <h1>Software dependencies</h1>
-<div id="r-python" class="section level2">
-<h2>R / Python</h2>
-</div>
-<div id="gams" class="section level2">
-<h2>GAMS</h2>
-</div>
+<ul>
+<li>R / Python</li>
+<li>GAMS</li>
+</ul>
 </div>
 <div id="getting-started" class="section level1">
 <h1>Getting started</h1>

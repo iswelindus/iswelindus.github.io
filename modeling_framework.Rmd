@@ -20,7 +20,9 @@ System transformaton is simulated within NEST using [MESSAGE](https://messageix.
 
 The soft-linking of MESSAGE and CWaTM within NEST provides a powerful platform to design future water-enegy-land system pathways that respond to water resource constraints and climate change. The Community Water Model ([CWatM](https://cwatm.github.io/)) provides a grid-based representation of terrestrial hydrology with current applications at a spatial resolution of 5 arc-minutes (grid-cells approximately 8 km wide near the equator) and daily temporal resolution [@Burek2018]. Similar to other large-scale hydrological models, CWaTM uses process-based equations to compute moisture storage in vertically stacked soil layers as well as the water exchange between the soil and the atmosphere and a groundwater reservoir. CWaTM is initially run under naturalized conditions (i.e., no withdrawals and return flows from human activties) to estimate run-off potentials and a baseline for calculating environmental flow indicators in MESSAGE. Elements of the resulting MESSAGE water system pathway are passed back to CWaTM to simulate the expected human impacts under adaptive management at a high spatial resolution. Up- and down-scaling tools facilitate the exchange of data across disparate spatial and temporal scales in CWaTM and MESSAGE.
 
-# Water-energy-land systems integration
+# Systems integration
+
+
 
 # Geographic scope
 
@@ -38,17 +40,16 @@ NEST is primarily implemented to explore long-term pathways spanning multiple de
 
 # Results explorer
 
+NEST generates outputs inluding technology capacities, outputs and emissions for each geographic region. Moreover, NEST generates water resource use and availability . To facilitate efficient browsing and sharing of the data with both , NEST is accompanied by an interactive web-based results explorer (figure below). The explorer enables users to visualize and aggregate results for different regions and variables. Users can also export data directly for further analysis.
 
 ```{r, out.width = "600px", echo = FALSE}
 knitr::include_graphics("figures/nest_data_dashboard.png")
 ```
 
-
 # Software dependencies
 
-## R / Python
-
-## GAMS
+- R / Python
+- GAMS
 
 # Getting started
 
