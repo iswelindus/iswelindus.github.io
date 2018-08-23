@@ -22,6 +22,19 @@ The soft-linking of MESSAGE and CWaTM within NEST provides a powerful platform t
 
 # Systems integration
 
+```{r, out.width = "650px", echo = FALSE, fig.align="center"}
+knitr::include_graphics("figures/nest_message_crop_implement.png")
+```
+
+```{r, out.width = "500px", echo = FALSE, fig.align="center"}
+knitr::include_graphics("figures/nes_yield_response_to_irrigation.png")
+```
+
+```{r, out.width = "500px", echo = FALSE, fig.align="center"}
+knitr::include_graphics("figures/nest_message_cwatm_integration.png")
+```
+
+
 
 
 # Geographic scope
@@ -40,15 +53,18 @@ NEST is primarily implemented to explore long-term pathways spanning multiple de
 
 # Results explorer
 
-NEST generates outputs inluding technology capacities, outputs and emissions for each geographic region. Moreover, NEST generates water resource use and availability . To facilitate efficient browsing and sharing of the data with both , NEST is accompanied by an interactive web-based results explorer (figure below). The explorer enables users to visualize and aggregate results for different regions and variables. Users can also export data directly for further analysis.
+The main outputs from NEST inlude the MESSAGE results providing projections over the planning horizon of the technology capacities, outputs and environmental impacts for each geographic region delineated in the model. MESSAGE data and results can be accessed and modified via the ix modeling platform, which enables version control and the ability to access and modify data online. Moreover, NEST generates water resource use and availability projections at a daily time-scale and 5 arc-minute spatial resolution consistent with CWaTM. To facilitate efficient browsing and sharing of the data with both technical and non-technical end-users, NEST is accompanied by an interactive web-based results explorer (figure below). 
 
-```{r, out.width = "600px", echo = FALSE}
+```{r, out.width = "800px", echo = FALSE}
 knitr::include_graphics("figures/nest_data_dashboard.png")
 ```
 
+The explorer is tailored for specific applications and enables users to visualize and aggregate results for different regions and variables. Users can also export data directly for further analysis. The explorer is web-based and connects directly to the results database via post-processing tools. 
+
 # Software dependencies
 
-- R / Python
+- R / Python. All data processing and configuration and running of the embedded models is performed via the free-to-use and download R / Python scientific programming environments. A number of 
+
 - GAMS
 
 # Getting started
