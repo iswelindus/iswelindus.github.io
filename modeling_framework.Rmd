@@ -26,20 +26,13 @@ The soft-linking of MESSAGE and CWaTM within NEST provides a powerful platform t
 knitr::include_graphics("figures/nest_reference_water_system.png")
 ```
 
+```{r, out.width = "550px", echo = FALSE, fig.align="center"}
+knitr::include_graphics("figures/nest_reference_energy_system.png")
+```
 
 ```{r, out.width = "650px", echo = FALSE, fig.align="center"}
 knitr::include_graphics("figures/nest_message_crop_implement.png")
 ```
-
-```{r, out.width = "500px", echo = FALSE, fig.align="center"}
-knitr::include_graphics("figures/nes_yield_response_to_irrigation.png")
-```
-
-```{r, out.width = "500px", echo = FALSE, fig.align="center"}
-knitr::include_graphics("figures/nest_message_cwatm_integration.png")
-```
-
-
 
 
 # Geographic scope
