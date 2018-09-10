@@ -37,6 +37,10 @@ The NExus Solutions Tool (NEST) is an open-access scientific computing framework
 
 2. how policies, technological solutions and investments can improve the resiliency and sustainability of transformation pathways while avoiding counterproductive interactions among sectors.
 
+```{r, out.width = "350px", echo = FALSE, fig.align="right"}
+knitr::include_graphics("figures/nest_funding.png")
+```
+
 
 <!-- This website presents the MESSAGE-Indus integrated assessment model, a new tool for water-energy-land nexus analysis. MESSAGE-Indus is being developed within the Integrated Solutions for Water, Energy and Land [(IS-WEL)](http://www.iiasa.ac.at/web/home/research/researchProjects/Nexus_Solutions.html) project led by the International Institute for Applied Systems Analysis (IIASA). The framework provides a consistent platform for modeling long-term pathways for water, energy and land systems. The approach is innovative because it hard-links management of interdependent systems across the entire basin and for multiple future time periods. Scenarios explored with the tool are derived through interactive stakeholder engagement incorporating views and objectives from people living and working throughout the basin. This perspective provides unique capabilities to develop pathways relevant in the local contexts that communicate important information regarding the cost and characteristics of infrastructure systems supporting sustainable human development. -->
 
