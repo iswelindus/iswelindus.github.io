@@ -1,5 +1,5 @@
 ---
-title: "Framework"
+title: "Modeling Framework"
 bibliography: bib_iswelindus.bib
 link-citations: true
 output:
@@ -18,7 +18,7 @@ NEST is a tool for scenario analysis. Scenarios in this context represent future
 
 The integrated basin development approach analyzed with NEST is based on the concept of inclusive growth through integration of natural assets and socio-economic development leading towards increasing economic opportunities across the basin.  NEST is implemented to explore long-term pathways spanning multiple decades because many of the modeled decisions involve infrastructure with long lifecycles (e.g., a new power plant can last for around 30 years). Moreover, relevant sustainable development policies for WEE systems usually focus on achieving targets many decades into the future in order to address adaptation to long-term sustainability challenges (e.g., the Sustainable Development Goals aim for achievement by 2030). 
 
-# Infrastructure Transformation
+# Integrated system transformation
 
 System transformation is simulated within NEST using [MESSAGE](https://messageix.iiasa.ac.at/) (Model for Energy Supply Strategy Alternatives and their General Environmental impact). MESSAGE was originally designed as a linear programming (LP) energy-economic model, but is readily extended to any type of technological supply-chain involving interlinked technologies and commodities. In NEST, a diverse portfolio of water, energy and land technologies are defined and characterized by input and output efficiencies (i.e., the rate at which a particular commodity is consumed or produced during technology operation), costs (investment, fixed and variable components), and environmental impacts (e.g., greenhouse gas emissions untreated wastewater, etc.). By solving the following deterministic intertemporal LP problem, MESSAGE minimizes the total cost for water, energy and land systems simultaneously over a future time period while meeting user-specified levels of demand and technical/policy constraints: 
 
@@ -45,7 +45,7 @@ The land system using the MESSAGE reference scheme (figure below) primarily focu
 knitr::include_graphics("figures/nest_message_crop_implement.png")
 ```
 
-# Climate and Water Resources
+# Water, energy and land resources
 
 The soft-linking of MESSAGE and CWaTM within NEST provides a powerful platform to design future water-enegy-land system pathways that respond to water resource constraints and climate change. The Community Water Model ([CWatM](https://cwatm.github.io/)) provides a grid-based representation of terrestrial hydrology with current applications at a spatial resolution of 5 arc-minutes (grid-cells approximately 8 km wide near the equator) and daily temporal resolution. Similar to other large-scale hydrological models, CWaTM uses process-based equations to compute moisture storage in vertically stacked soil layers as well as the water exchange between the soil and the atmosphere and a groundwater reservoir. CWaTM is initially run under naturalized conditions (i.e., no withdrawals and return flows from human activties) to estimate run-off potentials and a baseline for calculating environmental flow indicators in MESSAGE. Elements of the resulting MESSAGE water system pathway are passed back to CWaTM to simulate the expected human impacts under adaptive management at a high spatial resolution. Up- and down-scaling tools facilitate the exchange of data across disparate spatial and temporal scales in CWaTM and MESSAGE.
 
@@ -59,9 +59,7 @@ In NEST, river basins are dissaggregated into sub-basins to enable consistent tr
 knitr::include_graphics("figures/indus_map_cmb.png")
 ```
 
-# Input data
-
-# Results explorer
+# Inputs and outputs
 
 The main outputs from NEST inlude the MESSAGE results providing projections over the planning horizon of the technology capacities, outputs and environmental impacts for each geographic region delineated in the model. MESSAGE data and results can be accessed and modified via the ix modeling platform, which enables version control and the ability to access and modify data online. Moreover, NEST generates water resource use and availability projections at a daily time-scale and 5 arc-minute spatial resolution consistent with CWaTM. To facilitate efficient browsing and sharing of the data with both technical and non-technical end-users, NEST is accompanied by an interactive web-based results explorer (figure below). 
 
@@ -71,13 +69,11 @@ knitr::include_graphics("figures/nest_data_dashboard.png")
 
 The explorer is tailored for specific applications and enables users to visualize and aggregate results for different regions and variables. Users can also export data directly for further analysis. The explorer is web-based and connects directly to the results database via post-processing tools. 
 
-# Software dependencies
+# Getting started
 
 - R / Python. All data processing and configuration and running of the embedded models is performed via the free-to-use and download R / Python scientific programming environments. A number of 
 
 - GAMS
-
-# Getting started
 
 Do you have a specific application for NEST? To get started, follow the instructions for downloading, installing and running MESSAGE and CWaTM as stand-alone platforms. This will provide the knowledge basis to successfully develop your own NEST model. Next, check out recent applications and associated links to github where the tools and data specific to each case study can be downloaded free-of-charge. Still stuck? Feel free to get in touch with members of our technical team to discuss your project. We are eager to collaborate!
 
