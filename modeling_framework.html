@@ -11,7 +11,7 @@
 
 
 
-<title>Framework</title>
+<title>Modeling Framework</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -302,7 +302,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Framework</h1>
+<h1 class="title toc-ignore">Modeling Framework</h1>
 
 </div>
 
@@ -311,8 +311,8 @@ div.tocify {
 <p><img src="figures/NEST_diagram.png" width="800px" /></p>
 <p>NEST is a tool for scenario analysis. Scenarios in this context represent future pathways for WEE systems under consistent sets of input data assumptions. Each scenario is distinguished by a unique narrative, which locks-in climate, socioeconomic and policy outcomes that in turn drives harmonization of input data. Scenarios comprising different narratives (i.e., input data assumptions) are compared to explore tradeoffs, synergies and uncertainties associated with alternative future outcomes.</p>
 <p>The integrated basin development approach analyzed with NEST is based on the concept of inclusive growth through integration of natural assets and socio-economic development leading towards increasing economic opportunities across the basin. NEST is implemented to explore long-term pathways spanning multiple decades because many of the modeled decisions involve infrastructure with long lifecycles (e.g., a new power plant can last for around 30 years). Moreover, relevant sustainable development policies for WEE systems usually focus on achieving targets many decades into the future in order to address adaptation to long-term sustainability challenges (e.g., the Sustainable Development Goals aim for achievement by 2030).</p>
-<div id="infrastructure-transformation" class="section level1">
-<h1>Infrastructure Transformation</h1>
+<div id="integrated-system-transformation" class="section level1">
+<h1>Integrated system transformation</h1>
 <p>System transformation is simulated within NEST using <a href="https://messageix.iiasa.ac.at/">MESSAGE</a> (Model for Energy Supply Strategy Alternatives and their General Environmental impact). MESSAGE was originally designed as a linear programming (LP) energy-economic model, but is readily extended to any type of technological supply-chain involving interlinked technologies and commodities. In NEST, a diverse portfolio of water, energy and land technologies are defined and characterized by input and output efficiencies (i.e., the rate at which a particular commodity is consumed or produced during technology operation), costs (investment, fixed and variable components), and environmental impacts (e.g., greenhouse gas emissions untreated wastewater, etc.). By solving the following deterministic intertemporal LP problem, MESSAGE minimizes the total cost for water, energy and land systems simultaneously over a future time period while meeting user-specified levels of demand and technical/policy constraints:</p>
 <p><span class="math display">\[ \text{min} \, \sum_{t=1}^{n} \, \mathbf{c}_t^\text{T} \,  \mathbf{x_t} \, \delta_t \, , \]</span> <span class="math display">\[ \mathbf{A} \, \mathbf{x} \, \geq \, \mathbf{b}, \]</span> <span class="math display">\[ \mathbf{x} \, \geq \, 0  \]</span> In the above system of equations, the time period index is given by <span class="math inline">\(t = 1,2,...,n\)</span>. The soluton vector containing the capacity and activity of the technologies is given by <span class="math inline">\(\mathbf{x} = \left(\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_n\right)\)</span>. Economic costs are described in the cost coefficient vector of the objective function <span class="math inline">\(\mathbf{c}_t\)</span>. The discount rate associated with future cash flows is represented by <span class="math inline">\(\delta_t\)</span>. The set of constraints including the supply-demand balances, capacity constraints and additional policies addressing system emissions are contained in the technical coefficent matrix <span class="math inline">\(\mathbf{A}\)</span> and right-hand side constraints vector <span class="math inline">\(\mathbf{b}\)</span>.</p>
 <p>The water resource and technology system representation using the MESSAGE reference system scheme is depicted in the figure below. Water from different sources (surface, ground and saline) is converted and allocated across sectors (urban, rural, energy and agriculture). Simultaneosuly, return-flow volumes are managed, including opportunities to recycle wastewater streams within and between sectors. Likewise, river flow and conveyance between spatial units is optimized. The current version of the model aggregates urban domestic and manufacturing uses to simplify the number of desicion variables. Nexus interactions across sectors are accounted for explicitly, including the energy required for pumping and treating water, and the water needed for crops and electricity generation. Hence, the water system pathways in NEST adapt to future changes in agriculture and energy systems.</p>
@@ -322,8 +322,8 @@ div.tocify {
 <p>The land system using the MESSAGE reference scheme (figure below) primarily focuses on cropping systems. Existing and maximum yields for different crop types and management approaches are estimated using maps from the Global Agro-Ecological Zones (GAEZ) database. Yield varies with the amount of irrigation. On-farm energy requirements are estimated from data observed in the literature. Moreover, distinction is made between the type of energy carrier supporting agriculture activities (e.g., grid, diesel generation and distributed PV).</p>
 <p><img src="figures/nest_message_crop_implement.png" width="650px" style="display: block; margin: auto;" /></p>
 </div>
-<div id="climate-and-water-resources" class="section level1">
-<h1>Climate and Water Resources</h1>
+<div id="water-energy-and-land-resources" class="section level1">
+<h1>Water, energy and land resources</h1>
 <p>The soft-linking of MESSAGE and CWaTM within NEST provides a powerful platform to design future water-enegy-land system pathways that respond to water resource constraints and climate change. The Community Water Model (<a href="https://cwatm.github.io/">CWatM</a>) provides a grid-based representation of terrestrial hydrology with current applications at a spatial resolution of 5 arc-minutes (grid-cells approximately 8 km wide near the equator) and daily temporal resolution. Similar to other large-scale hydrological models, CWaTM uses process-based equations to compute moisture storage in vertically stacked soil layers as well as the water exchange between the soil and the atmosphere and a groundwater reservoir. CWaTM is initially run under naturalized conditions (i.e., no withdrawals and return flows from human activties) to estimate run-off potentials and a baseline for calculating environmental flow indicators in MESSAGE. Elements of the resulting MESSAGE water system pathway are passed back to CWaTM to simulate the expected human impacts under adaptive management at a high spatial resolution. Up- and down-scaling tools facilitate the exchange of data across disparate spatial and temporal scales in CWaTM and MESSAGE.</p>
 </div>
 <div id="geographic-scope" class="section level1">
@@ -332,24 +332,18 @@ div.tocify {
 <p>In NEST, river basins are dissaggregated into sub-basins to enable consistent tracking of within-basin surface water flows. To enable a transboundary perspective, NEST further intersects the sub-basin boundaries with country administrative units, e.g., from the Global Adminstrative Areas database (<a href="https://gadm.org/">GADM</a>). Subnational adminstrative units and regions covering multiple basins can be included. The intersection of the administrative and sub-basin units results in a new classification of spatial units referred to as Basin Country Units (BCU). A reduced-form network is estimated between BCUs using flow-accumulation data from hydroBASINS at 15 arc-seconds. An example for the Indus river basin in South Asia is depicted below.</p>
 <p><img src="figures/indus_map_cmb.png" width="800px" /></p>
 </div>
-<div id="input-data" class="section level1">
-<h1>Input data</h1>
-</div>
-<div id="results-explorer" class="section level1">
-<h1>Results explorer</h1>
+<div id="inputs-and-outputs" class="section level1">
+<h1>Inputs and outputs</h1>
 <p>The main outputs from NEST inlude the MESSAGE results providing projections over the planning horizon of the technology capacities, outputs and environmental impacts for each geographic region delineated in the model. MESSAGE data and results can be accessed and modified via the ix modeling platform, which enables version control and the ability to access and modify data online. Moreover, NEST generates water resource use and availability projections at a daily time-scale and 5 arc-minute spatial resolution consistent with CWaTM. To facilitate efficient browsing and sharing of the data with both technical and non-technical end-users, NEST is accompanied by an interactive web-based results explorer (figure below).</p>
 <p><img src="figures/nest_data_dashboard.png" width="800px" /></p>
 <p>The explorer is tailored for specific applications and enables users to visualize and aggregate results for different regions and variables. Users can also export data directly for further analysis. The explorer is web-based and connects directly to the results database via post-processing tools.</p>
 </div>
-<div id="software-dependencies" class="section level1">
-<h1>Software dependencies</h1>
+<div id="getting-started" class="section level1">
+<h1>Getting started</h1>
 <ul>
 <li><p>R / Python. All data processing and configuration and running of the embedded models is performed via the free-to-use and download R / Python scientific programming environments. A number of</p></li>
 <li><p>GAMS</p></li>
 </ul>
-</div>
-<div id="getting-started" class="section level1">
-<h1>Getting started</h1>
 <p>Do you have a specific application for NEST? To get started, follow the instructions for downloading, installing and running MESSAGE and CWaTM as stand-alone platforms. This will provide the knowledge basis to successfully develop your own NEST model. Next, check out recent applications and associated links to github where the tools and data specific to each case study can be downloaded free-of-charge. Still stuck? Feel free to get in touch with members of our technical team to discuss your project. We are eager to collaborate!</p>
 </div>
 <div id="references" class="section level1 unnumbered">

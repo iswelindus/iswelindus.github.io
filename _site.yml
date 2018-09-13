@@ -1,18 +1,6 @@
 name: my-website
 navbar:
-  title: NEST
-  left:
-  - text: Framework
-    href: modeling_framework.html
-  - text: Applications
-    href: input_data.html
-  - text: Team
-    href: team.html
-  right:  
-  - text: IIASA
-    href: http://www.iiasa.ac.at  
-  - text: UVic
-    href: https://www.uvic.ca/research/centres/iesvic/index.php  
+  title: 
 output:
   html_document:
     theme: lumen

@@ -4,14 +4,38 @@ bibliography: bib_iswelindus.bib
 link-citations: true
 output:
   html_document:
-    toc: true  
-    toc_float: true  
+    toc: false  
+    toc_float: false  
 ---
 
-# Organizations
+Principle Investigators:
 
-# Researchers
+* [Simon Parkinson](http://www.iiasa.ac.at/web/home/research/researchPrograms/Energy/Simon_Parkinson.html) (Research Scholar, IIASA and Research Associate, UVic)
 
-# Collaborators
+* [Edward Byers](http://www.iiasa.ac.at/web/home/research/researchPrograms/Energy/Edward_Byers.html) (Research Scholar, IIASA)
 
-# Steering Committee
+* [Peter Burek](http://www.iiasa.ac.at/staff/staff.php?type=auto&visibility=visible&search=true&login=burek) (Research Scholar, IIASA)
+
+Scientific Team: 
+
+* [Adriano Vinca](http://www.iiasa.ac.at/web/home/research/researchPrograms/Energy/Adriano_Vinca.html) (Research Assistant, IIASA and PhD Candidate, UVic)
+
+* [Yaoping Wang](http://www.iiasa.ac.at/staff/staff.php?type=auto&visibility=visible&search=true&login=wangy) (Research Assistant, IIASA)
+
+* [Fabio Diuna](http://www.coppe.ufrj.br/) (PhD Candidate, Federal University of Rio de Janeiro)  
+
+* [Zarrar Khan](https://www.pnnl.gov/science/staff/staff_info.asp?staff_num=9420) (Research Associate, JGCRI PNNL)
+
+Scientific Steering Committee:
+
+* [Ned Djiali](https://www.uvic.ca/engineering/mechanical/faculty-and-staff/faculty/ndjilali.php) (Canada Research Chair and Professor of Mechanical Engineering, UVic)
+
+* [Volker Krey](http://www.iiasa.ac.at/web/home/research/researchPrograms/Energy/Volker-Krey.en.html) (Deputy Director, Energy Program, IIASA and Adjunct Professor NTNU)
+
+* [Simon Langan](http://www.iiasa.ac.at/staff/staff.php?type=auto&visibility=visible&search=true&login=langan) (Director, Water Program, IIASA)
+
+* [Keywan Riahi](http://www.iiasa.ac.at/web/home/research/researchPrograms/Energy/Keywan-Riahi.en.html) (Director, Energy Program, IIASA and Visting Professor of Energy Systems, TU Graz)
+
+* [Andrew Rowe](https://www.uvic.ca/engineering/mechanical/faculty-and-staff/faculty/arowe.php) (Director, Institute for Integrated Energy Systems and Professor of Mechanical Engineering, UVic)
+
+* [Yoshihide Wada](http://www.iiasa.ac.at/staff/staff.php?type=auto&visibility=visible&search=true&login=wada) (Deputy Director, Water Program, IIASA)
